@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+
+  <link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
+  <link href="/scheduler-resources/local-style.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-ui-misc/jquery-ui-delta.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/global.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/last-word.css" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <script type="text/javascript" src="js/lib/json2.js"></script>
+  <script type="text/javascript" src="js/lib/jquery.min-3.4.0.js"></script>
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script> -->
+  <script type="text/javascript" src="js/lib/jquery-ui.min-1.12.1.js"></script>
+  <script type="text/javascript" src="js/lib/maskedInputPlugin.js"></script>
+  <script src="js/lib/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+
+  <script src="js/lib/date.format.js" type="text/javascript"></script>
+  <script src="js/lib/jquery.blockUI.js" type="text/javascript"></script>
+  <script src="js/util/dates.js" type="text/javascript"></script>
+  <script src="js/util/util.js" type="text/javascript"></script>
+  <script src="js/widget/widget_util.js" type="text/javascript"></script>
+  <script src="js/util/breadcrumbs.js" type="text/javascript"></script>
+
+  <script src="js/widget/dialogs.js" type="text/javascript"></script>
+
+  <script src="js/Studies/study_screen.js" type="text/javascript"></script>
+  <script src="js/Studies/study_form.js" type="text/javascript"></script>
+  <script src="js/common/feedback_screen.js" type="text/javascript"></script>
+  <script src="js/util/global2.js" type="text/javascript"></script>
+
+  <!-- javascript / css files for calendar plugin -->
+  <script type="text/javascript" src="js/lib/jquery-ui-sliderAccess.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+
+      $("#fullHeader").load("header.html", function () {
+
+        $('.studieslink').addClass('active');
+        initFooter();
+        loadMetaHeaders();
+        app_runIdleTimer();
+        getStudyStaticLists();
+        commonVisitApprovalScreenData();
+
+      });
+
+    });
+
+  </script>
+  <!--
+
+      Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are met:
+
+      1. Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+      2. Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+
+      3. The name of the author may not be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+      WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+      MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+      EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+      SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+      TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+      PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+      LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  -->
+
+</head>
+
+<body onMouseMove="app_handleMouseMove()">
+<div class="wrapperSize">
+
+  <div id="fullHeader"></div>
+
+  <div class="breadcrumbs"></div>
+
+  <!--     @MAIN BODY     -->
+  <div class="mainBody">
+    <div id="study_visit_approval_form_screen" style="display: block;">
+      <div class="importantInfoBlock">
+        <div style="padding: 3px;"></div>
+        <span id="study_approval_study_name" style="font-weight: normal;"></span>
+        <div style="padding: 3px;"></div>
+        <div class="mainNameBlock">
+          <span id="study_approval_visit_name"></span>
+          <div style="padding: 3px;"></div>
+          <div class="statusBlock statusPending">
+            <div class="label">Final Status</div>
+            <div><span id="visit_finalApprovalStatus"></span></div>
+          </div>
+        </div>
+      </div>
+      <div style="clear: both;"></div>
+      <form id="visit_approval" name="visit_approval" method="post" action="">
+        <div class="formBlock">
+          <div class="primaryTableHeader">Approval Details</div>
+          <div class="halfFormBlock">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="formLabel">Logged In User Ecommons</td>
+                <td align="right">
+                  <span id="study_visitApprovalUser" class="formTextReadOnly"></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="formLabel">Template Created</td>
+                <td align="right">
+                  <span id="study_visitApprovalCreated" class="formTextReadOnly"></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="formLabel">Comment</td>
+                <td align="right">
+                                        <div id="study_visitApprovalComment"></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="formButtonBlock">
+          <input type="button" name="button" id="study_visit_commentButton"
+                 onclick="javascript:submitVisitCommentClick();" value="Save Comment without Approving"
+                 class="formButton"/>
+          <input type="button" name="clear" id="study_visit_approveButton"
+                 onclick="javascript:submitVisitApprovalClick();" value="Save Comment and Approve"
+                 class="formButton"/>
+          <input type="button" name="clear" id="visit_approve_cancelButton"
+                 onclick="javascript:cancelVisitApprovalClick();" value="Cancel" class="formButton"/>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="footer"></div>
+</div>
+<!-- end wrapperSize -->
+
+
+<div id="main_dialog_wrapper">
+</div>
+
+</body>
+</html>

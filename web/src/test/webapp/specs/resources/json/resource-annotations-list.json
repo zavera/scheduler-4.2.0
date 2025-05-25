@@ -1,0 +1,21 @@
+{
+  "sublocations": [],
+  "nurseAnnotations": [
+    {"name":"Anthropometry","quantity":0,"resourceAnnotations":0,"quantifiable":true,"selected":false,"id":19},
+    {"name":"Monitoring 1:1","quantity":0,"resourceAnnotations":0,"quantifiable":false,"selected":false,"id":18}
+  ],
+  "nutritionAnnotations": [
+    {"name":"Anthropometry","quantity":0,"resourceAnnotations":0,"quantifiable":true,"selected":false,"id":19},
+    {"name":"Comment","quantity":0,"resourceAnnotations":0,"quantifiable":false,"selected":false,"id":62}
+  ],
+  "equipmentAnnotations": [
+    {"name":"Body Composition Scan","quantity":0,"resourceAnnotations":0,"quantifiable":true,"selected":false,"id":58},
+    {"name":"Hip Structural Analysis","quantity":0,"resourceAnnotations":0,"quantifiable":true,"selected":false,"id":72}
+  ],
+  "roomAnnotations": [
+    {"name":"Comment","quantity":0,"resourceAnnotations":0,"quantifiable":false,"selected":false,"id":62}
+  ],
+  "labAnnotations": [
+    {"name":"Comment","quantity":0,"resourceAnnotations":0,"quantifiable":false,"selected":false,"id":62}
+  ]
+}

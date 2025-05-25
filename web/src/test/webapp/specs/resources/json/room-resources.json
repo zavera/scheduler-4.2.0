@@ -1,0 +1,11 @@
+{
+    "resources":
+    [
+        {   "id":64, "name":"ROOM 1"},
+        {"id":140,"name":"MISC ROOM"},
+        {"id":42,"name":"ROOM 2"},
+        {"id":43,"name":"ROOM 3"},
+        {"id":44,"name":"ROOM 4"}
+    ]
+}
+

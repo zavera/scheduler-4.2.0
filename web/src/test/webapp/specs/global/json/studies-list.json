@@ -1,0 +1,24 @@
+{
+  "studys": [
+    {
+      "localId": "TA-001",
+      "name": "Test Study 001"
+    },
+    {
+      "localId": "TA-002",
+      "name": "Test Study 002"
+    },
+    {
+      "localId": "ICT-001",
+      "name": "Scheduling Inpatient CT"
+    },
+    {
+      "localId": "AS001",
+      "name": "Auto Study 001"
+    },
+    {
+      "localId": "OUT001",
+      "name": "Scheduling Outpatient"
+    }
+  ]
+}

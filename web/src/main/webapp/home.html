@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link href="/scheduler-resources/local-style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- css files for EasyUI plugin -->
+    <link href="css/jquery-easyui-1.8.2/icon.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/combo.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/combobox.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/linkbutton.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/menu.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/panel.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/textbox.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/tooltip.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/validatebox.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/switchbutton.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/searchbox.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/dialog.css" rel="stylesheet" type="text/css"/>
+    <!-- javascript / css files for calendar plugin -->
+
+    <link href='js/lib/fullcalendar-scheduler-4.2.0/packages/core/main.css' rel='stylesheet' type='text/css'>
+    <link href='js/lib/fullcalendar-scheduler-4.2.0/packages/daygrid/main.css' rel='stylesheet' type='text/css'>
+    <link href='js/lib/fullcalendar-scheduler-4.2.0/packages/timegrid/main.css' rel='stylesheet' type='text/css'/>
+
+    <!--https://www.jeasyui.com/documentation/index.php-->
+    <link href="css/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-ui-misc/jquery-ui-delta.css" rel="stylesheet" type="text/css"/>
+
+    <link href="css/global.css" rel="stylesheet" type="text/css"/>
+
+    <link href="css/appt_calendar.css" rel="stylesheet" type="text/css"/>
+    <link href="css/tables.css" rel="stylesheet" type="text/css"/>
+    <link href="css/timeline.css" rel="stylesheet" type="text/css"/>
+    <link href="css/home.css" rel="stylesheet" type="text/css"/>
+
+    <link href="css/last-word.css" rel="stylesheet" type="text/css"/>
+
+
+    <script type="text/javascript" src="js/lib/json2.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.min-3.4.0.js"></script>
+    <!--  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script>-->
+    <script type="text/javascript" src="js/lib/jquery-ui.min-1.12.1.js"></script>
+
+    <!--https://www.jeasyui.com/documentation/index.php-->
+
+    <!--javascript files needed for EasyUI combobox -->
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.menu.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.linkbutton.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.tooltip.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.panel.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.parser.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.validatebox.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.textbox.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.combo.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.combobox.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.switchbutton.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.searchbox.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+
+    <script src="js/common/feedback_screen.js" type="text/javascript"></script>
+    <script src="js/lib/maskedInputPlugin.js" type="text/javascript"></script>
+    <script src="js/lib/date.format.js" type="text/javascript"></script>
+    <script src="js/lib/jquery.blockUI.js" type="text/javascript"></script>
+    <script src="js/lib/jsrender.js" type="text/javascript"></script>
+    <script src="js/util/breadcrumbs.js" type="text/javascript"></script>
+    <script src="js/util/util.js" type="text/javascript"></script>
+    <script src="js/util/dto.js" type="text/javascript"></script>
+    <script src="js/util/global2.js" type="text/javascript"></script>
+    <script src="js/util/dateRanges.js" type="text/javascript"></script>
+    <script src="js/widget/dialogs.js" type="text/javascript"></script>
+    <script src="js/widget/widget_util.js" type="text/javascript"></script>
+    <script src="js/widget/columns.js" type="text/javascript"></script>
+    <script src="js/widget/tables.js" type="text/javascript"></script>
+    <script src="js/widget/table_filter.js" type="text/javascript"></script>
+    <script src="js/widget/table_pagination.js" type="text/javascript"></script>
+    <script src="js/util/dates.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/lib/jquery-ui-sliderAccess.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.js"></script>
+
+    <!-- new jsrender template -->
+    <script src="js/lib/jsrender.js" type="text/javascript"></script>
+
+    <script type='text/javascript' src='js/lib/fullcalendar-scheduler-4.2.0/packages/core/main.js'></script>
+    <script type='text/javascript' src='js/lib/fullcalendar-scheduler-4.2.0/packages/daygrid/main.js'></script>
+    <script type='text/javascript' src='js/lib/fullcalendar-scheduler-4.2.0/packages/timegrid/main.js'></script>
+    <script type='text/javascript' src='js/lib/fullcalendar-scheduler-4.2.0/packages/interaction/main.js'></script>
+
+    <script src="js/Studies/study_module.js" type="text/javascript"></script>
+    <script src="js/Subjects/subjectGrid.js" type="text/javascript"></script>
+    <script src="js/Home/booked_resources_table.js" type="text/javascript"></script>
+    <script src="js/Home/appt_template_resource_table.js" type="text/javascript"></script>
+    <script src="js/Home/home_screen.js" type="text/javascript"></script>
+    <script src="js/Home/visit_templates_needing_approval.js" type="text/javascript"></script>
+    <script src="js/Home/timeline.js" type="text/javascript"></script>
+    <script src="js/Home/appt_tables.js" type="text/javascript"></script>
+    <script src="js/Home/appt_subjects_tables.js" type="text/javascript"></script>
+    <script src="js/Home/appointment_screen.js" type="text/javascript"></script>
+    <script src="js/Home/home_util.js" type="text/javascript"></script>
+    <script src="js/Home/appt_calendar.js" type="text/javascript"></script>
+    <script src="js/Studies/study_tables.js" type="text/javascript"></script>
+    <script src="js/Home/overbook_check_table.js" type="text/javascript"></script>
+    <script src="js/Home/appt_dialogs.js" type="text/javascript"></script>
+    <script src="js/Home/appt_search.js" type="text/javascript"></script>
+    <script src="js/Home/appt_calendar_page.js" type="text/javascript"></script>
+
+    <!-- needed just for the templateResourceOriginDate variable -->
+    <!-- TODO: move templateResourceOriginDate to another js file which makes more sense -->
+    <script src="js/Studies/template_resource_timeline.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.widget("ui.tooltip", $.ui.tooltip, {
+                options: {
+                    content: function () {
+                        return $(this).prop('title');
+                    }
+                }
+            });
+            onloadHomePage();
+        });
+
+    </script>
+
+    <!--
+
+    Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+    3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+    EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  -->
+</head>
+
+<body onMouseMove="app_handleMouseMove()">
+
+<div class="wrapperSize">
+    <!--     @HEADER     -->
+    <div id="fullHeader"></div>
+
+    <div class="breadcrumbs"></div>
+
+    <!--     @MAIN BODY     -->
+    <div class="mainBody">
+        <div id="apptModuleTabs">
+            <ul>
+                <li class="appCallLi_1"><a href="#appointmentsTab" class="appCallLi_a1"
+                                           onclick="javascript:getHomeCalendar();">Appointments</a></li>
+                <li class="homeLi_2 hidden" id="tempApprovalTab">
+                    <a href="#tempApprovalTabContent"
+                       onclick="javascript:VisitTemplatesNeedingApproval.getTemplatesToApprove();"
+                       class="homeLi_a2">Visit Templates Needing Approval</a>
+                </li>
+                <li class="appCallLi_2">
+                    <a href="#appt_timeline" onclick="javascript:loadTimelineTab();"
+                       class="appCallLi_a2">Resource Timeline</a>
+                </li>
+            </ul>
+
+            <div id="appointmentsTab">
+                <div id="viewToggle">
+                    <strong class="viewLabel">View by:</strong>
+                    <input type="radio" name="home_viewToggle" id="home_toggleCalendar" value="cal"
+                           onclick="javascript:Home.toggleToCalendarView();" checked="checked">
+                    <label for="home_toggleCalendar" class="labels">Calendar</label>
+                    <input type="radio" name="home_viewToggle" id="home_toggleList"
+                           value="list" onclick="javascript:Home.toggleToListView();">
+                    <label for="home_toggleList" class="labels">List</label>
+                </div>
+                <div id="calendarTab">
+                    <div id="appointment_main_screen">
+                        <div class="apptfilterContainer">
+                            <form action="" method="get">
+                                <div class="apptDateRangeContainer">Select Date: <input type="text"
+                                                                                        id="apptCalendarGoToDate"
+                                                                                        class="ll-skin-latoja">
+                                </div>
+                                &nbsp;&nbsp;&nbsp;
+                                <strong>Filter By:</strong>
+                                <div id="calendarFilterContainer">
+                                    <select id="filterSelected" onchange="javascript:filterCalendarViewChangeClick();"
+                                            name="select">
+                                        <option id="filter" value="0">choose</option>
+                                        <option id="filter1" value="1">Subject Last Name</option>
+                                        <option id="filter2" value="2">Study (Local ID)</option>
+                                        <option id="filter3" value="3">Resource</option>
+                                        <option id="filter4" value="4">Scheduled</option>
+                                        <option id="filter5" value="5">Checked-In</option>
+                                        <option id="filter6" value="6">Checked-Out</option>
+                                        <option id="filter7" value="7">Cancelled</option>
+                                        <option id="filter8" value="8">Hold</option>
+                                    </select>
+
+                                    <div class="simpleFilterContainer">
+                                        <input type="text" size="30" id="appointmentfilterString"
+                                               placeholder="Please enter filter term" class="formTextSmallerFilter"
+                                               onkeypress="return filterEnterKeySubmit(this,event);"/>
+                                        <input type="text" style="display: none;"/>
+                                        <input type="button" id="appointment_filterButton" name="button" value="Filter"
+                                               onclick="javascript:filterCalendarViewClick();"
+                                               class="formButton"/>
+                                    </div>
+                                </div>
+                                <input type="button" id="appointment_resetButton" name="button" value="Reset"
+                                       onclick="javascript:resetCalendarViewClick();"
+                                       class="formButton" style="margin-top:10px"/>
+                            </form>
+                        </div>
+                        <div id="apptSearch" class='appt_schedule lineBorder'>
+                            <div id="searchApptToggle">
+                                <div id="apptSearchHeading" class="secondaryTableHeader" title="Expand"
+
+                                     onclick="WidgetUtil.ExpandableSection({headingId:'apptSearchHeading', imageId: 'apptSearchExpandIcon', sectionId: 'apptSearchForm'});">
+                                    <img id="apptSearchExpandIcon" src="css/images/double_down_arrow.png"
+                                         class="parentHeaderImages">
+                                    <span id="newAppointmentText">Schedule New Appointment</span>
+                                </div>
+                            </div>
+                            <div id="apptSearchForm">
+                                <table id="apptSearchFormTopSection">
+                                    <tr>
+                                        <td>
+                                            Study
+                                        </td>
+                                        <td>
+                                            <input id="apptSearchStudy" type="text" size="20px"/>
+                                            <img id="apptSearchStudyIcon" src="css/images/icon_info.png"
+                                                 class="infoIcon" onclick="AppointmentSearchForm.handleTooltip(this);"
+                                                 hspace="5" style="vertical-align: middle;"/>
+                                            <span id="apptSearchStudyIconText"></span>
+                                            <span id="apptSearchInvestigatorLabel"></span>
+                                            <span id="apptSearchInvestigator"></span>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Visit
+                                        </td>
+                                        <td>
+                                            <input id="apptSearchVisit" type="text" size="20px"/>
+                                            <img id="apptSearchVisitIcon" src="css/images/icon_info.png"
+                                                 class="infoIcon" onclick="AppointmentSearchForm.handleTooltip(this);"
+                                                 hspace="5" style="vertical-align: middle;"/>
+                                            <span id="apptSearchVisitDurationLabel"
+                                                  class="apptSearchVisitDuration"></span>
+                                            <span id="apptSearchVisitDuration" class="apptSearchVisitDuration"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Subject
+                                        </td>
+                                        <td colspan="4">
+                                            <input id="apptSearchSubject" type="text" size="20px"/>
+                                            <img id="apptSearchSubjectIcon" src="css/images/icon_info.png"
+                                                 class="infoIcon" onclick="AppointmentSearchForm.handleTooltip(this);"
+                                                 hspace="5" style="vertical-align: middle;"/>
+                                            <span id="apptSearchHoldMain">
+                        <label>
+                          <input id="apptSearchHold" type="checkbox" size="20px"
+                                 onclick="AppointmentSearchForm.holdAppt();"/>
+                          Hold the appointment without a subject
+                        </label>
+                      </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div id="apptSearchRange">
+                                    <span id="apptSearchRangeTitle">Select Search Range</span>
+
+                                    <div id="apptSearchType">
+                                        <label id="apptSearchTypeScheduleMain"><input type="radio" name="apptSearchType"
+                                                                                      id="apptSearchTypeSchedule"
+                                                                                      value="schedule"
+                                                                                      onclick="AppointmentSearchForm.Schedule.displayScheduleForm();"
+                                                                                      checked="checked">Schedule
+                                        </label>
+                                        <label id="apptSearchTypeOverbookMain"><input type="radio" name="apptSearchType"
+                                                                                      id="apptSearchTypeOverbook"
+                                                                                      value="overbook"
+                                                                                      onclick="AppointmentSearchForm.Overbook.displayOverbookForm();">
+                                            Overbook </label>
+                                    </div>
+
+                                    <div id="schedulingRestrictionWarningContainer">
+                                        <span id="schedulingRestrictionWarning"></span>
+                                    </div>
+
+                                    <table id="apptSearchSchedule">
+                                        <tr>
+                                            <td id="apptSearch_startDateLabel">
+                                                Earliest Start Date
+                                            </td>
+                                            <td class="date">
+                                                <input type="text" id="apptSearch_startDate"/>
+                                            </td>
+                                            <td id="apptSearch_startTimeLabel">
+                                                Earliest Start Time
+                                            </td>
+                                            <td>
+                                                <input type="text" id="apptSearch_startTime"/>
+                                            </td>
+                                            <td id="apptSearch_scheduleValidation" colspan="3"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="apptSearch_endDateLabel">
+                                                Latest End Date
+                                            </td>
+                                            <td class="date">
+                                                <input type="text" id="apptSearch_endDate"/>
+                                            </td>
+                                            <td id="apptSearch_endTimeLabel">
+                                                Latest End Time
+                                            </td>
+                                            <td>
+                                                <input type="text" id="apptSearch_endTime"/>
+                                            </td>
+                                        </tr>
+                                        <tr id="apptSearchDayOfWeek">
+                                            <td>
+                                                Specific days
+                                            </td>
+                                            <td colspan="4">
+                        <span>
+                          <input type="checkbox" class="week_days" id="allWeekDays" name="allWeekDays" value=""
+                                 onclick="toggleAllWeekDays(this);"/>
+                          <label>All Weekdays</label>
+                        </span>
+                                                <span>
+                            <input type="checkbox" id="monday" value="1" name="weekday" class="weekday"/>
+                            <label>Monday</label>
+                        </span>
+                                                <span>
+                            <input type="checkbox" id="tuesday" value="2" name="weekday" class="weekday"/>
+                            <label>Tuesday</label>
+                        </span>
+                                                <span>
+                            <input type="checkbox" id="wednesday" value="3" name="weekday" class="weekday"/>
+                            <label>Wednesday</label>
+                        </span>
+                                                <span>
+                          <input type="checkbox" id="thursday" value="4" name="weekday" class="weekday"/>
+                          <label>Thursday</label>
+                        </span>
+                                                <span>
+                          <input type="checkbox" id="friday" value="5" name="weekday" class="weekday"/>
+                          <label>Friday</label>
+                        </span>
+                                                <div class="dottedBottomBorder"></div>
+                                                <span>
+                          <input type="checkbox" id="saturday" value="6" name="weekend" class="weekend"/>
+                          <label>Saturday</label>
+                        </span>
+                                                <span>
+                          <input type="checkbox" id="sunday" value="0" name="weekend" class="weekend"/>
+                          <label>Sunday</label>
+                        </span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div id="apptSearchOverbook">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    Override Reason
+                                                </td>
+                                                <td>
+                                                    <input type="text" id="apptSearchOverbookReason"/>
+                                                    <span id="apptSearch_overbookReasonValidation"></span>
+                                                </td>
+                                            </tr>
+                                            <tr id="apptSearchOverbookRoomRow">
+                                                <td>
+                                                    Select a Room
+                                                </td>
+                                                <td id="apptSearchOverbookRoomTd">
+                                                    <input type="text" id="apptSearchOverbookRoom"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Comment
+                                                </td>
+                                                <td>
+                                                    <div id="apptSearchOverbookComment"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Start Date/Time
+                                                </td>
+                                                <td class="date">
+                                                    <input type="text" id="apptSearchOverbookStartDate"/>
+                                                    <input type="text" id="apptSearchOverbookStartTime"/>
+                                                    <span id="apptSearch_overbookDateTimeValidation"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="searchApptResourceToggle">
+                                    <div class="secondaryTableHeader" id="apptSearchResourceHeading" title="Expand"
+
+                                         onclick="WidgetUtil.ExpandableSection({headingId:'apptSearchResourceHeading', imageId: 'apptSearchResourceExpandIcon', sectionId: 'apptSearchTemplateResources'});">
+                                        <img id="apptSearchResourceExpandIcon" src="css/images/sm_circle_plus.png"
+                                             class="parentHeaderImages">
+                                        Resources
+                                    </div>
+                                    <div id="apptSearchTemplateResources">
+                                        <div id="apptTemplateResourceTablePagination" class="tableControls"></div>
+                                        <div id="apptTemplateResourceTableWrapper" class="CSSTableGenerator"></div>
+                                    </div>
+                                </div>
+                                <div id="apptSearchActionsOuter">
+                                    <div class="floatRight" id="apptSearchActions">
+                                        <input type="button" id="apptSearchRestart" value="Restart" class="formButton"
+                                               onclick="AppointmentSearchForm.restart();"/>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div id="calendar-wrapper">
+                            <div class="calendarKey">
+                                <div class="calendarKeyRow noPrint">
+                                    <div class="calendarKeyItem">
+                                        <div class="calendarKeyBox calendarKeyAvailable"><img
+                                                src="css/images/icon_available.png" alt="(A)"></div>
+                                        <div class="calendarKeyText">
+                                            Available
+                                        </div>
+                                        <div class="calendarKeyBox calendarKeyScheduled"><img
+                                                src="css/images/icon_scheduled.png" alt="(S)"></div>
+                                        <div class="calendarKeyText">
+                                            Scheduled
+                                        </div>
+                                        <div class="calendarKeyBox calendarKeyHold"><img src="css/images/icon_hold.png"
+                                                                                         alt="(H)"></div>
+                                        <div class="calendarKeyText">
+                                            Hold
+                                        </div>
+                                        <div class="calendarKeyBox calendarKeyCheckedIn"><img
+                                                src="css/images/icon_checkedin.png" alt="(I)"></div>
+                                        <div class="calendarKeyText">
+                                            Checked In
+                                        </div>
+                                        <div class="calendarKeyBox calendarKeyCheckedOut"><img
+                                                src="css/images/icon_checkedout.png" alt="(O)"></div>
+                                        <div class="calendarKeyText">
+                                            Checked Out
+                                        </div>
+                                        <div class="calendarKeyBox calendarKeyCanceled"><img
+                                                src="css/images/icon_canceled.png" alt="(X)"></div>
+                                        <div class="calendarKeyText">
+                                            Canceled
+                                        </div>
+                                        <div class="calendarKeyBox calendarKeyNotFound"><img
+                                                src="css/images/icon_unavailable.png" alt="(U)"></div>
+                                        <div class="calendarKeyText">
+                                            Unavailable
+                                        </div>
+                                        <div id="lastMinuteTop" class="calendarKeyBox"></div>
+                                        <div class="lastMinuteText calendarKeyText"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="loading" style="display: none; position:static; background-color: gray;"><img
+                                    src="css/images/components/ajax_loader_indicator_large.gif" align="middle"/>
+                                Please Wait....the Scheduling System is checking for available appointments.
+                                <input id="appt_stopButton" onclick="javascript:apptStopSearchClick();" type="submit"
+                                       value="Stop Search" size="20px"/>
+                            </div>
+                            <div id="filter_loading" style="display: none; position:static; background-color: gray;">
+                                <img
+                                        src="css/images/components/ajax_loader_indicator_large.gif" align="middle"/>
+                                Please Wait....filter search is still in progress.
+                                <input id="appt_stopButton" type="submit" value="Stop Search" size="20px"/>
+                            </div>
+                            <div id="initial_loading" style="display: none; position:static; background-color: gray;">
+                                <img
+                                        src="css/images/components/ajax_loader_indicator_large.gif" align="middle"/>
+                                Please Wait....Appointments calendar is loading.
+                            </div>
+                            <div class="calendarTab">
+                                <div id='apptSublocationListTop'></div>
+                            </div>
+
+                            <div id="appt_calendar"></div>
+
+                            <div class="calendarTab">
+                                <div id='apptSublocationListBottom'></div>
+                            </div>
+                        </div>
+                        <div class="calendarKey">
+                            <div class="calendarKeyRow noPrint">
+                                <div class="calendarKeyItem">
+                                    <div class="calendarKeyBox calendarKeyAvailable"><img
+                                            src="css/images/icon_available.png" alt="(A)"></div>
+                                    <div class="calendarKeyText">
+                                        Available
+                                    </div>
+                                    <div class="calendarKeyBox calendarKeyScheduled"><img
+                                            src="css/images/icon_scheduled.png" alt="(S)"></div>
+                                    <div class="calendarKeyText">
+                                        Scheduled
+                                    </div>
+                                    <div class="calendarKeyBox calendarKeyHold"><img src="css/images/icon_hold.png"
+                                                                                     alt="(H)"></div>
+                                    <div class="calendarKeyText">
+                                        Hold
+                                    </div>
+                                    <div class="calendarKeyBox calendarKeyCheckedIn"><img
+                                            src="css/images/icon_checkedin.png" alt="(I)"></div>
+                                    <div class="calendarKeyText">
+                                        Checked In
+                                    </div>
+                                    <div class="calendarKeyBox calendarKeyCheckedOut"><img
+                                            src="css/images/icon_checkedout.png" alt="(O)"></div>
+                                    <div class="calendarKeyText">
+                                        Checked Out
+                                    </div>
+                                    <div class="calendarKeyBox calendarKeyCanceled"><img
+                                            src="css/images/icon_canceled.png"
+                                            alt="(X)"></div>
+                                    <div class="calendarKeyText">
+                                        Canceled
+                                    </div>
+                                    <div class="calendarKeyBox calendarKeyNotFound"><img
+                                            src="css/images/icon_unavailable.png" alt="(U)"></div>
+                                    <div class="calendarKeyText">
+                                        Unavailable
+                                    </div>
+                                    <div id="lastMinuteBottom" class="calendarKeyBox"></div>
+                                    <div class="lastMinuteText calendarKeyText"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="appt_list"></div>
+            </div>
+
+            <div id="tempApprovalTabContent" class="hidden">
+                <div class="tabBox">
+                    <div class="tableControls">
+                        <div class="selectBox" style="display: inline-table;"></div>
+                        <div class="pagination_block" style="display: inline-table; margin-left: 25px;"></div>
+                    </div>
+                    <div id="homeTemplatesApprovalData" class="CSSTableGenerator"></div>
+                </div>
+            </div>
+            <div id="appt_timeline"></div>
+        </div>
+
+        <div class="wizardBody" id="appt_wizard_searchedDetails" title="Appointment Details">
+            <div class="primaryTableHeader">Visit Summary</div>
+            <div class="listPaginationBlock">
+                <table>
+                    <tr>
+                        <td width="25%" style="font-weight: bold;" align="left" valign="top">Study:</td>
+                        <td align="left" valign="top"><span id="dialog_searchstudy_name_detail"
+                                                            class="formTextReadOnly"></span></td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-weight: bold;" valign="top">Local ID:</td>
+                        <td align="left" valign="top"><span id="dialog_searchstudy_localid"
+                                                            class="formTextReadOnly"></span></td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-weight: bold;" valign="top">Investigator:</td>
+                        <td align="left" valign="top"><span id="dialog_searchstudy_piname_detail"
+                                                            class="formTextReadOnly"></span></td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-weight: bold;" valign="top">Visit:</td>
+                        <td align="left" valign="top"><span id="dialog_searchvisit_name_detail"
+                                                            class="formTextReadOnly"></span></td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-weight: bold;" valign="top">Subject:</td>
+                        <td align="left" valign="top"><span id="dialog_searchsubject_name_detail"
+                                                            class="formTextReadOnly"></span></td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-weight: bold;" valign="top">MRN:</td>
+                        <td align="left" valign="top"><span id="dialog_searchsubject_mrn_detail"
+                                                            class="formTextReadOnly"></span></td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-weight: bold;" valign="top">Gender:</td>
+                        <td align="left" valign="top"><span id="dialog_searchsubject_gender_detail"
+                                                            class="formTextReadOnly"></span></td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-weight: bold;" valign="top">Visit Start Time:</td>
+                        <td align="left" valign="top"><span id="dialog_searchvisit_start_detail"
+                                                            class="formTextReadOnly"></span></td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-weight: bold;" valign="top">Visit End Time:</td>
+                        <td align="left" valign="top"><span id="dialog_searchvisit_end_detail"
+                                                            class="formTextReadOnly"></span></td>
+                    </tr>
+                </table>
+                <div id="filterSearchedResources" style="display: none;">
+                    <div class="rightDivs">
+                        <ul style="list-style-type: none;">
+                            <li>
+                                <label> <input type="radio" value="No" name="filterResource" id="notAvailableResources"
+                                               onclick="filterResources(this);"/> Display Unavailable Resources</label>
+                            </li>
+                            <li>
+                                <label> <input type="radio" value="Yes" name="filterResource" id="availableResources"
+                                               onclick="filterResources(this);"/> Display Available Resources</label>
+                            </li>
+                            <li>
+                                <label> <input type="radio" value="All" name="filterResource" id="allResources"
+                                               onclick="filterResources(this);"/> Display Both</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br/><br/><br/>
+                <div class="leftDivs">
+                    <img src="css/images/icon_fixed.png"/> Fixed &nbsp;
+                    <img src="css/images/icon_float.png"/> Float &nbsp;
+                    <img src="css/images/icon_floatgroup.png"/> Float Group &nbsp;
+                    <img src="css/images/icon_flex.png"/> Flex &nbsp;
+                </div>
+                <br/><br/><br/>
+
+                <div id="searchResourcesTableWrapper" class="CSSTableGenerator"></div>
+
+                <table id="commentTable">
+                    <tr>
+                        <td class="formLabel">Comment:</td>
+                        <td>
+                            <div id="scheduleWizard_comment"></div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="wizardButtons">
+                    <input type="button" class="formButton" value="Schedule"
+                           onclick="javascript:AppointmentSearchForm.scheduleDialog();"
+                           id="appt_wizard_scheduleAppointment"/>
+                    <input type="button" class="formButton" value="Close"
+                           onclick="javascript:closeSearchedDetailsClick(); return false;"
+                           id="appt_wizard_searchedDetails-close"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="wizardBody" id="appt_wizard_scheduled_visit_details" style="display: none; overflow: scroll;"
+             title="Check-In/Cancel Appointment">
+            <div class="primaryTableHeader" id="visitSummaryHeader">Scheduled Visit Summary</div>
+
+            <span class="dialog_study_id" style="display:none"></span>
+            <span class="dialog_visit_id" style="display:none"></span>
+
+            <table>
+                <tbody class="forTemplate"></tbody>
+            </table>
+            <div style="display:none" id="switchSubject_div">
+                <div class="primaryTableHeader" id="wizardTableSwitchSubjectHeader">Switch Subject</div>
+                <div class="holdDiv" id="wizardSetSubjectNA">
+                    <label>
+                        <input type="checkbox" id="switchSubject_noSubject"
+                               onclick="javascript:resetSelectedSubjectAndChoiceVisibility(false, '#switchSubject_chooseSubject', this);">
+                        Remove subject and hold appointment without a subject</label>
+                </div>
+
+                <div id="switchSubject_chooseSubject">
+                    <div class="noPrint simpleFilterContainer"
+                         id="appt_filter_functionality3_switchSubject">
+                        &nbsp;Filter by MRN or Subject Last Name:
+                        <input id="switchSubject_subjectFilterText" type="text" size="30"
+                               placeholder="Please enter filter term"
+                        />
+                        <input type="button" id="switchSubject_subjectFilterButton"
+                               name="button"
+                               value="Filter" class="formButton" size="30"/>
+                    </div>
+
+                    <div id="switchSubject_StudySubjectTablePagination" class="tableControls"></div>
+                    Select the subject you want to schedule for this visit and click "Submit"
+                    <div id="switchSubject_StudySubjectTableWrapper" class="CSSTableGenerator hoverable"></div>
+
+                </div>
+
+                <div style="float: left; padding-top: 5px;">
+                    <span id="switchSubject_formValidation" style="padding-left: 35px; visibility: hidden;"
+                          class="formValidationRequired"></span>
+                </div>
+                <div class="wizardButtons">
+                    <img id="appt_responseLoading_switchSubject" src="css/images/components/ajax_loader_indicator.gif"
+                         alt="loading" class="mgmt_fieldCheckRunning" style="display: none"/>
+                    <input type="button" class="formButton" value="Submit" id="appt_wizard_form-next_switchSubject"
+                           onclick="javascript:switchSubjectSubmit(); return false;"/>
+                    <input type="button" class="formButton" value="Cancel"
+                           id="appt_wizard_form-next_switchSubject-cancel"
+                           onclick="javascript:cancelSwitchSubject(); return false;"/>
+                </div>
+            </div>
+
+            <div id="scheduledResourcesBlock">
+                <div class="primaryTableHeader" style="width: 890px;">Scheduled Resources</div>
+
+                <div class="newItemButton">
+                    <a id="appt_wizard_overbookCheckAppointment" onclick="javascript:overbookCheckClick();return false;"
+                       class="newOverrideItemButton">Overbook Check</a>
+                    <a id="appt_newResourceButton" onclick="javascript:newOverrideResourceClick(event);"
+                       class="newOverrideItemButton">Add New Resource</a>
+                </div>
+                <div id="scheduledResourcesTablePagination" class="tableControls"></div>
+                <div id="scheduledResourcesTableWrapper" class="CSSTableGenerator"></div>
+
+                <div class="statusWrap">
+                    <table>
+                        <tr class="rightDropDown" id="cancellationDropDown">
+                            <td>
+                                <span class="formLabel" id="cancelReasonLabel">Cancellation Reason: </span>
+                            </td>
+                            <td>
+                                <select id="wizard_cancellationReasons"
+                                        onchange="javascript:changeCancellationReasonsClick();"></select>
+                            </td>
+                        </tr>
+                        <tr class="comment_label_and_input">
+                            <td>
+                                <span class="formLabel">Comment:</span>
+                            </td>
+                            <td>
+                                <div id="wizard_comment" class="wizard_comment"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="wizardButtons">
+                    <input type="button" class="formButton appt_wizard_saveComment" value="Save Comment"
+                           onclick="javascript:saveBookedVisitCommentClick();" id="appt_wizard_saveComment"/>
+                    <input type="button" class="formButton viewComments" value="View Comments"
+                           onclick="javascript:viewBookedVisitCommentClick();" id="viewScheduledCommentLink"/>
+                    <input type="button" class="formButton" value="Check-In Appointment" id="appt_wizard_checkin"
+                           onclick="javascript:checkinAppointmentClick(); return false;"/>
+                    <input type="button" class="formButton" value="Cancel Appointment"
+                           id="appt_wizard_cancelAppointment"
+                           onclick="javascript:cancelAppointmentClick(); return false;"/>
+                    <input type="button" class="formButton" value="Close"
+                           onclick="javascript:closeScheduleDetailsClick(); return false;"
+                           id="appt_wizard_scheduled_visit_details-close"/>
+                </div>
+            </div>
+        </div>
+
+        <div id="cancellation-dialog-confirm" class="hidden">Are you sure you want to cancel this visit?</div>
+
+        <div id="checkout-dialog-confirm" class="hidden">Are you sure you want to check out this visit?</div>
+
+        <div id="schedule-dialog-confirm" class="hidden">Are you sure you want to schedule this visit?</div>
+
+        <div id="comment-dialog-confirm" class="hidden">Do you want to save the comment?</div>
+
+        <div id="demographicSubject-data-dialog-confirm"
+             title="Do you want to update the subject demographic data?"></div>
+
+        <div id="checkin-visit-dialog-confirm" class="hidden">Are you sure you want to check in this visit?</div>
+
+        <div id="add-studySubject-dialog-confirm"
+             title="Are you sure you want to add selected subject(s) to the study?"></div>
+
+        <div id="subject-dialog-confirm" style="display: none; overflow: hidden;">
+            <p>
+                PLEASE NOTE: This subject is scheduled for another visit that will conflict with your desired time. Do
+                you wish to continue?
+                <br/><br/>
+                If you choose to schedule, please follow the proper notification and operational procedures at your
+                site.
+            </p>
+        </div>
+
+        <div id="appt-common-dialogs"></div>
+
+        <div class="wizardBody" id="appt_wizard_checkedin_visit_details"
+             title="Check-Out Appointment">
+            <div class="primaryTableHeader">Checked-In Visit Summary</div>
+            <div class="listPaginationBlock">
+                <table>
+                    <tbody class="forTemplate"></tbody>
+                </table>
+                <div class="primaryTableHeader" style="width: 860px;">Checked-In Resources</div>
+
+                <div class="newItemButton">
+                    <a id="appt_wizard_overbookCheckAppointment1"
+                       onclick="javascript:overbookCheckClick(); return false;">Overbook Check</a>
+                    <a id="appt_newResourceButton" onclick="javascript:newOverrideResourceClick(event);"
+                       class="appt_checkoutnewResource">Add New Resource </a>
+                </div>
+
+                <div id="checkedInResourcesTablePagination" class="tableControls"></div>
+                <div id="checkedInResourcesTableWrapper" class="CSSTableGenerator"></div>
+
+                <div id="checkOutRadio" class="tightForm">
+                    Did any of the resources for this visit vary in duration more than 15 mins?
+                    <div class="requiredIcon">*</div>
+                    <input type="radio"
+                           id="check_visit_duration_yes"
+                           name="check_visit_duration"
+                           value="true">
+                    Yes
+                    <input type="radio" id="check_visit_duration_no" name="check_visit_duration" value="false"> No
+                    <br/>
+                    Were any activities added to or omitted from this visit?
+                    <div class="requiredIcon">*</div>
+                    <input type="radio"
+                           id="check_visit_activities_yes"
+                           name="check_visit_activities"
+                           value="true"> Yes
+                    <input type="radio" id="check_visit_activities_no" name="check_visit_activities" value="false"> No
+                </div>
+
+                <table class="tightForm">
+                    <tr id="checkOutBlock">
+                        <td class="formLabel">Check-Out Reason:
+                            <div class="requiredIcon">*</div>
+                        </td>
+                        <td>
+                            <select id="wizard_checkoutReasons"></select>
+                        </td>
+                    </tr>
+                    <tr class="comment_label_and_input">
+                        <td class="formLabel">Comment:</td>
+                        <td>
+                            <div id="checkoutWizard_comment" class="wizard_comment"></div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="wizardButtons">
+                    <input type="button" class="formButton appt_wizard_saveComment" value="Save Comment"
+                           onclick="javascript:saveBookedVisitCommentClick1();" id="appt_wizard_saveComment1"/>
+                    <input type="button" class="formButton viewComments" value="View Comments"
+                           onclick="javascript:viewBookedVisitCommentClick();" id="viewCheckedInCommentLink"/>
+                    <input type="button" class="formButton" value="Check-Out Appointment"
+                           onclick="javascript:checkOutVisitClick(); return false;" id="appt_wizard_checkout"/>
+                    <input type="button" class="formButton" value="Close"
+                           onclick="javascript:closeCheckOutClick(); return false;"
+                           id="appt_wizard_checkedin_visit_details-close"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="wizardBody" id="appt_wizard_checkedout_visit_details"
+             title="Checked-Out Appointment">
+            <div class="primaryTableHeader">Checked-Out Visit Summary</div>
+            <div class="listPaginationBlock">
+                <table>
+                    <tbody class="forTemplate"></tbody>
+                </table>
+                <div class="primaryTableHeader" style="width: 860px;">Checked-Out Resources</div>
+
+                <div class="newItemButton">
+                    <a id="appt_wizard_overbookCheckAppointment2"
+                       onclick="javascript:overbookCheckClick(); return false;">Overbook Check</a>
+                    <a id="appt_newResourceButton" onclick="javascript:newOverrideResourceClick(event);"
+                       class="appt_checkoutVisitnewResource">Add New Resource</a>
+                </div>
+
+                <div id="checkedOutResourcesTablePagination" class="tableControls"></div>
+                <div id="checkedOutResourcesTableWrapper" class="CSSTableGenerator"></div>
+
+                <div id="checkedOutRadioRead">
+                    Did any of the resources for this visit vary in duration more than 15 mins?
+                    <div class="requiredIcon">*</div>
+                    <input type="radio"
+                           id="check_visit_duration_yes_readonly"
+                           name="check_visit_duration"
+                           value="true"
+                           disabled="disabled">
+                    Yes
+                    <input type="radio" id="check_visit_duration_no_readonly" name="check_visit_duration" value="false"
+                           disabled="disabled"> No
+                    <br/>
+                    Were any activities added to or omitted from this visit?
+                    <div class="requiredIcon">*</div>
+                    <input type="radio"
+                           id="check_visit_activities_yes_readonly"
+                           name="check_visit_activitiess"
+                           value="true" disabled="disabled">
+                    Yes
+                    <input type="radio" id="check_visit_activities_no_readonly" name="check_visit_activities"
+                           value="false" disabled="disabled"> No
+                </div>
+                <div class="wizardButtons">
+                    <input type="button" class="formButton viewComments" value="View Comments"
+                           onclick="javascript:viewBookedVisitCommentClick();"
+                           id="viewCheckedoutCommentLink"/>
+
+                    <input type="button" class="formButton" value="Close"
+                           onclick="javascript:closeCheckOutDetailsClick(); return false;"
+                           id="appt_wizard_checkedout_visit_details-close"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="wizardBody" id="appt_wizard_cancelled_visit_details"
+             title="Cancelled Appointment">
+            <div class="primaryTableHeader">Cancelled Visit Summary</div>
+            <div class="listPaginationBlock">
+                <table>
+                    <tbody class="forTemplate"></tbody>
+                </table>
+
+                <div class="primaryTableHeader">Cancelled Resources</div>
+
+                <div class="newItemButton">
+                    <a id="appt_wizard_overbookCheckAppointment3"
+                       onclick="javascript:overbookCheckClick(); return false;">Overbook Check</a>
+                </div>
+
+                <div id="cancelledResourcesTablePagination" class="tableControls"></div>
+                <div id="cancelledResourcesTableWrapper" class="CSSTableGenerator"></div>
+
+                <div class="wizardButtons">
+                    <input type="button" class="formButton" value="View Comments"
+                           onclick="javascript:viewBookedVisitCommentClick();"
+                           id="viewCancelledCommentLink"/>
+                    <input type="button" class="formButton" value="Reschedule"
+                           onclick="javascript:rescheduleAppointmentClick(); return false;"
+                           id="appt_wizard_rescheduleAppointment"/>
+                    <input type="button" class="formButton" value="Close"
+                           onclick="javascript:closeCancelDetailsClick(); return false;"
+                           id="appt_wizard_cancelled_visit_details-close"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="wizardBody" id="appt_reschedule_dialog"
+             title="Reschedule Appointment">
+            <table id="rescheduleTable">
+                <col width="190">
+                <col width="650">
+                <tr>
+                    <td class="formLabel_new">Scheduled Start Date/Time
+                        <div class="requiredIcon">*</div>
+                    </td>
+                    <td class="apptDateRangeContainer" style="width: 225px; margin-left: 7px;">
+                        <input type="text" id="reschedule_start_date" style="width: 100px; padding-left: 2px;"
+                               class="ll-skin-latoja"/>&nbsp;
+                        <input type="text" id="reschedule_start_time" style="padding-left: 2px;"
+                               class="ll-skin-latoja"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formLabel_new">Override Reason
+                        <div class="requiredIcon">*</div>
+                    </td>
+                    <td>
+                        <select id="wizard_rescheduleReasons"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formLabel_new">Reschedule based on
+                        <div class="requiredIcon">*</div>
+                    </td>
+                    <td>
+                        <input type="radio" name="reschedule_appt_selected" id="booked_visit_radio"
+                               value="booked_vis"><span style="padding-left:5px">Cancelled Visit</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="radio" name="reschedule_appt_selected" id="visit_template_radio"
+                               value="visit_temp"><span style="padding-left:5px">Visit Template</span>
+                    </td>
+                </tr>
+            </table>
+            <div id="rescheduleWizardButtons" class="wizardButtons" align="right">
+                <input type="button" class="formButton" value="Save"
+                       onclick="javascript:crudRescheduleAppointmentClick();" id="appt_reschedule_save"/>
+                <input type="button" class="formButton" value="Close"
+                       onclick="javascript:cancelRescheduleAppointmentClick(); return false;"
+                       id="appt_reschedule-close"/>
+            </div>
+        </div>
+
+        <div class="wizardBody" id="appt_visit_comment_dialog"
+             title="Booked Appointment Comments">
+            <div id="BookedVisitCommentsTableWrapper" class="CSSTableGenerator"></div>
+        </div>
+
+        <div class="wizardBody" id="appt_bookedResource_update_dialog"
+             title="Add New Resource">
+            <table style="width: 850px;">
+                <tr>
+                    <td class="formLabel_new">Resource
+                        <div class="requiredIcon">*</div>
+                    </td>
+                    <td style="padding: 0">
+                        <select id="wizard_overrideResources"
+                                onchange="javascript:ResourceAnnotationsTable.loadFromResourceMenuSelection('resource', 'wizard_overrideResources');"></select>
+                    </td>
+
+                    <td class="formLabel_new">Billable for the visit?</td>
+                    <td style="padding: 0">
+                        <input type="checkbox" id="override_billable" value="override_billable">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formLabel_new">Resource Start Date
+                        <div class="requiredIcon">*</div>
+                    </td>
+                    <td class="apptDateContainer">
+                        <input type="text" id="override_start_date" style="width: 100px; padding-left: 2px;"
+                               class="ll-skin-latoja"/>&nbsp;
+                    </td>
+                    <td class="formLabel_new">Resource Start Time
+                        <div class="requiredIcon">*</div>
+                    </td>
+                    <td class="apptDateContainer">
+                        <input type="text" id="override_start_time" class="ll-skin-latoja"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formLabel_new">Resource End Date
+                        <div class="requiredIcon">*</div>
+                    </td>
+                    <td class="apptDateContainer">
+                        <input type="text" id="override_end_date" style="width: 100px; padding-left: 2px;"
+                               class="ll-skin-latoja"/>&nbsp;
+                    </td>
+                    <td class="formLabel_new">Resource End Time
+                        <div class="requiredIcon">*</div>
+                    </td>
+                    <td class="apptDateContainer">
+                        <input type="text" id="override_end_time" class="ll-skin-latoja"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formLabel_new">Override Reason
+                        <div class="requiredIcon">*</div>
+                    </td>
+                    <td colspan="3" style="padding: 0">
+                        <select id="wizard_addOverrideReasons"></select>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="annotationsTable" style="display: none; width: 100%">
+                <div class="primaryTableHeader">Available Activities</div>
+                <div id="filterResourceAnnotations" style="float: right">
+                    <ul style="list-style-type: none;">
+                        <li>
+                            <label> <input type="radio" value="No" name="filterAnnotations" id="notSelectedAnnotations"
+                                           onclick="filterAnnotations(this);"/> Display Unselected Annotations</label>
+                        </li>
+                        <li>
+                            <label> <input type="radio" value="Yes" name="filterAnnotations" id="selectedAnnotations"
+                                           onclick="filterAnnotations(this);"/> Display Selected Annotations</label>
+                        </li>
+                        <li>
+                            <label> <input type="radio" value="All" name="filterAnnotations" id="allAnnotations"
+                                           onclick="filterAnnotations(this);"/> Display Both</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="resourceAnnotationsTableWrapper" class="CSSTableGenerator"></div>
+
+                <div id="overrideWizardButtons" class="wizardButtons" align="right">
+                    <input type="button" class="formButton" value="Save" onclick="javascript:initiateOverride();"
+                           id="appt_override_save"/>
+                    <input type="button" class="formButton" value="Close"
+                           onclick="javascript:cancelOverrideClick(); return false;" id="appt_override_close"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="wizardBody" id="appt_bookedResource_delete_dialog"
+             title="Override Appointment">
+            <div class="primaryTableHeader">Delete Booked Resource</div>
+            <div class="listPaginationBlock">
+                <table>
+                    <tr>
+                        <td class="formLabel">Override Reason:</td>
+                        <td>
+                            <select id="wizard_deleteOverrideReasons"></select>
+                        </td>
+                    </tr>
+                </table>
+                <div class="wizardButtons" align="right">
+                    <input type="button" class="formButton" value="Save"
+                           onclick="javascript:deleteBookedResourceClick();"
+                           id="appt_bookedResource_delete_dialog_save"/>
+                    <input type="button" class="formButton" value="Close"
+                           onclick="javascript:closeBookedResourceClick(); return false;"
+                           id="appt_bookedResource_delete_dialog-close"/>
+                </div>
+            </div>
+        </div>
+
+        <!--  Check for overbooking from appointment wizard -->
+        <div class="wizardBody" id="appt_overbook_check_dialog"
+             title="Check for overbooked Resource(s)">
+            <div class="listPaginationBlock">
+                <div id="overbookResourcesTableWrapper" class="CSSTableGenerator"></div>
+                <div class="wizardButtons" align="right">
+                    <input type="button" class="formButton" value="Close"
+                           onclick="javascript:closeOverbookCheckClick(); return false;"
+                           id="appt_wizard_overbook-close"/>
+                </div>
+            </div>
+        </div>
+    </div> <!--     @MAIN BODY     -->
+
+    <!--     @FOOTER    -->
+    <div class="footer"></div>
+</div>
+
+<div id="main_dialog_wrapper"></div>
+
+<div id="templateSection"></div>
+
+</body>
+</html>

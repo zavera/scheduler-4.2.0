@@ -1,0 +1,43 @@
+[
+  {
+    "id":55,
+    "resourceName":"Resource 1",
+    "rooms":"",
+    "visitName":"",
+    "piName":"",
+    "subjectFirstName":"No Subject Assigned",
+    "subjectLastName":"No Subject Assigned",
+    "studyLocalId":"","startTime":0,"endTime":0,
+    "resourceCount":0,"alternateResources":"Resource 5, Resource 11",
+    "defaultResourceSchedule":[
+      {
+        "defaultScheduleQuantity":"1",
+        "defaultScheduleTime":"THU: 07:30 - 16:00"}
+    ],
+    "temporaryResourceSchedule":[]
+  },
+  {
+    "id":64,
+    "resourceName":"Resource 2",
+    "rooms":"Room 4",
+    "visitHoverStartTime":"01/27/2017 22:00",
+    "visitHoverEndTime":"03/07/2017 01:00",
+    "resourceHoverStartTime":"01/27/2017 22:00",
+    "resourceHoverEndTime":"03/07/2017 01:00",
+    "visitName":"Visit 2",
+    "piName":"Staff1",
+    "subjectFirstName":"SubjectFirsT",
+    "subjectLastName":"SubjectLast",
+    "studyLocalId":"LocalId 1",
+    "startTime":-27900,
+    "endTime":27000,
+    "resourceCount":0,
+    "alternateResources":"Resource 10, Resource 30, Resource 50",
+    "defaultResourceSchedule":[
+      {
+        "defaultScheduleQuantity":"1",
+        "defaultScheduleTime":"THU: 07:00 - 18:00"}
+    ],
+    "temporaryResourceSchedule":[]
+  }
+]

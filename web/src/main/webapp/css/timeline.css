@@ -1,0 +1,536 @@
+/**
+ * Copyright (c) 2015-2016, President and Fellows of Harvard College
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
+ *
+ * 3. The name of the author may not be used to endorse or promote products
+ * derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ * EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ * TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+/* CSS Document */
+.floatRight {
+    float: right;
+}
+
+.resourcePicker {
+    background: url("images/resource-bg-leftbar.png") repeat-y scroll 0 0 #f1f1f1;
+    height: 42px;
+    margin: 0 0 10px 0;
+    padding: 10px 0 0 20px;
+    color: #b29e63;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.confine {
+    padding: 0 10px 10px 10px;
+}
+
+.resourceUsageLink {
+    color: #9ba9b6;
+    border: 1px solid #9ba9b6;
+    padding: 2px 5px;
+    margin: 0 0 0 20px;
+    text-decoration: none;
+}
+
+.dateContainer {
+    display: inline-block;
+    padding: 10px;
+    width: 230px;
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.dateContainer input {
+    width: 80px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.sliderContainer {
+    width: 322px;
+    margin: 0 25px;
+    padding: 7px 11px 6px 13px;
+    background: none repeat scroll 0 0 #F1F1F1;
+}
+
+.sliderMarkers {
+    width: 375px;
+}
+
+.sliderMarker {
+    text-align: center;
+    width: 75px;
+    display: inline-block;
+    color: #9ba9b4;
+    font-size: 80%;
+    padding: 2px 0 0 0;
+    /*background: url("images/slider-marker.png") no-repeat scroll center 0 rgba(0, 0, 0, 0);*/
+}
+
+.view12HourRadioContainer {
+    background: url("images/on_12hr.png") no-repeat scroll center 0 #ffffff;
+    height: 49px;
+    width: 153px;
+    position: relative;
+}
+
+.view24HourRadioContainer {
+    background: url("images/on_24hr.png") no-repeat scroll center 0 #ffffff;
+    height: 49px;
+    width: 153px;
+    position: relative;
+}
+
+.viewWeeklyRadioContainer {
+    background: url("images/on_weekly.png") no-repeat scroll center 0 #ffffff;
+    height: 49px;
+    width: 153px;
+    position: relative;
+}
+
+.viewRadio12 {
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    opacity:0;
+}
+
+.viewRadio24 {
+    position: absolute;
+    top: 6px;
+    left: 62px;
+    opacity:0;
+}
+
+.viewRadioWeek {
+    position: absolute;
+    top: 6px;
+    left: 122px;
+    opacity:0;
+}
+
+.timelineDay {
+    width: 138px;
+    color: #566774;
+    display: inline-block;
+}
+
+.timelineDay .timelineDayDay {
+    text-align: center;
+    font-size: 16px;
+}
+
+.timelineDay .timelineDayHours {
+    text-align: center;
+    width: 33%;
+    display: inline-block;
+    font-size: 8px;
+}
+
+.filterLabel {
+    color: #748fa4;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.filterCheckbox {
+    color: #094f7c;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px 0 0;
+}
+
+.filterCheckbox input {
+    vertical-align: middle;
+    margin-top: 0;
+}
+
+.goldColor {
+    background-color: #b8a56b !important;
+}
+.timelineContainer {
+    width: 1150px;
+}
+
+.timelinePaging {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 140%;
+    color: #0a517b;
+    clear: both;
+}
+
+.timelinePaging img {
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+.timelineTree {
+    background: #f1f1f1;
+    width: 230px;
+    float: left;
+    padding: 0;
+    font-size: 16px;
+}
+
+.timelineTree .resourceLabel {
+    background: #0b4f7e;
+    color: #fff;
+    font-size: 18px;
+    height: 33px;
+    padding: 3px 0;
+    text-align: center;
+}
+
+.timelineTree .resourceLabel img {
+    margin: 0 0 0 20px;
+}
+
+.timelineTree .appointmentRow {
+    padding-left: 5px;
+}
+
+.resourceDetails {
+    width: 180px;
+    min-height: 100px;
+    padding: 0;
+    background: #09507c;
+    color: #fff;
+    display: none;
+}
+
+.resourceDetails a {
+    color: #fff;
+}
+
+.resourceHeader {
+    background: #728da2;
+    padding: 10px 0 10px 30px;
+    font-size: 15px;
+    display: none;
+}
+
+.resourceBody {
+    padding: 10px 0 10px 10px;
+    font-size: 14px;
+}
+
+.availableRow {
+    padding: 3px 0;
+    margin-left: 5px;
+}
+
+.availableTime {
+    width: 85%;
+    display: inline-block;
+    text-align: left;
+    font-size: 12px;
+}
+
+.availableSlots {
+    width: 10%;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.availableRowHeader
+{
+    margin-left: 0;
+}
+
+.resourceDetailsOther {
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.timelineBody {
+    background: #fff;
+    padding: 0;
+    border: 1px solid #0B4F7E;
+}
+
+.timelineHours {
+    height: 34px;
+    overflow: hidden;
+    border-bottom: 0px solid #0b4f7e;
+    background: none repeat scroll 0 0 #ECF0F1;
+}
+
+.resourceLabel img {
+    vertical-align: middle;
+    margin-left: 3px;
+}
+
+/*note: this bacgrkound color needs to work with the sort_desc.png gif
+if sort arrows change, update/check this! */
+.timelineHours .resourceLabel {
+    width: 180px;
+    display:inline-block;
+    background: #5981a6;
+    color: #fff;
+    font-size: 18px;
+    height: 33px;
+    padding: 3px 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.timelineHour {
+    width: 44px;
+    height: 34px;
+    line-height: 0.8em;
+    text-align: center;
+    display: inline-block;
+    background: #ecf0f1;
+    font-size: 14px;
+    vertical-align: top;
+    font-weight: 600;
+    color: #566774;
+}
+
+.timelineHour .hour {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.timeline12 {
+    background: url("images/timeline-bg-12.png") repeat scroll 6px 0 #fff;
+}
+
+.timeline12 .timelineHour {
+    width: 0px;
+    padding: 7px 70px 0 6px;
+}
+
+.timeline12 .timelineBody {
+    padding: 0;
+}
+
+.timeline24 {
+    background: url("images/timeline-bg-24.png") repeat scroll -30px 0 #fff;
+}
+
+.timeline24 .timelineHour {
+    width: 0px;
+    padding: 7px 35px 0 5px;
+}
+
+.timeline24 .timelineBody {
+    padding: 0;
+}
+
+.timelineWeek {
+    background: url("images/timeline-bg-week.png") repeat scroll 45px 0 #fff;
+}
+
+.timelineWeek .timelineHour {
+    width: 0px;
+    padding: 7px 35px 0 5px;
+}
+
+.timelineWeek .timelineBody {
+    padding: 0;
+}
+
+.timelineStrip {
+    position: relative;
+    display: inline-block;
+    width: 954px;
+    height: 28px;
+    vertical-align: top;
+    padding: 4px 0;
+}
+
+.timelineBottomBorder {
+    height: 9px;
+    background: url("images/timeline-bottomborder-blue.png");
+}
+
+.resourceGetDetails img {
+    vertical-align: middle;
+    float: left;
+    margin-top: 8px;
+    height: 9px;
+    width: 9px;
+}
+
+.appointmentRow {
+    position: relative;
+    border-bottom: dashed 1px #f1f1f1;
+}
+
+.appointmentLabel {
+    width: 180px;
+    display: inline-block;
+    background: #f1f1f1;
+    padding: 4px 0;
+    cursor: pointer;
+    min-height:28px;
+}
+
+#appt_timeline .appointment {
+    position: absolute;
+    height: 20px;
+    background: #49b293;
+    border: 1px solid #0c7556;
+}
+
+.appointmentRelative {
+    position: relative;
+}
+
+.timelineHover {
+    padding: 10px;
+    width: 280px;
+    background: #fff;
+    border: solid 3px #49b293;
+    position: absolute;
+    bottom: 10px;
+    font-size: 12px;
+}
+
+.appointmentHoverLabel {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.appointmentHoverItem {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#appt_timeline .appointmentHoverTime {
+    color: #49b293;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+/* titleClouds CSS */
+#tc{
+    display:none;
+    position:absolute;
+    z-index:999999;
+    /*	max-width:160px;
+        padding:10px;
+        width: 140px;
+        height: 160px;
+
+        background: #fff;
+        border: solid 3px #49b293;*/
+    opacity: 0.9;
+    -moz-opacity:0.9;
+
+}
+#tc:after {
+    background:url("images/timeline-hover-arrow.png") no-repeat scroll center -2px #ffffff;
+    height: 10px;
+    width: 280px;
+    content:" ";
+    display: block;
+    clear: both;
+}
+/* END titleClouds */
+
+/* Slider Styling */
+/*the slider background*/
+.resourceSlider {
+    /*width:230px;*/
+    height:11px;
+    background:#fff;/*url(images/slider-bg.png);*/
+    position:relative;
+    margin:0;
+    padding:0 10px;
+    border-radius: 0;
+    border-width: 0;
+}
+
+/*Style for the slider button*/
+.resourceSlider .ui-slider-handle {
+    width:12px !important;
+    height:12px !important;
+    position:absolute;
+    top:-6px !important;
+    margin-left:-12px !important;
+    z-index:200;
+    /*background: url("images/slider-button.png") no-repeat scroll top left rgba(0, 0, 0, 0) !important;*/
+    border: solid 5px #fff !important;
+    border-radius: 15px !important;
+    background: #13537f;
+    background: #718ba2 !important; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #718ba2 0%, #3c6d8e 50%, #09507e 100%) !important; /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#718ba2), color-stop(50%,#3c6d8e), color-stop(100%,#09507e)) !important; /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, #718ba2 0%,#3c6d8e 50%,#09507e 100%) !important; /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #718ba2 0%,#3c6d8e 50%,#09507e 100%) !important; /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #718ba2 0%,#3c6d8e 50%,#09507e 100%) !important; /* IE10+ */
+    background: radial-gradient(ellipse at center, #718ba2 0%,#3c6d8e 50%,#09507e 100%) !important; /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#718ba2', endColorstr='#09507e',GradientType=1 ) !important; /* IE6-9 fallback on horizontal gradient */
+}
+
+/*This is the fill bar colour*/
+.resourceSlider .ui-widget-header {
+    /*background:url(images/fill.png) no-repeat left;*/
+    background: #09507e; /* Old browsers */
+    background: -moz-linear-gradient(left,  #09507e 0%, #3c6d8e 50%, #718ba2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#09507e), color-stop(50%,#3c6d8e), color-stop(100%,#718ba2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #09507e 0%,#3c6d8e 50%,#718ba2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #09507e 0%,#3c6d8e 50%,#718ba2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #09507e 0%,#3c6d8e 50%,#718ba2 100%); /* IE10+ */
+    background: linear-gradient(to right,  #09507e 0%,#3c6d8e 50%,#718ba2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#09507e', endColorstr='#718ba2',GradientType=1 ); /* IE6-9 */
+    border-radius: 0;
+}
+
+a {
+    outline:none;
+    -moz-outline-style:none;
+}
+/* END Slider Styling */
+
+
+
+/* JQUERY Tooltip Styling */
+
+.timelineTooltip, .arrow:after {
+    background: black;
+    border: 0px solid white !important;
+    box-shadow: 0 0 0 black;
+    padding: 0px !important;
+    background:url("images/timeline-hover-arrow.png") no-repeat scroll center -2px #ffffff;
+    height: 10px;
+    width: 280px;
+    content:" ";
+    display: block;
+    clear: both;
+}
+
+/* END JQUERY Tooltip Styling */
+
+#sublocationFilterList {
+    margin-left: 10px;
+}
+
+

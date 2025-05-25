@@ -1,0 +1,18 @@
+{
+  "totalCount": 12,
+  "studys": [
+    {"id": 7, "localId": "AS001", "name": "Auto Study 001"},
+    {"id": 8, "localId": "AS002", "name": "Auto Study 002"},
+    {"id": 5, "localId": "AS005", "name": "Auto Study 005"},
+    {"id": 6, "localId": "AS004", "name": "Auto Study 004"},
+    {"id": 9, "localId": "AS003", "name": "Auto Study 003"},
+    {"id": 12, "localId": "ICT-001", "name": "Scheduling Inpatient CT"},
+    {"id": 13, "localId": "IRT-001", "name": "Scheduling Inpatient RT"},
+    {"id": 11, "localId": "OUT-001", "name": "Scheduling Outpatient"},
+    {"id": 14, "localId": "SCB-001", "name": "Scheduling Special Cases"},
+    {"id": 1, "localId": "TA-001", "name": "Test Study 001"},
+    {"id": 2, "localId": "TA-002", "name": "Test Study 002"},
+    {"id": 3, "localId": "TB-003", "name": "Test Study 003"}
+  ]
+}
+

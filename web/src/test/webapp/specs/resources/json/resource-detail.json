@@ -1,0 +1,12 @@
+{
+  "id":100,
+  "totalCount":1,
+  "resourceId":42,
+  "resource":"ROOM 2",
+  "resourceType":"Room",
+  "sublocationId":4,
+  "sublocation":"Sub-Location 4",
+  "active":true,
+  "sharedResourceId":300,
+  "sharedResourceNotes":"I am a shared resource"
+}

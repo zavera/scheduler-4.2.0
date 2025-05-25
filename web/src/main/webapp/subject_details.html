@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+
+  <link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
+
+  <link href="css/jquery-easyui-1.8.2/icon.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/combo.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/combobox.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/linkbutton.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/menu.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/panel.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/textbox.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/tooltip.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/validatebox.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/switchbutton.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/global.css" rel="stylesheet" type="text/css">
+
+  <link href="css/reporting.css" rel="stylesheet" type="text/css"/>
+
+
+  <link href="css/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-ui-misc/jquery-ui-delta.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/add_edit_subject.css" rel="stylesheet" type="text/css">
+
+  <link href="css/last-word.css" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <script type="text/javascript" src="js/lib/json2.js"></script>
+  <script type="text/javascript" src="js/lib/jquery.min-3.4.0.js"></script>
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script> -->
+  <script type="text/javascript" src="js/lib/jquery-ui.min-1.12.1.js"></script>
+  <script type="text/javascript" src="js/lib/maskedInputPlugin.js"></script>
+
+  <script src="js/widget/dialogs.js" type="text/javascript"></script>
+  <script src="js/lib/date.format.js" type="text/javascript"></script>
+  <script src="js/lib/jquery.blockUI.js" type="text/javascript"></script>
+  <script src="js/util/breadcrumbs.js" type="text/javascript"></script>
+  <script src="js/widget/widget_util.js" type="text/javascript"></script>
+  <script src="js/ReportBuilder/report_templates.js" type="text/javascript"></script>
+  <script src="js/common/feedback_screen.js" type="text/javascript"></script>
+  <script src="js/util/global2.js" type="text/javascript"></script>
+  <script src="js/util/util.js" type="text/javascript"></script>
+
+  <!--https://www.jeasyui.com/documentation/index.php-->
+
+  <!--javascript files needed for EasyUI combobox -->
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.menu.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.linkbutton.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.tooltip.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.panel.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.parser.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.validatebox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.textbox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.combo.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.combobox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.switchbutton.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+
+  <!-- javascript / css files for calendar plugin -->
+  <script type="text/javascript" src="js/lib/jquery-ui-sliderAccess.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.js"></script>
+
+  <script src="js/util/dates.js" type="text/javascript"></script>
+
+  <script src="js/Subjects/add_edit_subject.js" type="text/javascript"></script>
+  <script src="js/Studies/study_module.js" type="text/javascript"></script>
+  <script src="js/Studies/study_screen.js" type="text/javascript"></script>
+  <script src="js/Subjects/subjects.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+
+      $.blockUI();
+      window.onpopstate = function (event) {
+
+        //update the page here
+        subjectFormPage.init();
+
+      };
+
+      var deferredHeaderLoad = $.Deferred();
+
+      $("#fullHeader").load("header.html", function () {
+        deferredHeaderLoad.resolve();
+      });
+
+      $.when(deferredHeaderLoad).done(function () {
+          loadMetaHeaders();
+          initFooter();
+
+          $('.subjectslink').addClass('active');
+          app_runIdleTimer();
+          commonData();
+          eraseLicense();
+          subjectFormPage.init();
+      });
+
+    });
+
+  </script>
+  <!--
+
+      Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are met:
+
+      1. Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+      2. Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+
+      3. The name of the author may not be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+      WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+      MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+      EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+      SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+      TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+      PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+      LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  -->
+</head>
+<body onMouseMove="app_handleMouseMove()">
+<div class="wrapperSize">
+  <!--     @HEADER     -->
+  <div id="fullHeader">
+  </div>
+
+  <div class="breadcrumbs"></div>
+  <div id="subject_details_content" style="visibility: hidden">
+    <div id="subject_details_content_failoverMessage"></div>
+    <div id="form_header">
+      <span id="subject_name_display"></span>
+      <div>
+        <div class="newItemButton textLeft">
+          <a id="edit_subject_btn" onclick="subjectFormPage.switchToEditMode();">Edit Subject</a>
+        </div>
+      </div>
+    </div>
+    <!--     @MAIN BODY     -->
+    <div class="mainBody">
+      <div id="subjectForm">
+        <div id="subject_header">
+          <div>
+            <span id="subject_form_title">Additional Details</span>
+          </div>
+          <div class="requiredText">* = Required</div>
+          <div style='clear:both'></div>
+        </div>
+        <table id="subjectFormTable" class="view_edit_page">
+          <tr>
+            <td class="formLabel">
+              First Name <span class="requiredIcon">*</span>
+            </td>
+            <td class="editOnly">
+              <input type="text" id="subject_firstName" class="formTextInput" tabindex="1"/>
+              <span id="subject_firstNameValidation" class="formElementRequired"></span>
+            </td>
+            <td id="subject_firstName_readOnly" class="readOnly">
+            </td>
+
+            <td class="formLabel">
+              Street Address 1 <span class="requiredIcon">*</span>
+            </td>
+            <td id="streetAddress1Area" class="editOnly">
+              <input type="text" id="subject_streetAddress1" class="formTextInput" tabindex="9"/>
+              <span id="subject_streetAddress1Validation" class="formElementRequired"></span>
+            </td>
+            <td id="subject_streetAddress1_readOnly" class="readOnly">
+            </td>
+
+            <td class="formLabel editOnly studyArea" id="studyAreaLabel">
+              Add to Study
+            </td>
+            <td id="studyArea" class="editOnly studyArea">
+              <select id="subject_study" class="formSelectInput" tabindex="17"></select>
+              <span id="subject_studyValidation" class="formElementRequired"></span>
+            </td>
+
+            <td class="formLabel readOnly">
+              Comment
+            </td>
+            <td rowspan="3" id="subject_comment_readOnly" class="readOnly">
+            </td>
+          </tr>
+          <tr>
+            <td class="formLabel">
+              Middle Name/Initial
+            </td>
+            <td class="editOnly">
+              <input type="text" id="subject_middleName" class="formTextInput" tabindex="2"/>
+            </td>
+            <td id="subject_middleName_readOnly" class="readOnly">
+            </td>
+
+            <td class="formLabel">
+              Street Address 2
+            </td>
+            <td id="streetAddress2Area" class="editOnly">
+              <input type="text" id="subject_streetAddress2" class="formTextInput" tabindex="10"/>
+            </td>
+            <td id="subject_streetAddress2_readOnly" class="readOnly">
+            </td>
+
+            <td class="formLabel editOnly" id="commentAreaLabel">
+              Comment
+            </td>
+            <td rowspan="4" id="commentArea" class="editOnly">
+                            <textarea rows="4" cols="200" id="subject_comment" class="formTextAreaSmaller" tabindex="18"
+                                      maxlength="256"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td class="formLabel">
+              Last Name <span class="requiredIcon">*</span>
+            </td>
+            <td class="editOnly">
+              <input type="text" id="subject_lastName" class="formTextInput" tabindex="3"/>
+              <span id="subject_lastNameValidation" class="formElementRequired"></span>
+            </td>
+
+            <td id="subject_lastName_readOnly" class="readOnly">
+            </td>
+            <td class="formLabel">
+              City <span class="requiredIcon">*</span>
+            </td>
+            <td id="cityArea" class="editOnly">
+              <input type="text" id="subject_city" class="formTextInput" tabindex="11"/>
+              <span id="subject_cityValidation" class="formElementRequired"></span>
+            </td>
+            <td id="subject_city_readOnly" class="readOnly">
+            </td>
+
+          </tr>
+          <tr>
+            <td class="formLabel">
+              Gender <span class="requiredIcon epicRequiredIcon">*</span>
+            </td>
+            <td class="editOnly">
+              <select id="subject_gender" class="formSelectInput" tabindex="4"></select>
+              <span id="subject_genderValidation" class="formElementRequired"></span>
+            </td>
+            <td id="subject_gender_readOnly" class="readOnly">
+            </td>
+
+            <td class="formLabel">
+              State
+            </td>
+            <td class="editOnly">
+              <select id="subject_state" class="formSelectInput" tabindex="12"></select>
+              <span id="subject_stateValidation" class="formElementRequired"></span>
+            </td>
+            <td id="subject_state_readOnly" class="readOnly">
+            </td>
+
+          </tr>
+          <tr>
+            <td class="formLabel">
+              Race <span class="requiredIcon">*</span>
+            </td>
+            <td class="editOnly">
+              <select id="subject_race" class="formSelectInput" tabindex="5"></select>
+              <span id="subject_raceValidation" class="formElementRequired"></span>
+            </td>
+            <td id="subject_race_readOnly" class="readOnly">
+            </td>
+
+            <td class="formLabel">
+              Zipcode <span class="requiredIcon">*</span>
+            </td>
+            <td class="editOnly">
+              <input type="text" id="subject_zipcode" class="formTextInput" tabindex="13"/>
+              <span id="subject_zipcodeValidation" class="formElementRequired"></span>
+            </td>
+            <td id="subject_zipcode_readOnly" class="readOnly">
+            </td>
+          </tr>
+          <tr>
+            <td class="formLabel">
+              Ethnicity <span class="requiredIcon">*</span>
+            </td>
+            <td class="editOnly">
+              <select id="subject_ethnicity" class="formSelectInput" tabindex="6"></select>
+              <span id="subject_ethnicityValidation" class="formElementRequired"></span>
+            </td>
+            <td id="subject_ethnicity_readOnly" class="readOnly">
+            </td>
+            <td class="formLabel">
+              Country <span class="requiredIcon">*</span>
+            </td>
+            <td class="editOnly">
+              <select id="subject_country" class="formSelectInput" tabindex="14"></select>
+              <span id="subject_countryValidation" class="formElementRequired"></span>
+            </td>
+            <td id="subject_country_readOnly" class="readOnly">
+            </td>
+
+          </tr>
+          <tr>
+            <td class="formLabel">
+              Birth Date <span class="requiredIcon">*</span>
+            </td>
+            <td class="editOnly">
+              <input type="text" id="subject_dob" class="formTextInput"
+                     style="display: inline-block;" tabindex="7"/>
+              <span id="subject_dobValidation" class="formElementRequired"></span>
+            </td>
+            <td id="subject_dob_readOnly" class="readOnly">
+            </td>
+
+            <td class="formLabel">
+              Primary Phone <span class="requiredIcon">*</span>
+            </td>
+            <td class="editOnly">
+              <input type="text" id="subject_primaryContactNumber" class="formTextInput" tabindex="15"/>
+              <span id="subject_primaryPhoneValidation" class="formElementRequired"></span>
+            </td>
+            <td id="subject_primaryContactNumber_readOnly" class="readOnly">
+            </td>
+          </tr>
+          <tr>
+            <td class="formLabel">
+              MRN <span class="requiredIcon epicRequiredIcon">*</span>
+            </td>
+            <td class="editOnly">
+              <input type="text" id="subject_mrn" class="formTextInput" tabindex="8"/>
+              <span id="subject_mrnValidation" class="formElementRequired"></span>
+            </td>
+            <td id="subject_mrn_readOnly" class="readOnly">
+            </td>
+
+            <td class="formLabel">
+              Secondary Phone
+            </td>
+            <td class="editOnly">
+              <input type="text" id="subject_secondaryContactNumber" class="formTextInput" tabindex="16"/>
+            </td>
+            <td id="subject_secondaryContactNumber_readOnly" class="readOnly">
+            </td>
+          </tr>
+          <tr id="warningMessageRow" class="hidden"></tr>
+          <tr id="subject_form_buttons">
+            <td colspan="6" style="text-align: right;">
+              <input type="button" id="subject_cancel_btn" value="Cancel" class="formButton"
+                     tabindex="19"  onclick="javascript:cancelSubjectSaveClick();"/>
+              <input type="button" id="subject_restore_btn" value="Restore" class="formButton"
+                     tabindex="20" onclick="javascript:restoreSubjectClick();"/>
+              <input type="button" id="subject_submit_btn" value="Save" class="formButton"
+                     tabindex="20"  onclick="javascript:saveSubjectClick();"/>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div style="clear: both;"></div>
+      <!--     @MAIN BODY     -->
+    </div>
+  </div>
+  <br/>
+
+  <div class="footer">
+  </div>
+  <!--     @FOOTER    -->
+</div>
+<!-- end wrapperSize -->
+
+<div id="main_dialog_wrapper"></div>
+</body>
+</html>

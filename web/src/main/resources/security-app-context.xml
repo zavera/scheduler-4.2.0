@@ -1,0 +1,160 @@
+<!--
+
+    Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+    3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+    EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                    http://www.springframework.org/schema/security 
+                    http://www.springframework.org/schema/security/spring-security-4.2.xsd">
+
+
+	<sec:global-method-security
+		metadata-source-ref="customMetadataSource" pre-post-annotations="enabled" />
+
+	<bean id="extractor" class="edu.harvard.catalyst.scheduler.security.AuthorizedRolesExtractor" />
+
+	<bean id="customMetadataSource"
+		class="org.springframework.security.access.annotation.SecuredAnnotationSecurityMetadataSource">
+		<constructor-arg ref="extractor" />
+	</bean>
+
+	<sec:http use-expressions="true">
+
+		<sec:csrf  disabled="true"/>
+
+		<sec:intercept-url pattern="/rest/app/**" access="permitAll()" />
+		<sec:intercept-url pattern="/rest/**" access="isFullyAuthenticated()" /> <!--security annotations will properly protect the REST API -->
+		<sec:intercept-url pattern="/login.html" access="permitAll()" />
+		<sec:intercept-url pattern="/registration.html" access="permitAll()" />
+
+
+		<!-- HTML fragments -->
+		<sec:intercept-url pattern="/common_dialogs.html" access="permitAll()" />
+		<sec:intercept-url pattern="/appts_dialogs.html" access="permitAll()" />
+		<sec:intercept-url pattern="/wizard_templates.html" access="permitAll()" />
+		<sec:intercept-url pattern="/footer.html" access="permitAll()" />
+		<sec:intercept-url pattern="/header.html" access="permitAll()" />
+		<sec:intercept-url pattern="/main_dialog_wrapper.html" access="permitAll()" />
+		<sec:intercept-url pattern="/meta_headers.html" access="permitAll()" />
+		<sec:intercept-url pattern="/headerLogin.html" access="permitAll()" />
+
+		<!-- HOME MODULE -->
+		<sec:intercept-url pattern="/home.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF', 'ROLE_GENERAL_VIEW')" />
+
+		<!-- SUBJECT MODULE -->
+		<sec:intercept-url pattern="/subject_search.html"
+						   access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF')" />
+		<sec:intercept-url pattern="/subject_details.html"
+						   access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF')" />
+
+		<!-- MGMT MODULE -->
+		<sec:intercept-url pattern="/mgmt_screen.html"
+			access="hasRole('ROLE_SUPER_ADMIN')" />
+		<sec:intercept-url pattern="/create_user.html"
+			access="hasRole('ROLE_SUPER_ADMIN')" />
+		<sec:intercept-url pattern="/mgmt_detail.html"
+			access="hasRole('ROLE_SUPER_ADMIN')" />
+		<sec:intercept-url pattern="/password_reset.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF', 'ROLE_GENERAL_VIEW')" />
+
+
+		<!-- RESOURCE MODULE -->
+		<sec:intercept-url pattern="/add_sublocation_closure.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER')" />
+		<sec:intercept-url pattern="/nursing_gantt.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF', 'ROLE_GENERAL_VIEW')" />
+		<sec:intercept-url pattern="/nutrition_gantt.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF', 'ROLE_GENERAL_VIEW')" />
+		<sec:intercept-url pattern="/sublocation_closure_screen.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER')" />
+		
+		<sec:intercept-url pattern="/resource_form.html"
+						   access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF', 'ROLE_GENERAL_VIEW')" />
+		<sec:intercept-url pattern="/resource_screen.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF', 'ROLE_GENERAL_VIEW')" />
+
+		<!-- APPOINTMENT MODULE -->
+		<sec:intercept-url pattern="/appt_timeline.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF', 'ROLE_GENERAL_VIEW')" />
+		<sec:intercept-url pattern="/appt_list.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF', 'ROLE_GENERAL_VIEW')" />
+		<sec:intercept-url pattern="/appt_batch.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF', 'ROLE_GENERAL_VIEW')" />
+
+		<!-- STUDY MODULE -->
+		<sec:intercept-url pattern="/create_study.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER')" />
+		<sec:intercept-url pattern="/create_visit.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK')" />
+		<sec:intercept-url pattern="/study_detail.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF')" />
+		<sec:intercept-url pattern="/study_member.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK')" />
+		<sec:intercept-url pattern="/study_screen.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF')" />
+		<sec:intercept-url pattern="/visit_approval.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK')" />
+		<sec:intercept-url pattern="/visit_detail.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN', 'ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_STUDY_STAFF')" />
+
+		<!-- REPORT MODULE -->
+		<sec:intercept-url pattern="/report_screen.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_GENERAL_VIEW')" />
+		<sec:intercept-url pattern="/report.html"
+			access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_RESOURCE_MANAGER', 'ROLE_SCHEDULER', 'ROLE_FRONT_DESK', 'ROLE_GENERAL_VIEW')" />
+
+        <!-- NEW REPORTING MODULE -->
+        <sec:intercept-url pattern="/report_builder.html"
+                           access="hasAnyRole('ROLE_SUPER_ADMIN')" />
+
+		<sec:intercept-url pattern="/*.html" access="isFullyAuthenticated()" />
+		<sec:intercept-url pattern="/" access="permitAll()" />
+
+		<sec:form-login login-page="/login.html"
+			always-use-default-target="true" default-target-url="/home.html"
+			authentication-failure-url="/login.html?error=true" />
+			
+		<sec:logout logout-success-url="/login.html"
+			invalidate-session="true"/>
+			
+		<sec:access-denied-handler error-page="/access_denied.html" />
+	</sec:http>
+
+
+	<sec:authentication-manager>
+		<sec:authentication-provider ref="schedulerDbAuthenticationProvider" />
+	</sec:authentication-manager>
+
+	<bean id="schedulerDbAuthenticationProvider"
+		class="edu.harvard.catalyst.scheduler.service.SchedulerDbAuthenticationProvider">
+		<constructor-arg ref="authService" />
+	</bean>
+</beans>

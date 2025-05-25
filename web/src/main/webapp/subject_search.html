@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+
+  <link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
+
+  <link href="css/jquery-easyui-1.8.2/icon.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/combo.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/combobox.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/linkbutton.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/menu.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/panel.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/textbox.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/tooltip.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/validatebox.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/reporting.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-ui-misc/jquery-ui-delta.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/global.css" rel="stylesheet" type="text/css">
+
+  <link href="css/subjects.css" rel="stylesheet" type="text/css">
+
+  <link href="css/last-word.css" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <script type="text/javascript" src="js/lib/json2.js"></script>
+  <script type="text/javascript" src="js/lib/jquery.min-3.4.0.js"></script>
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script> -->
+  <script type="text/javascript" src="js/lib/jquery-ui.min-1.12.1.js"></script>
+  <script type="text/javascript" src="js/lib/maskedInputPlugin.js"></script>
+
+  <script src="js/widget/dialogs.js" type="text/javascript"></script>
+  <script src="js/lib/date.format.js" type="text/javascript"></script>
+  <script src="js/lib/jquery.blockUI.js" type="text/javascript"></script>
+  <script src="js/util/breadcrumbs.js" type="text/javascript"></script>
+  <script src="js/widget/widget_util.js" type="text/javascript"></script>
+  <script src="js/ReportBuilder/report_templates.js" type="text/javascript"></script>
+  <script src="js/common/feedback_screen.js" type="text/javascript"></script>
+  <script src="js/util/global2.js" type="text/javascript"></script>
+  <script src="js/util/util.js" type="text/javascript"></script>
+
+  <!--https://www.jeasyui.com/documentation/index.php-->
+
+  <!--javascript files needed for EasyUI combobox -->
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.menu.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.linkbutton.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.tooltip.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.panel.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.parser.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.validatebox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.textbox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.combo.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.combobox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+
+  <!-- javascript / css files for calendar plugin -->
+  <script type="text/javascript" src="js/lib/jquery-ui-sliderAccess.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.js"></script>
+  <!--end common javascript/style block-->
+
+  <!--javascript files for *just this page* -->
+  <script src="js/util/dates.js" type="text/javascript"></script>
+  <script src="js/Subjects/subjects.js" type="text/javascript"></script>
+  <script src="js/Subjects/subject_search_page.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+
+      onloadSubjectSearchPage();
+
+    });
+
+  </script>
+  <!--
+  Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+
+  2. Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+
+  3. The name of the author may not be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+  EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+  TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+</head>
+<body onMouseMove="app_handleMouseMove()">
+<div class="wrapperSize">
+  <!--     @HEADER     -->
+  <div id="fullHeader">
+  </div>
+
+  <div class="breadcrumbs"></div>
+
+  <!--     @MAIN BODY     -->
+  <div class="mainBody">
+    <br/>
+    <div id="subject_search" class="roundBorder6" style="visibility: hidden">
+      <div id="subject_search_header">
+        <div style="float:left;" id="subject_search_title">Search Subject List</div>
+      </div>
+      <div style="clear: both;"></div>
+      <div id="subject_search_body" style="width: 100%">
+        <table style="margin-top: 2px;width:100%;">
+          <tr>
+            <td>
+              <div class="subject_search_input">
+                <input id="subject_search_mrn" class="subject_search_field" type="text"
+                       placeholder="MRN"/>
+              </div>
+              <div class="subject_search_input">
+                <span style="padding: 4px"> or </span> <input id="subject_search_name"
+                                                              class="subject_search_field" type="text"
+                                                              placeholder="Last name, First name"/>
+              </div>
+              <div class="subject_search_input">
+                <input id="subject_search_birthdate" class="subject_search_field"
+                       placeholder="Birthdate MM/DD/YYYY" type="text"/>
+              </div>
+              <div id="search_subject_btn_div">
+                <input type="submit" id="search_subject_btn" onclick="processSearchSubject();"
+                       value="Search" class="saveButtons" disabled/>
+              </div>
+            </td>
+            <td rowspan='3' id="create_new_subject"
+                style="vertical-align:middle;border-left: 1px solid #ffffff;display: none;padding-left: 60px;"></td>
+          </tr>
+          <tr>
+            <td>
+              <div id="subject_search_error" class="searchValidationRequired">
+                <ul>
+                  <li id="subject_mrn_error">
+                    MRN should only contain digits.
+                  </li>
+                  <li id="subject_name_error">
+                    At least 2 characters are required for last name and first name.
+                  </li>
+                  <li id="subject_birthdate_error">
+                    Please enter a valid birthdate.
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="padding-top: 10px; clear: both;">
+                <span>Filter by gender: </span> <span id="subject_search_gender"></span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div style="clear: both;"></div>
+    <div id="searchOutputWrapper" width="100%"></div>
+    <div id="searchOutput" style="display: none;" class="tree" width="100%"></div>
+    <div id="search_place_holder" style="min-height:325px" width="100%"></div>
+  </div>
+
+  <div style="clear: both;"></div>
+  <!--     @MAIN BODY     -->
+  <br/>
+
+  <div class="footer"></div>
+  <!--     @FOOTER    -->
+</div>
+<!-- end wrapperSize -->
+
+<div id="main_dialog_wrapper">
+</div>
+</body>
+</html>

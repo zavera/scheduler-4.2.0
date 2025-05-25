@@ -1,0 +1,11 @@
+bin
+.idea
+*.iml
+*.log
+target
+Vagrantfile
+.vagrant
+data-cleaner-output
+node
+node_modules
+web/test-output

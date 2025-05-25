@@ -1,0 +1,22 @@
+{
+  "id": 1298,
+  "visitName":"Screen",
+  "studyName":"Test Study 1",
+  "shortName":"",
+  "sublocationName":"Sublocation 5",
+  "sublocationId":3,
+  "visitTypeName":"Outpatient Non CRC",
+  "visitTypeId":2,
+  "comment":"",
+  "researchPharmacy":false,
+  "institutionNonCrc":false,
+  "nonInstitutionNonCrc":false,
+  "nursing":"4",
+  "nutrition":"0",
+  "processing":"0",
+  "setup":"0",
+  "relativeTime":false,
+  "approved":"Approved",
+  "createdDate":"Jan 29, 2017 11:25:20 AM",
+  "numVisitTemplateComments":0
+}

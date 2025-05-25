@@ -1,0 +1,112 @@
+.ui-widget, .ui-state-default
+{
+    font-family: 'Roboto', sans-serif ;
+    font-weight: 300;
+    font-size: 16px;
+    color: #5C83A7 !important;
+}
+
+.ui-widget button, .ui-widget input, .ui-widget select, .ui-widget textarea
+{
+    font-family: 'Roboto', sans-serif ;
+}
+
+.ui-widget button, .ui-widget input, .ui-widget select
+{
+    font-weight: 300;
+}
+
+.ui-state-default a, .ui-state-default a:link
+{
+    color: #5C83A7 !important;
+    font-weight: 300;
+}
+
+.ui-tabs-active a, .ui-tabs-active a:link
+{
+    color: #5C83A7 !important;
+    font-weight: bold;
+    font-size: 17px;
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+}
+
+.ui-tabs-nav.ui-widget-header
+{
+    border: none;
+    border-bottom: 1px solid #5981a6;
+    background: none !important;
+    color: #5981a6;
+    font-weight: bold;
+}
+
+.ui-tabs-nav .ui-corner-top
+{
+    border-radius: 0;
+}
+
+.ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header .ui-state-active
+{
+    background: none repeat scroll 0 0 #ffffff;
+}
+
+.ui-tabs-nav .ui-state-default, .ui-tabs .ui-state-default, .ui-datepicker-calendar .ui-state-default
+{
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 24%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 43%, rgba(255,255,255,1) 45%, rgba(197,208,216,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(24%, rgba(255,255,255,1)), color-stop(33%, rgba(255,255,255,1)), color-stop(43%, rgba(255,255,255,1)), color-stop(45%, rgba(255,255,255,1)), color-stop(100%, rgba(197,208,216,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 24%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 43%, rgba(255,255,255,1) 45%, rgba(197,208,216,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 24%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 43%, rgba(255,255,255,1) 45%, rgba(197,208,216,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 24%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 43%, rgba(255,255,255,1) 45%, rgba(197,208,216,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 24%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 43%, rgba(255,255,255,1) 45%, rgba(197,208,216,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c5d0d8', GradientType=0 );
+    color: #5C83A7;
+    font-weight: 300;
+}
+
+.ui-state-active {
+    background:  #ffffff !important;
+    color: #5C83A7 !important;
+    font-weight: bold !important;
+}
+
+.ui-dialog-titlebar {
+    background: #ffffff !important;
+    border: none !important;
+    border-bottom: 1px solid #5C83A7 !important;
+    padding-left: 15px !important;
+}
+
+.ui-dialog-titlebar .ui-dialog-titlebar-close {
+    background: #E1EEF4 !important;
+}
+
+.ui-dialog-titlebar .ui-dialog-titlebar-close:hover {
+    background: #b5d5e3 !important;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    border: none;
+}
+
+.ui-button.ui-state-default {
+    font-weight: normal !important;
+}
+
+.ui-button.ui-state-active {
+    font-weight: bold !important;
+}
+
+.ui-spinner{
+    border-radius: 5px;
+}
+
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary,
+    .ui-widget-header .ui-priority-secondary{
+    opacity: 0.9
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-weight: bold;
+}

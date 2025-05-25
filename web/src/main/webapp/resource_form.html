@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+
+  <link href="/scheduler-resources/local-style.css" rel="stylesheet" type="text/css"/>
+  <link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
+
+  <link href="css/jquery-easyui-1.8.2/icon.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/combo.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/combobox.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/linkbutton.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/menu.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/panel.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/textbox.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/tooltip.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/validatebox.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/multiple-select.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-ui-misc/jquery-ui-delta.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/global.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/resources.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/last-word.css" rel="stylesheet" type="text/css"/>
+
+
+
+  <script type="text/javascript" src="js/lib/json2.js"></script>
+  <script type="text/javascript" src="js/lib/jquery.min-3.4.0.js"></script>
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script> -->
+  <script type="text/javascript" src="js/lib/jquery-ui.min-1.12.1.js"></script>
+  <script type="text/javascript" src="js/lib/maskedInputPlugin.js"></script>
+  <script src="js/lib/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+
+  <script src="js/lib/jquery.multiple.select.js" type="text/javascript"></script>
+  <script src="js/lib/date.format.js" type="text/javascript"></script>
+  <script src="js/lib/jquery.blockUI.js" type="text/javascript"></script>
+  <script src="js/util/breadcrumbs.js" type="text/javascript"></script>
+
+  <script src="js/common/feedback_screen.js" type="text/javascript"></script>
+  <script src="js/util/global2.js" type="text/javascript"></script>
+  <script src="js/util/util.js" type="text/javascript"></script>
+  <script src="js/widget/widget_util.js" type="text/javascript"></script>
+
+  <!-- javascript / css files for calendar plugin -->
+  <script type="text/javascript" src="js/lib/jquery-ui-sliderAccess.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.js"></script>
+
+  <!--start section for extra javascript-->
+
+  <!--https://www.jeasyui.com/documentation/index.php-->
+
+  <!--javascript files needed for EasyUI combobox -->
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.menu.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.linkbutton.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.tooltip.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.panel.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.parser.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.validatebox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.textbox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.combo.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.combobox.js" type="text/javascript"></script>
+
+  <script src="js/common/feedback_screen.js" type="text/javascript"></script>
+  <script src="js/util/global2.js" type="text/javascript"></script>
+  <script src="js/util/util.js" type="text/javascript"></script>
+
+  <script src="js/lib/jsrender.js" type="text/javascript"></script>
+
+  <script type="text/javascript" src="js/lib/jquery-ui-sliderAccess.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.js"></script>
+
+  <script src="js/util/dates.js" type="text/javascript"></script>
+  <script src="js/widget/dialogs.js" type="text/javascript"></script>
+  <script src="js/util/dateRanges.js" type="text/javascript"></script>
+
+  <script src="js/widget/widget_util.js" type="text/javascript"></script>
+  <script src="js/widget/columns.js" type="text/javascript"></script>
+  <script src="js/widget/tables.js" type="text/javascript"></script>
+  <script src="js/widget/table_filter.js" type="text/javascript"></script>
+  <script src="js/widget/table_pagination.js" type="text/javascript"></script>
+
+  <script src="js/Resources/resource_tables.js" type="text/javascript"></script>
+  <script src="js/Resources/resource.js" type="text/javascript"></script>
+  <script src="js/Resources/resource_form.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+        onloadResourceForm();
+    });
+
+  </script>
+
+  <!--
+
+    Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+    3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+    EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+
+</head>
+
+<body onMouseMove="app_handleMouseMove()">
+
+  <div class="wrapperSize">
+
+    <div id="fullHeader"></div>
+
+    <div class="breadcrumbs"></div>
+
+    <!--     @MAIN BODY     -->
+
+    <div class="mainBody">
+
+      <div id="resource_form_screen" class="formContainer" style="display: block;">
+
+        <div class="importantInfoBlock">
+
+          <!--main form (resource name, type, sublocation)-->
+          <!--populated by js template-->
+          <div id="mainResourceForm"></div>
+
+          <!-- Expand/Collapse All-->
+          <div id="resourceDetailToggle">
+            <span onclick="toggleAllResourceDetails(event, this);" title="Expand" style="float: left;"
+                  id="toggleAllResourceDetails">
+              <img src="css/images/arrows_expand.png" hspace="5"
+                   style="margin: 4px 10px 0 0; float: left;"
+                   class="toggleResourceDetails" id="toggleResourceDetailsImg">
+              <p id="toggleText" style="margin: 0; width: 135px">Expand All</p>
+              </img>
+            </span>
+          </div>
+
+          <br/>
+          <br/>
+
+          <!-- default availability collapsible section -->
+          <div id="defaultAvailabilitySection" class="resourceFormSection">
+            <div class="secondaryTableHeader resourceDetailHeader" id="resourceTabHeading1" title="Expand"
+                onclick="expandOrCollapseResourceFormSection('resourceTabHeading1', 'resourceTabExpandIcon1', 'resourceTab1');">
+              <img id="resourceTabExpandIcon1" src="css/images/sm_circle_plus.png" class="parentHeaderImages">
+              Default Availability
+            </div>
+            <div id="resourceTab1" class="resourceTab">
+              <div class="tableControls" id="defaultAvailabilityTableControls">
+              </div>
+              <div id="defaultAvailabilityTablePagination" class="tableControls"></div>
+              <div id="defaultAvailabilityTableWrapper" class="CSSTableGenerator"></div>
+              <div style="padding: 10px">
+              </div>
+            </div>
+          </div>
+
+          <!-- temporary adjustments collapsible section -->
+          <div id="temporaryAdjustmentSection" class="resourceFormSection">
+            <div class="secondaryTableHeader resourceDetailHeader" id="resourceTabHeading3" title="Expand"
+                 onclick="expandOrCollapseResourceFormSection('resourceTabHeading3', 'resourceTabExpandIcon3', 'tempAdjustmentContent');">
+              <img id="resourceTabExpandIcon3" src="css/images/sm_circle_plus.png" class="parentHeaderImages">
+              Temporary Adjustments
+            </div>
+            <div id="tempAdjustmentContent" class="resourceTab">
+              <div id="viewTempAdjustments">
+                <div id="viewTempAdjustmentsContent">
+                  <div id="temporaryAdjustmentTablePagination" class="tableControls"></div>
+                  <div id="temporaryAdjustmentTableWrapper" class="CSSTableGenerator"></div>
+                  <div id="delete-adjustment-dialog-confirm" class="hidden">Are you sure you want to delete this temporary adjustment?</div>
+                </div>
+              </div>
+              <div id="addTempAdjustments">
+                <div id="addTempAjustmentsHeader" class="primaryTableHeader font18px">Add Temporary Adjustments </div>
+                <div>
+                  <table id="addTempAdjustmentsTable">
+                    <tr >
+                      <td class="startDate dateLabel">
+                        <span class="formLabel">Start Date </span>
+                      </td>
+                      <td>
+                        <div class="dateContainer">
+                          <input type="text" id="appt_startDate" class="formDate"/>
+                        </div>
+                      </td>
+                      <td class="endDate dateLabel">
+                        <span class="formLabel">End Date </span>
+                      </td>
+                      <td>
+                        <div class="dateContainer">
+                          <input type="text" id="appt_endDate" class="formDate"/>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="formLabel">Quantity</span>
+                      </td>
+                      <td>
+                        <input type="text" min="0" id="taQuantity" class="numberUpTo999 numberSpinner">
+                      </td>
+                      <td rowspan="2">
+                        <div id="tempAdjustmentOvernight">
+                          <div id="spanOvernight"> Does this temporary adjustment span overnight? </div>
+                          <div>
+                            <label for="ta_overnight_yes">
+                              <input type="radio" name="ta_overnight" id="ta_overnight_yes" value="yes" onclick="javascript:TemporaryAdjustment.toggleWeeklyCheckboxes(true)" >Yes</label>
+                            <label for="ta_overnight_no">
+                              <input type="radio" name="ta_overnight" id="ta_overnight_no" value="no" checked="checked" onclick="javascript:TemporaryAdjustment.toggleWeeklyCheckboxes(false)">No</label>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td colspan="2">
+                        <span id="resource_ta_startDateValidation" class="formElementRequired"></span>
+                      </td>
+                      <td colspan="2">
+                        <span id="resource_ta_endDateValidation" class="formElementRequired"></span>
+                      </td>
+                      <td colspan="2">
+                        <span id="resource_ta_quantityValidation" class="formElementRequired"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="startTime dateLabel">
+                        <span class="wizardFormLabel">Start Time </span>
+                      </td>
+                      <td>
+                        <input type="text" id="appt_startTime" class="apptFormDate"/>
+                      </td>
+                      <td class="endTime dateLabel">
+                        <span class="wizardFormLabel">End Time </span>
+                      </td>
+                      <td>
+                        <input type="text" id="appt_endTime" class="apptFormDate"/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td colspan="2">
+                        <span id="resource_ta_startTimeValidation" class="formElementRequired"></span>
+                      </td>
+                      <td colspan="2">
+                        <span id="resource_ta_endTimeValidation" class="formElementRequired"></span>
+                      </td>
+                    </tr>
+                    <tr></tr>
+                    <tr id="weeklyCheckboxes">
+                      <td>
+                        <span class="wizardFormLabel"> Specific Days </span>
+                      </td>
+                      <td colspan="5">
+                        <span>
+                            <input type="checkbox" class="week_days" id="allWeekDays" name="allWeekDays" value=""
+                                   onclick="toggleAllWeekDays(this);"/>
+                            <label>All Weekdays</label>
+                        </span>
+
+                        <span>
+                            <input type="checkbox" id="monday" value="1" name="weekday" class="weekday"/>
+                            <label>Monday</label>
+                        </span>
+
+                        <span>
+                            <input type="checkbox" id="tuesday" value="2" name="weekday" class="weekday"/>
+                            <label>Tuesday</label>
+                        </span>
+
+                        <span>
+                            <input type="checkbox" id="wednesday" value="3" name="weekday" class="weekday"/>
+                            <label>Wednesday</label>
+                        </span>
+
+                        <span>
+                            <input type="checkbox" id="thursday" value="4" name="weekday" class="weekday"/>
+                            <label>Thursday</label>
+                        </span>
+
+                        <span>
+                            <input type="checkbox" id="friday" value="5" name="weekday" class="weekday"/>
+                            <label>Friday</label>
+                        </span>
+                        <div class="dottedBottomBorder"></div>
+                        <span>
+                            <input type="checkbox" id="saturday" value="6" name="weekend" class="weekend"/>
+                            <label>Saturday</label>
+                        </span>
+
+                        <span>
+                            <input type="checkbox" id="sunday" value="0" name="weekend" class="weekend"/>
+                            <label>Sunday</label>
+                        </span>
+                        <div id="dayOfWeekValidation" class="formElementRequired"></div>
+                      </td>
+                    </tr>
+                  </table>
+                  <div id="addTempAdjustmentAction" class="rightDivs">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- alternative resource collapsible section -->
+          <div id="alternateResourcesSection" class="resourceFormSection">
+            <div class="secondaryTableHeader resourceDetailHeader" id="resourceTabHeading2" title="Expand"
+                 onclick="expandOrCollapseResourceFormSection('resourceTabHeading2', 'resourceTabExpandIcon2', 'resourceTab2');">
+              <img id="resourceTabExpandIcon2" src="css/images/sm_circle_plus.png" class="parentHeaderImages">
+              Alternate Resources
+            </div>
+            <!-- populated by js template -->
+            <div id="resourceTab2" class="resourceTab">
+              <div id="alternateResourcesTablePagination" class="tableControls"></div>
+              <div id="alternateResourcesTableWrapper" class="CSSTableGenerator"></div>
+
+              <div id="delete-alternate-dialog-confirm" class="hidden">Are you sure you want to delete this Alternative Resource?</div>
+              <div id="add-alternate-dialog-confirm" class="hidden">Are you sure you want to add this Alternate Resource(s)?</div>
+            </div>
+          </div>
+
+          <!-- restrictions collapsible section -->
+          <div id="resourceRestrictionsSection" class="resourceFormSection">
+            <div class="secondaryTableHeader resourceDetailHeader" id="resourceTabHeading4" title="Expand"
+                 onclick="expandOrCollapseResourceFormSection('resourceTabHeading4', 'resourceTabExpandIcon4', 'resourceTab4');">
+              <img id="resourceTabExpandIcon4" src="css/images/sm_circle_plus.png" class="parentHeaderImages">
+              Resource Restrictions
+            </div>
+
+            <div id="resourceTab4" class="resourceTab">
+              <div id="resourceRestrictionsTablePagination" class="tableControls"></div>
+              <div id="resourceRestrictionsTableWrapper" class="CSSTableGenerator"></div>
+            </div>
+
+            <div id="delete-restriction-dialog-confirm" class="hidden">Are you sure you want to remove this Restriction?</div>
+            <div id="add-restriction-dialog-confirm" class="hidden">Are you sure you want to add this Restriction?</div>
+          </div>
+
+          <!-- annotations collapsible section -->
+          <div id="annotationsSection" class="resourceFormSection">
+            <div class="secondaryTableHeader resourceDetailHeader" id="resourceTabHeading5" title="Expand" onclick="expandOrCollapseResourceFormSection('resourceTabHeading5', 'resourceTabExpandIcon5', 'resourceTab5');">
+              <img id="resourceTabExpandIcon5" src="css/images/sm_circle_plus.png" class="parentHeaderImages"> Annotations
+            </div>
+            <div id="resourceTab5" class="resourceTab">
+              <div id="saveAnnotationsTop" class="rightDivs"></div>
+              <div id="annotationToggle">
+                <span id="toggleAllAnnotationSections" onclick="Annotations.expandOrCollapseAllAnnotationSections();" title="Collapse">
+                  <img id="toggleAllAnnotationSectionsImg" src="css/images/arrows_collapse.png" hspace="5"class="toggleAllAnnotationSections">
+                  <p id="toggleAnnotationText">Collapse All</p>
+                </span>
+                <span id="clearAnnotationsTop" class="clearSelectedFieldsLink"></span>
+              </div>
+              <span id = "annotationValidationTop" class="formElementRequired"></span>
+              <div id="clearDiv" class="clear"></div>
+              <div class="annotationsHeader" id="nurseHeading" title="Expand" onclick="Annotations.displayOrHideSection('nurse');">
+                <img id="nurseIcon" src="css/images/sm_circle_plus.png" class="parentHeaderImages"> Nursing Annotations
+              </div>
+              <div id="nurseAnnotationsSection">
+                <div id="clearOrSelectNursingAnnotations"></div>
+                <div id="nurseAnnotationList" class="three-columns listOfAnnotations"></div>
+              </div>
+              <div class="annotationsHeader" id="nutritionHeading" title="Expand" onclick="Annotations.displayOrHideSection('nutrition');">
+                <img id="nutritionIcon" src="css/images/sm_circle_plus.png" class="parentHeaderImages"> Nutrition Annotations
+              </div>
+              <div id="nutritionAnnotationsSection">
+                <div id="clearOrSelectNutritionAnnotations"></div>
+                <div id="nutritionAnnotationList" class="three-columns listOfAnnotations"></div>
+              </div>
+              <div class="annotationsHeader" id="equipmentHeading" title="Expand" onclick="Annotations.displayOrHideSection('equipment');">
+                <img id="equipmentIcon" src="css/images/sm_circle_plus.png" class="parentHeaderImages"> Equipment Annotations
+              </div>
+              <div id="equipmentAnnotationsSection">
+                <div id="clearOrSelectEquipmentAnnotations"></div>
+                <div id="equipmentAnnotationList" class="three-columns listOfAnnotations"></div>
+              </div>
+              <div class="annotationsHeader" id="roomHeading" title="Expand" onclick="Annotations.displayOrHideSection('room');">
+                <img id="roomIcon" src="css/images/sm_circle_plus.png" class="parentHeaderImages"> Room Annotations
+              </div>
+              <div id="roomAnnotationsSection">
+                <div id="roomAnnotationList" class="three-columns listOfAnnotations"></div>
+              </div>
+              <div class="annotationsHeader" id="labHeading" title="Expand" onclick="Annotations.displayOrHideSection('lab');">
+                <img id="labIcon" src="css/images/sm_circle_plus.png" class="parentHeaderImages"> Lab Annotations
+              </div>
+              <div id="labAnnotationsSection">
+                <div id="labAnnotationList" class="three-columns listOfAnnotations"></div>
+              </div>
+              <div id="saveAnnotationsBottom" class="rightDivs"></div>
+              <div id="annotationBottomToggle"></div>
+              <span id = "annotationValidationBottom" class="formElementRequired"></span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    <!--     @MAIN BODY     -->
+    </div>
+
+    <!--     @FOOTER    -->
+    <div class="footer"></div>
+
+  </div> <!-- end wrapperSize -->
+
+
+
+  <div id="main_dialog_wrapper"></div>
+  <div id="annotations-add-dialog-confirm" class="hidden">Are you sure you want to add these annotations? Annotations cannot be removed once added.</div>
+  <div id="activateDialog" class="hidden"> Are you sure you want to activate this resource?
+    Once activated, a resource cannot be de-activated, and will be available for scheduling.</div>
+  <div id="templateSection"></div>
+
+</body>
+</html>

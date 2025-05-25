@@ -1,0 +1,183 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>Scheduler Web</name>
+    <artifactId>scheduler-web</artifactId>
+    <packaging>war</packaging>
+    <parent>
+        <groupId>edu.harvard.catalyst.scheduler</groupId>
+        <artifactId>scheduler-base</artifactId>
+        <version>4.2.0</version>
+    </parent>
+
+    <properties>
+        <!-- for sonarqube version 6 -->
+        <sonar.javascript.lcov.reportPaths>test-output/coverage/lcov.info</sonar.javascript.lcov.reportPaths>
+        <!-- for sonarqube version 5 -->
+        <!--<sonar.javascript.lcov.reportPath>test-output/coverage/lcov.info</sonar.javascript.lcov.reportPath>-->
+        <sonar.exclusions>src/main/webapp/js/lib/**/*.js</sonar.exclusions>
+        <sonar.tests>src/test</sonar.tests>
+        <!-- for sonarqube version 6 -->
+        <sonar.testExecutionReportPaths>test-output/unit-tests/unit-tests-for-sonar.xml</sonar.testExecutionReportPaths>
+        <!-- for sonarqube version 5 -->
+        <!--<sonar.genericcoverage.unitTestReportPaths>test-output/unit-tests/unit-tests-for-sonar.xml</sonar.genericcoverage.unitTestReportPaths>-->
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>edu.harvard.catalyst.scheduler</groupId>
+            <artifactId>scheduler-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- EHCache Core APIs -->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache-core</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <!-- Hibernate EHCache API -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>${org.hibernate.ehcache.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j-version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>1.4.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <!-- NB! Set <version> to the latest released version of frontend-maven-plugin, like in README.md -->
+                <version>1.7.6</version>
+
+                <executions>
+
+                    <!-- the following installs node, which is needed for npm, and npm itself -->
+                    <!-- node goes into the 'node' folder under the directory where the present pom file is located -->
+                    <!-- npm too -->
+                    <execution>
+                        <id>install node and npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <configuration>
+                            <nodeVersion>v10.15.3</nodeVersion>
+                            <npmVersion>6.4.1</npmVersion>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>npm install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <!-- Optional configuration which provides for running any npm command -->
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+
+<!--                    <execution>-->
+<!--                        <id>javascript tests</id>-->
+<!--                        <goals>-->
+<!--                            <goal>karma</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <karmaConfPath>karma.conf.for.maven.build.js</karmaConfPath>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+
+                    <!-- came with frontend-maven-plugin, not used right now -->
+                    <!--<execution>-->
+                        <!--<id>npm run build</id>-->
+                        <!--<goals>-->
+                            <!--<goal>npm</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<arguments>run build</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+
+                    <!-- came with frontend-maven-plugin, not used right now -->
+                    <!--<execution>-->
+                        <!--<id>bower install</id>-->
+                        <!--<goals>-->
+                            <!--<goal>bower</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<arguments>install</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+
+                    <!-- came with frontend-maven-plugin, not used right now -->
+                    <!--<execution>-->
+                        <!--<id>jspm install</id>-->
+                        <!--<goals>-->
+                            <!--<goal>jspm</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<arguments>&#45;&#45;version</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+
+                    <!-- came with frontend-maven-plugin, not used right now -->
+                    <!--<execution>-->
+                        <!--<id>grunt build</id>-->
+                        <!--<goals>-->
+                            <!--<goal>grunt</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<arguments>&#45;&#45;no-color</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+
+                    <!-- came with frontend-maven-plugin, not used right now -->
+                    <!--<execution>-->
+                        <!--<id>gulp build</id>-->
+                        <!--<phase>generate-resources</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>gulp</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<environmentVariables>-->
+                                <!--<NODE_ENV>production</NODE_ENV>-->
+                            <!--</environmentVariables>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+
+                    <!-- came with frontend-maven-plugin, not used right now -->
+                    <!--<execution>-->
+                        <!--<id>javascript tests</id>-->
+                        <!--<goals>-->
+                            <!--<goal>karma</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<karmaConfPath>src/test/javascript/karma.conf.ci.js</karmaConfPath>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
+
+
+
+

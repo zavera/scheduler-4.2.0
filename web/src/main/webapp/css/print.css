@@ -1,0 +1,340 @@
+/**
+ * Copyright (c) 2015-2016, President and Fellows of Harvard College
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
+ *
+ * 3. The name of the author may not be used to endorse or promote products
+ * derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ * EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ * TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+/* CSS Document */
+
+body {
+	background: #FFFFFF;
+	margin: 0 !important;
+	padding: 0 !important;
+	font-size: 12px !important;
+}
+
+/* Remove unwanted elements */
+.headerLoginNav, .headerNav, .breadcrumbs, .header, .requiredFieldKey, .editColumn, .footer, .noprint, .editColumn, .mainEditLink, .fc-header-left, .fc-header-right, .reportFilter, .x-toolbar, .newItemButton,
+.subject_search_screen, .subject_search_grid, .filterContainer {
+	display: none;
+	width: 0;
+}
+
+.noPrint {
+	display: none !important;
+	width: 0;
+}
+/*
+.print10 {
+	width: 56pt !important;
+}
+
+.print15 {
+	width: 84pt !important;
+}
+
+.print25 {
+	width: 140pt !important;
+}
+*/
+.templatecolumn-1079, .x-grid-cell-templatecolumn-1079 .templatecolumn-1080, .x-grid-cell-templatecolumn-1080 .templatecolumn-1081, .x-grid-cell-templatecolumn-1081 .templatecolumn-1082, .x-grid-cell-templatecolumn-1082 {
+	display: none !important;
+	width: 0;
+}
+
+.mainNameBlock {
+	width: 100%;
+}
+
+.secondaryNameBlock {
+	width: 45%;
+}
+
+.statusBlockContainer {
+	width: 45%;
+	overflow: hidden;
+}
+
+.reportSecondary .label, .reportSecondary .value {
+	width: 50%;
+}
+
+.listContainer {
+	margin: 0;
+	padding: 0;
+}
+
+#calendar-wrapper {
+	text-align: left;
+}
+
+#calendar-wrapper .primaryTableHeader {
+	margin: 0;
+	padding: 0;
+}
+
+#appt_calendar {
+    margin: 0;
+    width: 890px;
+}
+
+/* Ensure the content spans the full width */
+.wrapperSize {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	float: none;
+}
+/* Change text colour to black (useful for light text on a dark background) */
+.lighttext {
+	color: #000
+}
+/* Improve colour contrast of links */
+a:link, a:visited {
+	color: #781351
+}
+
+.mainBody {
+	overflow: visible;
+}
+
+.statusWrapper {
+	clear:both;
+	overflow: visible; 
+	float:none;
+	background: #ffffff !important;
+	color: #000000;
+}
+
+.statusOpen {
+	color:#005904 !important;
+	background: #ffffff !important;
+}
+
+.statusPending {
+	color: #b9870c !important;
+	background: #ffffff !important;
+}
+
+.primaryTableHeader {
+	font-size: 140%;
+	border: solid #000;
+	border-width: 0 0 4px 0;
+	padding: 0 0 2px 2px;
+	border-radius: 0; 
+	-moz-border-radius: 0; 
+	-webkit-border-radius: 0; 
+	background: #ffffff;
+	color: #000000;
+	width: 800pt;
+}
+
+.secondaryTableHeader {
+	font-size: 120%;
+	border: solid #000;
+	border-width: 0 0 2px 0;
+	padding: 0 0 2px 2px;
+	border-radius: 0; 
+	-moz-border-radius: 0; 
+	-webkit-border-radius: 0; 
+	background: #ffffff;
+	color: #000000;
+	width: 280pt;
+}
+
+.contactBlock {
+	width: 47%;
+	margin-right: 1%;
+	background: #ffffff;
+	color: #000000;
+	display: block;
+	page-break-inside: avoid;
+}
+
+.contactBlock * {
+	page-break-after:avoid;
+	page-break-before:avoid;
+}
+
+.statusBlock {
+	padding: 0;
+	margin: 0 0 10px 0;
+	background: #ffffff;
+	color: #000000;
+	width: 430px;
+}
+
+.leftBlock, .rightBlock {
+	padding: 0;
+	margin: 0;
+	width: 50%;
+	background: #ffffff;
+	color: #000000;
+}
+
+.leftBlock .label, .rightBlock .label {
+	clear: both;
+	width: 180px;
+}
+
+.leftBlock .value, .rightBlock .value {
+	clear: right;
+}
+/*
+.statusRow {
+	clear: both;
+}
+*/
+.printBlock {
+	display: block;
+	width: 100%;
+	page-break-inside: avoid;
+}
+
+.printBlock * {
+	page-break-after:avoid;
+	page-break-before:avoid;
+
+}
+
+.fc-event {
+	margin: 0 0 10px 0 !important;
+}
+
+.fc-event-inner {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+}
+
+.icon-print
+{
+	background: url("images/printer.png") no-repeat left center !important;
+}
+
+/* First scheduler */
+
+
+/* GANNT PRINTING */
+
+
+.sch-horizontal {
+	overflow-x: hidden !important;
+	overflow-y: visible !important;
+	height: 600px;
+}
+
+.sch-event
+{
+    border-radius:5px; 
+    border-width: 0px !important;
+    background: #ffffff !important;
+}
+
+.sch-event-inner {
+	padding: 4px 8px 3px 8px !important;
+	background: #ffffff !important;
+    border: 1px solid #111111;
+	font-size: 14px !important;
+	line-height: 16px !important;
+}
+
+.sch-print-headerbg {
+    border-left: 0px solid #EEEEEE !important;
+}
+
+.x-grid-group-hd  {
+	display: none;
+}
+
+.x-grid-cell-inner {
+    min-height: 20px;
+}
+
+.sch-column-header {
+	font-size: 24px !important;
+	text-align: left !important;
+	line-height: 30px !important;
+}
+
+.x-column-header-inner {
+	line-height: 30px !important;
+	height: 30px !important;
+}
+
+.x-column-header {
+}
+
+.x-action-col-cell {
+	display: none;
+}
+
+.halfFormTable td {
+    height: 30px;
+	width: 180pt;
+}
+
+.formTable {
+	width: 800pt;
+}
+
+.formTable td {
+	width: 200pt !important;
+}
+
+.halfFormBlock {
+	width: 360pt;
+}
+
+.halfFormTable {
+	width: 360pt;
+}
+
+
+.formContainerBox {
+	width: 800pt;
+	padding: 5pt;
+	border-width: 0;
+}
+
+.solid_border_div {
+	width: 800pt;
+	border-width: 0;
+}
+
+.x-panel-default {
+    width: 800pt !important;
+}
+
+.x-box-item {
+}
+
+.x-panel, .x-plain {
+	overflow-x: hidden !important;
+	overflow-y: visible !important;
+    position: relative;
+}
+
+.formLabel, .formTextReadOnly {
+    font-size: 12px;
+ }

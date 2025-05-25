@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+
+  <link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
+  <link href="/scheduler-resources/local-style.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/jquery-easyui-1.8.2/icon.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/combo.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/combobox.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/linkbutton.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/menu.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/panel.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/textbox.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/tooltip.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/validatebox.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-ui-misc/jquery-ui-delta.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/global.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/last-word.css" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <script type="text/javascript" src="js/lib/json2.js"></script>
+  <script type="text/javascript" src="js/lib/jquery.min-3.4.0.js"></script>
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script> -->
+  <script type="text/javascript" src="js/lib/jquery-ui.min-1.12.1.js"></script>
+  <script type="text/javascript" src="js/lib/maskedInputPlugin.js"></script>
+
+  <script src="js/lib/date.format.js" type="text/javascript"></script>
+  <script src="js/lib/jquery.blockUI.js" type="text/javascript"></script>
+  <script src="js/util/breadcrumbs.js" type="text/javascript"></script>
+
+  <script src="js/widget/dialogs.js" type="text/javascript"></script>
+  <script src="js/common/feedback_screen.js" type="text/javascript"></script>
+  <script src="js/util/global2.js" type="text/javascript"></script>
+  <script src="js/util/util.js" type="text/javascript"></script>
+  <script src="js/widget/widget_util.js" type="text/javascript"></script>
+
+  <!--https://www.jeasyui.com/documentation/index.php-->
+
+  <!--javascript files needed for EasyUI combobox -->
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.menu.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.linkbutton.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.tooltip.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.panel.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.parser.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.validatebox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.textbox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.combo.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.combobox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+
+  <!-- javascript / css files for calendar plugin -->
+  <script type="text/javascript" src="js/lib/jquery-ui-sliderAccess.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.js"></script>
+
+  <script src="js/common/landing_screen.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+
+      $("#fullHeader").load("header.html", function () {
+
+        initRegistration();
+
+      });
+
+    });
+
+  </script>
+
+
+  <!--
+
+      Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are met:
+
+      1. Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+      2. Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+
+      3. The name of the author may not be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+      WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+      MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+      EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+      SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+      TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+      PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+      LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  -->
+</head>
+
+<body onMouseMove="app_handleMouseMove()">
+<div id="registrationWrapper" class="wrapperSize">
+
+  <div id="fullHeader">
+  </div>
+
+  <div id="registrationBody" class="mainBody">
+
+    <div>
+      <div id="index_registrationDiv">
+        <div class="importantInfoBlock">
+          <div class="mainNameTableBlock">
+            <div class="primaryTableHeader" id="registration_user_form_title">New
+              User Registration
+            </div>
+          </div>
+          <div style="clear: both;"></div>
+          <div class="formContainerBox">
+            <div class="requiredFieldKey">
+              <div class="requiredIcon">*</div>
+              = Required Field
+            </div>
+            <table class="formTable">
+              <tr>
+                <td class="formLabel">First Name
+                  <div class="requiredIcon">*</div>
+                </td>
+                <td>
+                  <input type="text" id="registration_firstName" class="formTextInput" tabindex="1"/>
+                  <span id="registration_firstNameValidation" class="formElementRequired"></span>
+                </td>
+                <td class="formLabel">Primary Phone
+                  <div class="requiredIcon">*</div>
+                </td>
+                <td>
+                  <input type="text" id="registration_primaryPhone" class="formTextInput"
+                         tabindex="11"/>
+                  <span id="registration_primaryPhoneValidation" class="formElementRequired"></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="formLabel">Middle Name</td>
+                <td>
+                  <input type="text" id="registration_middleName" class="formTextInput" tabindex="2"/>
+                </td>
+                <td class="formLabel">Secondary Phone</td>
+                <td>
+                  <input type="text" id="registration_secondaryPhone" class="formTextInput"
+                         tabindex="12"/>
+                  <span id="registration_secondaryPhoneValidation" class="formElementRequired"></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="formLabel">Last Name
+                  <div class="requiredIcon">*</div>
+                </td>
+                <td>
+                  <input type="text" id="registration_lastName" class="formTextInput" tabindex="3"/>
+                  <span id="registration_lastNameValidation" class="formElementRequired"></span>
+                </td>
+                <td class="formLabel">Credential</td>
+                <td>
+                        <select id="registration_credential" class="formSelectInput" tabindex="13"></select>
+                </td>
+              </tr>
+              <tr>
+                <td class="formLabel">User Id
+                  <div class="requiredIcon">*</div>
+                </td>
+                <td>
+                  <input type="text" id="registration_ecommonsId" class="formTextInput" tabindex="4"
+                         maxlength="8"/>
+                  <span id="registration_ecommonsIdValidation" class="formElementRequired"></span>
+                </td>
+                <td class="formLabel">Title
+                  <div class="requiredIcon">*</div>
+                </td>
+                <td>
+                    <select id="registration_role" class="formSelectInput" tabindex="14"></select>
+                    <span id="registration_roleValidation" class="formElementRequired"></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="formLabel">Faculty Rank</td>
+                <td>
+                        <select id="registration_facultyRank" class="formSelectInput"
+                          tabindex="15"></select>
+                </td>
+                <td class="formLabel">Department</td>
+                <td>
+                        <select id="registration_department" class="formSelectInput" tabindex="6"></select>
+                </td>
+              </tr>
+              <tr>
+                <td class="formLabel">Fax</td>
+                <td>
+                  <input type="text" id="registration_fax" class="formTextInput" tabindex="16"/>
+                  <span id="registration_faxValidation" class="formElementRequired"></span>
+                </td>
+                <td class="formLabel">Division</td>
+                <td>
+                    <select id="registration_division" class="formSelectInput" tabindex="7"></select>
+                </td>
+              </tr>
+              <tr>
+                <td class="formLabel">Pager</td>
+                <td>
+                  <input type="text" id="registration_pager" class="formTextInput" tabindex="17"/>
+                  <span id="registration_pagerValidation" class="formElementRequired"></span>
+                </td>
+                <td class="formLabel">Institution
+                  <div class="requiredIcon">*</div>
+                </td>
+                <td>
+                    <select id="registration_institution" class="formSelectInput" tabindex="8"></select>
+                    <span id="registration_institutionValidation" class="formElementRequired"></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="formLabel">Email
+                  <div class="requiredIcon">*</div>
+                </td>
+                <td>
+                  <input type="text" id="registration_email" class="formTextInput" tabindex="18"/>
+                  <span id="registration_emailValidation" class="formElementRequired"></span>
+                </td>
+                <td class="formLabel registration_confirmFormItem">Confirm Email
+                  <div class="requiredIcon">*</div>
+                </td>
+                <td>
+                  <input type="text" id="registration_emailConfirm" class="formTextInput"
+                         tabindex="19"/>
+                  <span id="registration_emailConfirmValidation" class="formElementRequired"></span>
+                </td>
+              </tr>
+              <tr>
+                <td class="formLabel registration_passwordFormItem">Password
+                  <div class="requiredIcon">*</div>
+                </td>
+                <td class="registration_passwordFormItem">
+                  <input type="password" id="registration_password" class="formTextInput"
+                         tabindex="9"/>
+                  <span id="registration_passwordValidation" class="formElementRequired"></span>
+                </td>
+                <td class="formLabel registration_confirmFormItem registration_passwordFormItem">Confirm
+                  Password
+                  <div class="requiredIcon">*</div>
+                </td>
+                <td>
+                  <input type="password" id="registration_passwordConfirm" class="formTextInput"
+                         tabindex="10"/>
+                                    <span id="registration_passwordConfirmValidation"
+                                          class="formElementRequired"></span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="6">
+                  <span id="registration_formValidation" class="formElementRequired"></span>
+                  <input type="button" id="registration_cancelButton"
+                         onclick="javascript:cancelRegistration();" name="button" value="Cancel"
+                         class="formButton"/>
+                  <input type="button" id="registration_submitButton"
+                         onclick="javascript:submitRegistration();" name="button" value="Save"
+                         class="formButton"/>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="index_registrationMsg">
+        Registration confirmation will be sent to your email
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"></div>
+</div> <!-- end wrapperSize -->
+
+<div id="main_dialog_wrapper"></div>
+
+</body>
+</html>

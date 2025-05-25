@@ -1,0 +1,330 @@
+/**
+ * Copyright (c) 2015-2016, President and Fellows of Harvard College
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
+ *
+ * 3. The name of the author may not be used to endorse or promote products
+ * derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ * EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ * TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+#resourceCancelBulkActivate {
+    display: none;
+}
+
+#resourceSaveBulkActivate {
+    display: none;
+}
+
+#resource_main_screen {
+    display: block;
+}
+
+#bulkResourceButtons {
+    float: left;
+    margin-top: 10px;
+}
+
+#resourceState {
+    margin: 10px 0 10px 0;
+}
+
+#temporaryAdjustmentSection #tempAdjustmentContent .tableControls {
+    margin-top: 7px;
+}
+
+#addTempAdjustments {
+    margin-bottom: 8px;
+    margin-top: 20px;
+    font-size: 14px;
+    display: none;
+}
+
+#tempAdjustmentOvernight {
+    margin: 0 auto 0 auto;
+    width: 380px;
+}
+
+#tempAdjustmentOvernight .formLabel
+{
+    font-weight: bold;
+}
+
+#tempAdjustmentOvernight div
+{
+    text-align: center;
+}
+
+label[for=ta_overnight_yes]
+{
+    margin-right: 30px;
+}
+
+#addTempAdjustments  #weeklyCheckboxes {
+    margin-top:15px;
+}
+
+#addTempAdjustments #mytable1 tr > td {
+    padding-bottom: 10px;
+}
+
+#addTempAdjustments #mytable1 {
+    padding-top:10px;
+}
+
+#weeklyTable
+{
+    width: 700px;
+}
+
+#weeklyTable td
+{
+    padding: 5px;
+}
+
+#addTempAdjustmentsTable
+{
+    width: 100%;
+}
+
+#addTempAdjustmentsTable td
+{
+    padding: 4px;
+}
+
+#resourceNameInput
+{
+    width: 345px;
+    height: 23px;
+    font-size: 12px;
+}
+
+#resource_form_screen .formLabel {
+    width: 165px;
+    vertical-align: middle;
+}
+
+#resource_form_screen .formTextReadOnly {
+    width: auto;
+}
+
+#resourceNameSuffix
+{
+    font-size: 15px;
+}
+
+#spanOvernight
+{
+    font-weight: bold;
+}
+
+#tempAdjustmentContent .formLabel
+{
+    font-weight: bold;
+    width: 90px;
+}
+
+.dateLabel
+{
+    max-width: 80px;
+}
+
+#viewTempAdjustmentsHeader
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 6px;
+}
+
+#viewTempAdjustmentsContent
+{
+    display: inline-block;
+}
+
+.resourceFormSection {
+    margin-bottom: 12px;
+    margin-top: 5px;
+}
+
+.resourceTab {
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 8px;
+}
+
+#viewTempAdjustmentsTable td {
+   padding: 3px;
+}
+
+#searchTempAdjustments {
+    height: 25px;
+    margin-left: 20px;
+}
+
+#searchTempAdjustmentsTd {
+    vertical-align: middle
+}
+
+.emptyTableData {
+    color: #5981a6;
+    font-size: 17px;
+    font-style: italic;
+    text-align: center;
+    margin-top: 17px;
+    margin-bottom: 17px;
+}
+
+#addTempAdjustmentAction {
+    margin-top: -40px;
+}
+
+.dottedBottomBorder {
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+
+#addTempAdjustmentsTable .formElementRequired
+{
+    margin-top: -7px;
+}
+
+#addAlternateResourceDataValidationDiv {
+    background-color: white !important;
+    display: none;
+}
+
+#addDefaultAvailabilityRow .hasDatepicker
+{
+    height: 20px;
+}
+
+#annotationToggle {
+    margin-top: 15px;
+}
+
+.clearSelectedFieldsLink {
+    margin-right: 20px;
+    float: right;
+    font-weight: bold;
+}
+
+#toggleAllAnnotationSectionsImg {
+    margin: 4px 10px 0 0;
+    float: left;
+}
+
+#toggleAllAnnotationSections {
+    float: left;
+}
+
+#toggleAnnotationText {
+    margin: 0;
+    width: 135px;
+}
+
+.annotationsSave {
+    margin: 10px 10px 10px 0;
+}
+
+.annotationsSelectLink {
+    margin-left: 40px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#clearAnnotationsBottom {
+    margin-top: 15px
+}
+
+.annotationList {
+    list-style: none;
+    margin: 0;
+}
+
+.listOfAnnotations {
+    margin: 10px 0 10px 0;
+}
+
+.annotationNode {
+    margin-bottom: 5px;
+}
+
+.selectedChildNode, .childNode:hover {
+    font-size: 13px;
+    color: #000000;
+    background: #dbe0e6;
+}
+
+.childNode {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.annotationsHeader {
+    margin-right: 7px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-weight: bold;
+    background: #dbe0e6;
+    color: rgb(51, 49, 50);
+    border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+}
+
+.savedAnnotation {
+    background: #ceddc7 !important;
+}
+
+#annotationValidationTop {
+    margin-right: 14px;
+    float: right;
+}
+
+#annotationValidationBottom {
+    margin-right: 14px;
+    float: right;
+}
+
+#resourceTypeNameTD {
+    vertical-align: middle;
+}
+
+#defaultSchedule .not_sortable {
+    width: 85px;
+}
+
+#temporarySchedule .hasDatepicker {
+    width: 120px;
+}
+
+#dayOfWeekValidation.formElementRequired {
+    margin-top: 5px;
+}
+
+.resourceNotEditable {
+    padding-left: 3px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 14px;
+    margin-left: 5px;
+}

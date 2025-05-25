@@ -1,0 +1,3940 @@
+/**
+ * Copyright (c) 2015-2016, President and Fellows of Harvard College
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
+ *
+ * 3. The name of the author may not be used to endorse or promote products
+ * derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ * EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ * TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+/* CSS Document */
+
+@import 'fonts/google/roboto_condensed/roboto-condensed.css';
+@import 'fonts/google/roboto/roboto.css';
+
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif ;
+}
+
+a {
+    color: #0A507D;
+    cursor: pointer;
+}
+
+hr {
+    clear: both;
+    margin: 10px 0 0 0;
+}
+
+hr.report {
+    height: 0;
+    border: dotted #000;
+    border-width: 0 0 2px 0;
+    margin: 20px 0;
+    clear: both;
+}
+
+.headerColor
+{
+    color: #5981a6;
+}
+
+/**to stop showing the start time twice in fc-short mode */
+.fc-time-grid-event.fc-short .fc-time:before {
+    content: none !important;
+}
+
+#zenbox_tab {
+    left: -15px;
+}
+
+#zenbox_tab:hover {
+    left: -10px;
+}
+
+th {
+    text-align: left;
+    vertical-align: top;
+}
+
+tr {
+
+}
+
+td,th {
+    padding: 5px;
+}
+
+.altRow {
+    background: #EEEEEE;
+    width: 100%;
+}
+
+.editColumn {
+    text-align: center !important;
+}
+
+td {
+    vertical-align: top;
+    text-align: left;
+}
+
+.liveLink {
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.liveLink:hover {
+    text-decoration: none;
+}
+
+.tablePadding {
+    margin: 10px 0;
+}
+
+/* Containers */
+.wrapperSize {
+    width: 1200px;
+    margin: 10px auto;
+
+    min-height: 800px;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,eaf4f6+15,eaf4f6+70,ffffff+100 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #eaf4f6 15%, #eaf4f6 70%, #ffffff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(15%,#eaf4f6), color-stop(70%,#eaf4f6), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#eaf4f6 15%,#eaf4f6 70%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#eaf4f6 15%,#eaf4f6 70%,#ffffff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#eaf4f6 15%,#eaf4f6 70%,#ffffff 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #ffffff 0%,#eaf4f6 15%,#eaf4f6 70%,#ffffff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+.headerLogo {
+    float: left;
+    width: 350px;
+    height: 90px;
+    border-radius: 10px 0px 0px 0px;
+    -moz-border-radius: 10px 0px 0px 0px;
+    -webkit-border-radius: 10px 0px 0px 0px;
+    padding: 0 0 0 10px;
+}
+
+.headerAt {
+    float: left;
+    padding: 40px 0 0 0;
+    font-weight: bold;
+}
+
+.headerInstitutionName {
+    float: left;
+    width: 195px;
+    font-weight: bold;
+    padding: 6px 0 0 10px;
+}
+
+.headerLoginNav {
+    text-align: right;
+    float: right;
+    padding: 5px 0 0 0;
+}
+
+.headerLoginNav input
+{
+  margin-left: 5px;
+}
+
+.helpLinks {
+    padding: 7px 0 10px 0;
+    display: table;
+    width: 100%;"
+
+}
+
+.x-column-header-trigger {
+    display: block !important;
+    height: 22px !important;
+}
+
+.x-column-header-trigger {
+    cursor: pointer;
+}
+
+.passwordLink {
+    display: inline-block;
+    padding: 5px 0 0 0;
+    font-size: 12px;
+}
+
+.authHeader {
+    padding: 5px 0 0 0;
+    clear: both;
+}
+
+
+.mainBody {
+    clear: both;
+    min-height: 700px;
+    margin: 15px 15px 0 15px;
+    background: #ffffff;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+
+.breadcrumbs {
+    padding: 10px 0 0 20px;
+    font-size: 15px;
+    color: #b8a56b;
+}
+
+.breadcrumbSep {
+    color: #5C83A7;
+}
+
+.breadcrumbSep:last-child {
+    color: #b8a56b;
+}
+
+.breadcrumbs a{
+    color: #5C83A7;
+    text-decoration: none;
+}
+
+.footer {
+    color: #222222;
+    font-size: 120%;
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+    text-align: justify;
+    width: 1200px;
+}
+
+.footerLogoWrapper img{
+    cursor: default;
+}
+
+.footer a {
+    color: #666666;
+}
+
+.importantInfoBlock {
+    float: left;
+    margin: 0 0 0 0;
+    width: 100%;
+    padding-left: 5px;
+}
+
+.mainNameBlock {
+    float: left;
+    padding: 10px 20px 10px 0;
+    word-wrap: break-word;
+}
+
+.mainNameTableBlock {
+    float: left;
+    width: 100%;
+    padding: 0;
+    font-weight: bold;
+}
+
+.mainNameTableBlock .mainName
+{
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+.secondaryName {
+    padding: 20px 20px 0 0px;
+    font-weight: normal;
+    font-size: 140%;
+}
+
+.mainEditLink {
+    font-size: 14px;
+    padding: 10px 0 0 0;
+}
+
+.statusWrapper {
+    float: right;
+    width: 525px;
+}
+
+.statusWrap {
+    overflow: hidden;
+    width: 900px;
+}
+
+.statusBlockContainer {
+    overflow: auto;
+    float: right;
+    font-size: 14px;
+}
+
+.resourceTypeValue {
+    width: 400px;
+    overflow: hidden;
+    float: right;
+    font-size: 120%;
+    text-align: right;
+}
+
+.filterContainer {
+    clear: both;
+    padding: 20px 0 0 0;
+    display: inline-block;
+}
+
+#appointment_main_screen {
+    display: inline-block;
+}
+
+.checkinTable {
+    font-size: 90%;
+    width: 100%;
+}
+
+.checkinTable .label {
+    width: 150px;
+}
+
+.checkinTable td {
+    padding: 5px;
+}
+
+.checkinTable select {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+    padding: 3px;
+    height: 22px;
+    border-radius: 0;
+    border: 1px solid #b5b7c9;
+    width: 240px;
+    background: url("images/text-bg.gif") repeat-x scroll 0 0 white;
+}
+
+.checkinTable select:focus {
+    border-color: #80abdc;
+}
+
+.statusBlock {
+    float: left;
+    width: 510px;
+    padding: 5px;
+    margin: 0 0 10px 0;
+    color: #FFFFFF !important;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.statusBlock.open {
+    background-color: #49B293;
+}
+
+.statusBlock.pending {
+    background-color: #e8bd42;    
+}
+
+.statusBlock.closed {
+    background-color: #b93f34;
+}
+
+
+div#studyDetailTab1 .statusBlock {
+    font-size:16px;
+}
+
+div#studyDetailTab1 table.formTable {
+    margin-bottom: 12px;
+}
+
+div#studyDetailTab1 table.formTable td {
+    height:auto;
+}
+
+.statusBlockBlackText {
+    float: left;
+    width: 470px;
+    padding: 5px;
+    margin: 0 0 10px 0;
+    color: #000000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-size: 200%;
+}
+
+.statusBlockBlackText .label {
+    width: 220px;
+    float: left;
+    clear: both;
+}
+
+.statusBlockBlackText .value {
+    width: 70px;
+    float: left;
+}
+
+.statusScheduled {
+    background: #49B293 !important;
+}
+
+.statusCheckedIn {
+    background: #7662AB !important;
+}
+
+.statusCheckedOut {
+    background: #7E878C !important;
+}
+
+.statusCancelled {
+    background: #b93f34 !important;
+}
+
+.statusHold {
+    background: #e8bd42 !important;
+}
+
+.statusOpen {
+    background: #005904 !important;
+}
+
+.pendingBlock {
+    background: #b9870c !important;
+}
+
+.statusPending {
+    background: #b9870c !important;
+}
+
+.statusBlock .label {
+    width: 220px;
+    float: left;
+    clear: both;
+}
+
+.statusBlock .value {
+    width: 70px;
+    float: left;
+}
+
+.reportNoStatusSecondary {
+    background: none repeat scroll 0 0 #0A507D;
+    font-size: 100%;
+}
+
+.reportSecondary {
+    background: none repeat scroll 0 0 #49B293;
+    font-size: 100%;
+}
+
+.reportCheckedInSecondary {
+    background: none repeat scroll 0 0 #7662AB;
+    font-size: 100%;
+}
+
+.reportCheckedOutSecondary {
+    background: none repeat scroll 0 0 #7E878C;
+    font-size: 100%;
+}
+
+.reportSecondary .label {
+    height: 21px;
+}
+
+#filter_functionality {
+    margin: 0 20px 0 0;
+}
+
+.fullBlock {
+    float: left;
+    width: 550px;
+    padding: 5px;
+    height: 60px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.fullBlock .label {
+    width: 170px;
+    min-height: 25px;
+    float: left;
+    clear: both;
+    position: relative;
+}
+
+.fullBlock .value { /* width: 70px; */
+    float: left;
+}
+
+.leftBlock {
+    float: left;
+    width: 230px;
+    padding: 10px 14px 10px 3px;
+    background: #748EA3;
+    color: #FFFFFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    clear: both;
+}
+
+.leftComment {
+    vertical-align: top;
+    padding: 10px 5px 10px 10px;
+    margin-right: 5px;
+    height: 80px;
+    clear: both;
+}
+
+.leftBlock .label {
+    width: 170px;
+    float: left;
+    clear: both;
+}
+
+.leftBlock .value {
+    width: 25px;
+    float: left;
+}
+
+.rightBlock {
+    float: left;
+    width: 250px;
+    margin-left: 3px;
+    padding: 10px;
+    background: #748EA3;
+    color: #FFFFFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.rightBlock .label {
+    width: 130px;
+    height: 25px;
+    float: left;
+    clear: both;
+}
+
+.rightBlock .value {
+    width: 70px;
+    float: left;
+}
+
+#study_contacts_details {
+    display: none;
+}
+
+#study_contacts {
+    display: none;
+}
+
+.contactBlock {
+    float: left;
+    width: 340px;
+    font-size: 90%;
+    margin-top: 20px;
+}
+
+.commentBlock {
+    clear: both;
+    float: left;
+    width: 100%;
+    font-size: 90%;
+    margin-top: 20px;
+}
+
+.tabBox {
+    border: solid #0A507D;
+    border-width: 0 1px 1px 1px;
+}
+
+.secondaryTableHeader {
+    margin-right: 7px;
+    padding: 5px;
+    font-weight: bold;
+    background: #5981a6;
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+}
+
+.requiredFieldKey {
+    padding: 5px 0;
+    margin-left:4px;
+    overflow: auto;
+}
+
+.listPaginationNumbers {
+    float: left;
+}
+
+.listPagination {
+    float: left;
+    padding: 0 20px;
+}
+
+.listPaginationPiece {
+    float: left;
+    padding: 0 5px;
+}
+
+.listPaginationSelect {
+    float: left;
+}
+
+.listPaginationAddItem {
+    float: right;
+    text-align: right;
+    padding: 2px 0 0 0;
+}
+
+.selectBox {
+    display: inline-table;
+}
+
+.pagination_block {
+    display: inline-table;
+    margin-left: 25px;
+}
+
+/* Text Stylings */
+.approved {
+    color: #003300;
+}
+
+.pending {
+    color: #b9870c;
+}
+
+.studyName {
+
+}
+
+#main_calendar {
+    width: 980px;
+    margin: 10px auto 0 auto;
+}
+
+#calendar-wrapper {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#calendar-wrapper .primaryTableHeader {
+    float: left;
+}
+
+#calendar {
+    width: 458px;
+    margin: 0;
+}
+
+#appt_calendar {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.fc-time, .fc-title {
+    font-size: 12px !important;
+}
+
+.fc-event {
+    font-size: 1.1em !important;
+}
+
+.fc-time div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.calendarKey {
+    clear: both;
+    padding: 0;
+    text-align: left;
+}
+
+.calendarKeyTitle {
+    font-size: 120%;
+    font-weight: bold;
+    text-align: left;
+    padding: 0 0 10px 0;
+}
+
+.calendarKeyBox {
+    width: 24px;
+    height: 22px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.calendarKeyBox img {
+    padding: 3px;
+    padding-right: 4px;
+    width: 15px;
+    height: 15px;
+    cursor: default;
+}
+
+/* first icon (available) */
+.calendarKeyBox:first-child img {
+    padding:0px;
+    padding-top:2px;
+    width:12px;
+    height:12px;
+}
+
+/*  hold icon */
+.calendarKeyBox:nth-child(5) img {
+    padding-top: 4px;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.calendarKeyText {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 0 0 5px;
+    margin-right: 25px;
+    font-size: 14px;
+}
+
+/* Calendar event for available appointment */
+.NotFound,.fc-agenda .NotFound .fc-time,.NotFound .fc-skin a
+{
+    background-color: #df6b19 !important;
+    border-color: #df6b19 !important;
+}
+
+.calendarKeyNotFound {
+    background-color: #df6b19;
+}
+
+.calendarKeyAvailable {
+    background-color: #1173be;
+}
+
+.calendarKeyHold {
+    background-color: #e8bd42 !important;
+}
+
+.Searching,.fc-agenda .Searching .fc-time,.Searching .fc-skin a
+{
+    background-color: #1173be !important;
+    border-color: #1173be !important;
+}
+
+.calendarKeyScheduled {
+    background-color: #49B293;
+}
+
+/* Calendar event for scheduled appointment */
+.Scheduled,.fc-agenda .Scheduled .fc-time,.Scheduled .fc-skin a
+{
+    background-color: #49B293 !important;
+    border-color: #49B293 !important;
+}
+
+.calendarKeyCheckedIn {
+    background-color: #7662AB;
+}
+
+/* Calendar event for checked in appointment */
+.Checked-In,.fc-agenda .Checked-In .fc-time,.Checked-In .fc-skin a
+{
+    background-color: #7662AB !important;
+    border-color: #7662AB !important;
+}
+
+.calendarKeyCheckedOut {
+    background-color: #7E878C;
+}
+
+/* Calendar event for checked out appointment */
+.Checked-Out,.fc-agenda .Checked-Out .fc-time,.Checked-Out .fc-skin a
+{
+    background-color: #7E878C !important;
+    border-color: #7E878C !important;
+}
+
+.calendarKeyCanceled {
+    background-color: #b93f34;
+}
+
+/* Calendar event for canceled appointment */
+.Cancellation,.fc-agenda .Cancellation .fc-time,.Cancellation .fc-skin a
+{
+    background-color: #b93f34 !important;
+    border-color: #b93f34 !important;
+}
+
+.fc-corner-right .fc-inner {
+    border-right-width: 0px !important;
+    padding-left: 2px;
+}
+
+.fc-corner-left .fc-inner {
+    border-left-width: 0px !important;
+    padding-right: 2px;
+}
+
+.calendarKeyRow {
+    clear: both;
+    text-align: left;
+    display: inline-block;
+    width: 150px;
+    vertical-align: top;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.calendarKeyItem {
+    display: inline-block;
+    margin: 5px 0 0 15px;
+    width: 1200px;
+}
+
+.calendarKeyItem img {
+    vertical-align: middle;
+}
+
+.formButton {
+    background-color: #5981a6;
+    /* need to have a border here to override defalut border, so setting it
+    to same color as background */
+    border: 1px solid #5981a6;
+    font-family: 'Roboto Regular', sans-serif;
+    font-weight: normal;
+    padding: 8px 15px 8px 15px;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-appearance: none;
+    font-size: 90%;
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 0 10px 20px 0;
+}
+
+/*use a box shadow INSTEAD of the default outline, which is a border box;
+ this way the box-shadow hugs the corners of the element if it is rounded
+
+ any buttons with rounded edges should be in the selector list here
+ */
+.formButton:focus, .newItemButton a:focus, .ui-dialog-buttonset .ui-button-text-only:focus {
+    outline:none;
+    -webkit-box-shadow: 0px 0px 2px 3px rgba(134,189,253,0.8);
+    -moz-box-shadow: 0px 0px 2px 3px rgba(134,189,253,0.8);
+    box-shadow: 0px 0px 2px 3px rgba(134,189,253,0.8);
+}
+
+.formButton:hover:enabled {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #083e60
+    ), color-stop(1, #0a507d) ) repeat scroll 0 0 #ebae46;
+    background: -moz-linear-gradient(center top, #083e60 5%, #0a507d 100%)
+    repeat scroll 0 0 #0a507d;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#083e60',
+    endColorstr='#0a507d' );
+    background-color: #0a507d;
+}
+
+.formButton:active:enabled {
+    position: relative;
+    top: 1px;
+    text-align: center;
+}
+
+.formButton:disabled {
+    opacity: 0.5
+}
+
+/* Wizard Styles */
+.appt_wizard_form {
+    min-width: 600px;
+    display: none;
+}
+
+.refineTextBox {
+    width: 400px;
+    height: 12px;
+    padding: 1px;
+    font-size: 70%;
+}
+
+.refineButton {
+    width: 85px;
+    height: 23px;
+}
+
+.refineDropDown {
+    width: 400px;
+    height: 23px;
+}
+
+.wizardButtons {
+    padding: 5px 0;
+    margin-top: 8px;
+}
+
+.wizardTableHeader {
+    width: 100%;
+    font-size: 90%;
+    padding-bottom: 15px;
+}
+
+.wizardTableHeaderWrapper {
+    max-height: 250px;
+    overflow-y: auto;
+    border: solid #333333;
+    border-width: 0 1px 1px 1px;
+}
+
+.wizardTable {
+    width: 100%;
+    border: 0px;
+    cellspacing: 0px;
+    cellpadding: 5px;
+    font-size: 90%;
+}
+
+.leftDivs {
+    border:1px solid black;
+    float:left;
+    padding: 5px;
+}
+
+.rightDivs {
+    float:right;
+    margin-right:5px;
+}
+
+.fc-day-grid-event .fc-content {
+    white-space: normal !important;
+}
+
+.wizardTableWrapper {
+    max-height: 250px;
+    overflow-y: auto;
+    border: solid #333333;
+    border-width: 0 1px 1px 1px;
+}
+
+.wizardTable th {
+    font-weight: bold;
+}
+
+.dialog_study_name {
+    display: inline-block;
+    max-height: 54px;
+    overflow-y: auto;
+}
+
+.wizardFormLabel {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+    width: 140px;
+}
+
+.custom-checkbox {
+    font-size: 14px;
+}
+
+.apptFormDate {
+    font-size: 12px;
+    letter-spacing: 1px;
+    height: 25px;
+    width: 100px;
+    align-content: center;
+    justify-content: center;
+}
+
+.wizardFormLabel2 {
+    display: inline-block;
+    font-weight: bold;
+    width: 250px;
+}
+
+.centeredButtons {
+    padding: 5px 0;
+    text-align: center;
+}
+
+.wizardButtons input:first-child {
+    margin-left: 0;
+}
+
+.wizardButtons input {
+    margin: 0 5px 0 10px
+}
+
+.wizardButtons input:active {
+    position: relative;
+    top: 1px;
+    text-align: center;
+}
+
+.calendar-wrapper {
+    margin-top: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header {
+    margin-bottom: 8px;
+}
+
+.ui-timepicker-div dl {
+    text-align: left;
+}
+
+.ui-timepicker-div dl dt {
+    height: 25px;
+    margin-bottom: -25px;
+}
+
+.ui-timepicker-div dl dd {
+    margin: 0 10px 10px 65px;
+}
+
+.ui-timepicker-div td {
+    font-size: 90%;
+}
+
+.ui-tpicker-grid-label {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ui-timepicker-rtl {
+    direction: rtl;
+}
+
+.ui-timepicker-rtl dl {
+    text-align: right;
+    padding: 0 5px 0 0;
+}
+
+.ui-timepicker-rtl dl dt {
+    float: right;
+    clear: right;
+}
+
+.ui-timepicker-rtl dl dd {
+    margin: 0 40% 10px 10px;
+}
+
+#index_username {
+    width: 80px;
+}
+
+#index_password {
+    width: 80px;
+}
+
+#index_helpLinks {
+    visibility: hidden;
+}
+
+#index_loginLoading {
+    visibility: hidden;
+}
+
+#index_passwordResetLoading {
+    visibility: hidden;
+}
+
+.x-action-col-cell img {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.x-ie6 .x-action-col-cell img {
+    position: relative;
+    top: -1px;
+}
+
+.wrap .x-grid-cell-inner {
+    white-space: normal;
+}
+
+.listContainer {
+    clear: both;
+    margin: 0;
+}
+
+.formContainer {
+    clear: both;
+    margin: 0;
+}
+
+.formContainer table {
+    margin-left: 0;
+}
+
+.formContainer td {
+    padding: 0px;
+}
+
+.formElementRequired {
+    color: #bb0000;
+    font-size: 90%;
+    margin: 0 0 0 0;
+    display: block;
+    clear: both;
+    max-width: 250px;
+    padding-bottom: 0;
+}
+
+.x-datepicker .x-datepicker-default .x-unselectable .x-layer {
+    width: 250px;
+}
+
+#report_searchForm {
+    display: none;
+}
+
+#report_basicForm img.ui-datepicker-trigger {
+    margin-left:5px;
+}
+
+.formBlock {
+    padding: 10px 0 0 0;
+}
+
+.formBlock tr {
+    padding: 5px 0;
+}
+
+.halfFormBlock {
+    width: 45%;
+    margin: 10px 2% 10px 0;
+    float: left;
+}
+
+.halfFormBlock td {
+    height: 50px;
+}
+
+.formButtonBlock {
+    clear: both;
+    padding: 20px 0 0 0;
+}
+
+.formTextSmaller {
+    width: 250px;
+    height: 20px;
+}
+
+.formTextSmallerFilter {
+    width: 250px;
+    height: 20px;
+}
+
+.formTextSmallerFilters {
+    width: 250px;
+    height: 20px;
+}
+
+.formTextAreaSmaller {
+    width: 240px;
+    height: 50px;
+}
+
+.formTextAreaSmaller, .commentTextArea {
+    padding: 5px;
+    border: 2px solid #AAAAAA;
+}
+
+.formText {
+    width: 300px;
+    height: 16px;
+}
+
+.formTextArea {
+    width: 500px;
+    height: 200px;
+}
+
+.formCheckBox {
+    padding: 5px 0 0 0;
+    clear: both;
+}
+
+.formCheckBoxReadOnly {
+    padding: 5px 0 0 0;
+    clear: both;
+}
+
+.formCheckBoxBlock {
+    padding: 5px 0 5px 0;
+    clear: both;
+    height: 20px;
+}
+
+.formCheckBoxBlock input {
+    clear: left;
+    float: left;
+    margin-left: 0;
+}
+
+.formCheckBoxBlock label {
+    display: block;
+    float: left;
+    text-align: right;
+    margin: 0 0 0 10px;
+}
+
+.astrix {
+    font-size: 140%;
+}
+
+.formTextInput {
+    width: 200px;
+    height: 25px;
+}
+
+.formSelectInput {
+    width: 200px;
+    height: 26px;
+    padding: 4px 0 0 0;
+}
+
+.formSelectInputSmall {
+    width: 125px;
+    height: 20px;
+    padding: 4px 0 0 0;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.mgmt_fieldCheckRunning {
+    visibility: hidden;
+}
+
+.app_fieldCheckRunning {
+    visibility: hidden;
+}
+
+.requiredIcon {
+    color:#bb0000;
+    display: inline-block;
+}
+
+.mgmt_formInput {
+
+}
+
+.mgmt_passwordFormItem {
+
+}
+
+.mgmt_confirmFormItem {
+
+}
+
+.formTextReadOnly {
+    font-size: 14px;
+    width: 200px;
+    height: 25px;
+}
+
+.formLabel {
+    font-weight: normal;
+    font-size: 14px;
+    width: 150px;
+}
+
+
+.formLabel.disabled {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.formLabel2 {
+    font-weight: normal;
+    font-size: 14px;
+    width: 150px;
+}
+
+.formLabelGrid {
+    font-weight: normal;
+    font-size: 14px;
+    width: inherit;
+}
+
+.smallFormLabel {
+    font-weight: normal;
+    width: 120px;
+}
+
+.newItemButton {
+    float: right;
+    text-align: right;
+}
+
+.textLeft {
+    text-align: left;
+    float:none;
+}
+
+.textLeft a {
+    margin: 5px 5px 5px 0px !important;
+}
+
+/*#VisitTemplatesTabs*/
+
+input.newItemButton {
+    padding: 8px 9px;
+    color:#ffffff !important;
+    background: #b8a56b !important;
+    text-decoration: none;
+    margin: -5px 0px 5px 5px;
+    display: inline-block;
+    white-space: nowrap;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.newItemButton a, .ui-dialog-buttonset .ui-button-text-only {
+    padding: 8px 9px;
+    color:#ffffff !important;
+    background: #b8a56b !important;
+    text-decoration: none;
+    margin: -5px 0 5px 5px;
+    display: inline-block;
+    white-space: nowrap;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.newItemButton a:hover {
+    background: #9b874b !important;
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.newItemButton a.disabled {
+    opacity: 0.5 !important;
+    background: #b8a56b !important;
+}
+
+.newAppointmentButton {
+    width: 100%;
+    /*font: bolder;*/
+    font-weight: bolder;
+    font-size: larger;
+    font-stretch: expanded;
+    text-align: right;
+    padding: 5px;
+}
+
+.reportListLink {
+    float: right;
+    text-align: right;
+    padding: 5px;
+}
+
+.halfFormTable {
+    margin-top: 10px;
+    width: 575px;
+    border: 0px;
+    cellspacing: 0px;
+    cellpadding: 0px;
+}
+
+.halfFormTable td {
+    height: 50px;
+}
+
+.fundingTable td {
+    height: 30px;
+}
+
+.formTable {
+    border: 0px;
+    cellspacing: 0px;
+    cellpadding: 0px;
+    width: 100%;
+}
+
+.formTable td {
+    height: 35px;
+}
+
+.reportFormTable {
+    border: 0px;
+    cellspacing: 0px;
+    cellpadding: 0px;
+    margin-left: 5px;
+    float: left;
+    font-size: 14px;
+    width: 100%;
+}
+
+.reportFormTable td {
+    height: 50px;
+}
+
+.reportFormLabel {
+    font-size: 13px;
+    width: 115px;
+    font-weight: bold;
+}
+
+.reportFormTextInput {
+    width: 100px;
+    height: 25px;
+}
+
+.formFields400px input, .formFields400px select {
+    width: 400px;
+}
+
+.subject_fieldCheckRunning {
+    visibility: hidden;
+}
+
+.responseLoading {
+    visibility: hidden;
+}
+
+.study_fieldCheckRunning {
+    visibility: hidden;
+}
+
+.formValidation {
+    color: red;
+    font-size: 13px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    visibility: hidden;
+}
+
+#mgmt_screen_link_section {
+    display: inline;
+}
+
+#resource_newResourceLink {
+    color: #AAAAAA;
+}
+
+#study_form_buttons {
+    text-align: left;
+    padding-top: 40px;
+}
+
+#main_dialog_wrapper {
+    width: 100%;
+    top: 20px;
+    position: fixed;
+    visibility: hidden;
+    z-index: 10000;
+}
+
+#main_dialog {
+    width: 450px;
+    margin: 0px auto;
+}
+
+#main_dialog_inner {
+    padding: 5px 5px 5px 5px;
+    width: 450px;
+    height: 100px;
+    background-color: white;
+    border-style: solid;
+    border-color: red;
+    font-size: 11pt;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.reportRow {
+    display: block;
+}
+
+#report_results {
+    padding: 5px 5px 5px 5px;
+}
+
+.secondaryNameBlock {
+    float: left;
+    width: 480px;
+    padding: 0 0 0 0px;
+    font-weight: bold;
+}
+
+.mainName {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.mainName .newItemButton {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+#report_loadMessage {
+    display: none;
+}
+
+#report_emptyMessage {
+    display: none;
+}
+
+#report_errorMessage {
+    display: none;
+    border: 1px solid red;
+    color: red;
+}
+
+/*  All those Screens */
+#study_visit_main_screen {
+    display: none
+}
+
+#study_subject_form_screen {
+    display: none
+}
+
+#study_member_main_screen {
+    display: none
+}
+
+#study_member_form_screen {
+    display: none
+}
+
+#study_visit_form_screen {
+    display: none
+}
+
+#study_visit_approval_form_screen {
+    display: none
+}
+
+#scheduler_form_screen {
+    display: none
+}
+
+tr.header {
+    cursor: pointer;
+}
+
+#homepageTabs {
+    background: #FFFFFF;
+    margin: 0;
+    border:none;
+}
+
+#homepageTabs .ui-tabs-panel {
+    padding: 0 1.4em 1em 1.4em;
+}
+
+#apptModuleTabs .ui-tabs-panel .tabBox {
+    padding: 10px 0 0 0;
+    border-width: 0;
+}
+
+#apptModuleTabs .ui-tabs-panel .tabBox .options {
+    margin: 0 10px 10px 10px;
+}
+
+.homePageColumns {
+    width: 585px;
+    float: left;
+    padding: 0 10px 10px 10px;
+}
+
+.homePageColumnLeft {
+    width: 585px;
+    float: left;
+    padding: 10px 10px 10px 0;
+}
+
+.homePageColumnRight {
+    width: 585px;
+    float: left;
+    padding: 10px 0 10px 10px;
+}
+
+#home_screen {
+    min-height: 600px;
+    background: #FFFFFF;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+#home_screen #hp-tab1 .tabBox .options input {
+    margin-left:10px;
+}
+
+#feedback_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#mgmt_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#report_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#report_main_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#report_report_screen {
+    min-height: 600px;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#report_builder_screen
+{
+    min-height: 600px;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#mgmt_password_change_screen {
+    width: 80%;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#mgmt_main_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#mgmt_user_form_screen {
+    min-height: 600px;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#mgmt_user_form_screen .mainName {
+    margin-top:15px;
+}
+
+#mgmt_user_form_screen #mgmt_editUserLink {
+    margin-left:0;
+    padding-left: 0;
+}
+
+#mgmt_user_form_screen #mgmt_editUserLink a {
+    margin-left:0;
+}
+
+
+#subject_main_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#subject_form_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#subject_search_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#subject_search_grid {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#subject_details_content #subjectForm table td.editOnly input#subject_dob {
+    margin-right:4px;
+    width:100px !important;
+    max-width: 100px !important;
+}
+
+#resource_close_sub_list {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#resource_close_sub_form {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#resource_close_sub_form table input#closesublocation_submitButton.formButton {
+    margin-top: 8px;
+}
+
+#resource_main_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#resource_nutrition_gantt {
+    width: 1140px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#resource_nursing_gantt {
+    width: 1140px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#resource_gantt {
+    width: 1140px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#resource_form_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#resource_defaultavail_form_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#resource_tempadj_form_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#resource_tempadj_form_screen #resource_ta_form_title {
+    margin-top:15px;
+}
+
+#resource_tempadj_form_screen .formTable {
+    width:350px;
+}
+
+#resource_tempadj_form_screen .formTable tbody tr td img.ui-datepicker-trigger
+{
+    margin-left:8px;
+    vertical-align: middle;
+}
+                       
+
+#resource_alternative_form_screen {
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#resource_alternative_form_screen .tableControls {
+    margin-top:10px;
+}
+
+#resource_alternative_form_screen .mainName {
+    margin-top: 15px;
+}
+
+/* where the first column of the table is a checkbox */
+#addAlternateResourcesData table tr td:first-child,
+#addStudyMemberData table tr td:first-child, #addStudyMemberHeaderData table tr th:first-child {
+    width:40px;
+    text-align:center;
+}
+
+#activeVisitTemplatesTableWrapper {
+    margin:0;
+}
+
+#VisitTemplatesTabs #active_visits, #VisitTemplatesTabs #inactive_visits {
+    padding-top: 0;
+    padding-right:1.4em;
+    padding-left:1.4em;
+}
+
+
+#VisitTemplatesTabs .newItemButton {
+    margin-right:1em;
+    margin-top: 20px;
+}
+
+#VisitTemplatesTabs .tableControls {
+    margin-top: 20px;
+}
+
+#studyDetailsTabs #studySubjectsTab3 #studySubjectsTableWrapper.CSSTableGenerator {
+    margin-top:20px;
+}
+
+#addAlternateResourcesData {
+    margin-right: 8px;
+    width:auto;
+}
+
+#resource_alternative_form_screen #cancelAddAlternateResources {
+    margin-top: 10px;
+    min-width: 70px;
+}
+
+#resource_detail_screen {
+    min-height: 100px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 20px 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#resourceDetailPageTabs {
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 10px 0 10px;
+}
+
+#study_detail_screen {
+    min-height: 600px;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 5px 10px 5px;
+    margin: 0 10px;
+}
+
+#StudyDetailsTabs
+{
+    border: none;
+}
+
+#studyDetailTab1 {
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    margin: 0;
+    padding-left: 3px;
+}
+
+#study_main_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 15px;
+    margin: 0 10px;
+}
+#study_main_screen #study_filter_Last_Button, #mgmt_main_screen #user_filter_Last_Button {
+    margin-right:5px;
+}
+
+#study_main_screen #filters_string, #mgmt_main_screen #filters_string,
+#study_member_form_screen #filter_studymember_string {
+    height:1.75em;
+    margin-right:5px;
+    margin-left: 3px;
+}
+
+#study_form_screen {
+    min-height: 600px;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 10px;
+}
+
+#visit_detail_screen {
+    min-height: 600px;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 5px 10px 5px;
+    margin: 0 10px;
+}
+
+#VisitDetailsTabs {
+
+    border: none
+}
+
+#study_visit_main_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#study_visit_form_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#visit_approval_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#scheduler_form_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#study_visit_approval_form_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+#study_subject_main_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#study_member_main_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#study_member_form_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#study_subject_add_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#appointment_main_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#appointment_list_view {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0 10px;
+}
+
+#appointment_form_screen {
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+#appointment_form_screen .importantInfoBlock {
+    float:none;
+}
+
+#apptModuleTabs {
+    border: none;
+    margin: 0 10px;
+}
+
+#index_registrationDiv {
+    background: #FFFFFF;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+#index_registrationMsg
+{
+    color: #0084ff;
+    font-size: 14px;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    margin-left:20px;
+}
+
+#study_subject_search_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+#study_subject_form_screen {
+    width: 1170px;
+    min-height: 600px;
+    display: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    margin: 0;
+}
+
+.floatRowTop td {
+    border: solid #7875aa !important;
+}
+
+.floatRowTop .x-grid-cell {
+    border-width: 2px 0px 0 0px !important;
+}
+
+.floatRowTop .x-grid-cell-first {
+    border-width: 2px 0px 0 2px !important;
+}
+
+.floatRowTop .x-grid-cell-last {
+    border-width: 2px 2px 0 0px !important;
+}
+
+.floatRowBottom td {
+    border: solid #7875aa !important;
+}
+
+.floatRowBottom .x-grid-cell {
+    border-width: 0px 0px 2px 0px !important;
+}
+
+.floatRowBottom .x-grid-cell-first {
+    border-width: 0px 0px 2px 2px !important;
+}
+
+.floatRowBottom .x-grid-cell-last {
+    border-width: 0px 2px 2px 0px !important;
+}
+
+.flexRowTop td {
+    border: solid #9dee8d !important;
+}
+
+.flexRowTop .x-grid-cell {
+    border-width: 2px 0px 0 0px !important;
+}
+
+.flexRowTop .x-grid-cell-first {
+    border-width: 2px 0px 0 2px !important;
+}
+
+.flexRowTop .x-grid-cell-last {
+    border-width: 2px 2px 0 0px !important;
+}
+
+.flexRowBottom td {
+    border: solid #9dee8d !important;
+}
+
+.flexRowBottom .x-grid-cell {
+    border-width: 0px 0px 2px 0px !important;
+}
+
+.flexRowBottom .x-grid-cell-first {
+    border-width: 0px 0px 2px 2px !important;
+}
+
+.flexRowBottom .x-grid-cell-last {
+    border-width: 0px 2px 2px 0px !important;
+}
+
+.fc-skin {
+    border-color: transparent !important;
+}
+
+/****************/
+#pagination a {
+    border: solid 1px #9aafe5;
+    margin-right:2px;
+    font-weight: bold;
+}
+
+#pagination a:hover {
+    border: solid 1px #0e509e;
+}
+
+#pagination a:link,#pagination a:visited {
+    color: #0e509e;
+    display:block;
+    float: left;
+    padding: 3px 6px;
+    text-decoration: none;
+}
+
+/*
+ * HTML Table sorting
+ */
+input[type=number]:invalid {
+    background-color: #FFCCCC;
+}
+
+/************************UI Notification*******************************/
+#ui_notifIt {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    -wekbit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#ui_notifIt:hover {
+    opacity: 1 !important;
+}
+
+#ui_notifIt p {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Color setup */
+.success {
+    background-color: yellowgreen;
+    color: white;
+}
+
+.error {
+    background-color: orangered;
+    color: white;
+}
+
+.warning {
+    background-color: orange;
+    color: white;
+}
+
+.info {
+    background-color: #4297d7;
+    color: white;
+}
+
+.default {
+    background-color: #EEE;
+    color: #444;
+}
+
+.eventClickActions {
+    padding: 10px 10px 0 10px;
+    background: #fff;
+    border: solid 3px #2779aa;
+    position: absolute;
+    font-size: 12px;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+}
+
+.eventClickActions:after {
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    margin-right: -25px;
+    content: ' ';
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid #2779aa;
+    cursor: pointer;
+
+    -webkit-transform: rotatex(360deg);
+    -moz-transform: rotatex(360deg);
+    -ms-transform: rotatex(360deg);
+    transform: rotatex(360deg);
+}
+
+.resourceHoverText {
+    padding: 10px 10px 0 10px;
+    background: #fff;
+    border: solid 3px #2779aa;
+    position: absolute;
+    font-size: 12px;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+}
+
+.resourceHoverText:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    margin-top: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #2779aa;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    cursor: pointer;
+
+    -webkit-transform: rotatex(360deg);
+    -moz-transform: rotatex(360deg);
+    -ms-transform: rotatex(360deg);
+    transform: rotatex(360deg);
+}
+
+.appointmentHover {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 280px;
+    background: #fff;
+    border: solid 3px #2779aa;
+    position: absolute;
+    font-size: 12px;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+}
+
+.appointmentHoverLabel {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+}
+
+.appointmentHoverItem {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    float: right;
+    word-wrap: break-word;
+}
+
+.appointmentHoverTime {
+    color: #49b293;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+.appointmentHoverAnnotations {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+/***********************************************HTML table css****************************************************************/
+.CSSTableGenerator {
+    margin: 15px 0px 0px 0px;
+    border: 1px solid #8c8c8c;
+    width: 100%;
+    overflow: auto;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -moz-border-radius-topright: 0px;
+    -webkit-border-top-right-radius: 0px;
+    border-top-right-radius: 0px;
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-top-left-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.CSSTableGenerator table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.CSSTableGenerator.hoverable table tr:hover,
+.CSSTableGenerator.datagridNew.hoverable thead tr:first-child:hover, .CSSTableGenerator.datagridNew.hoverable tbody tr:first-child:hover,
+table.hoverable tr:nth-child(n+2):hover{
+    color: #1c3e6c;
+    background: #c1d6f0;
+}
+
+.CSSTableGenerator table tr.selectedRow, .CSSTableGenerator.datagridNew table tr.selectedRow {
+    color: #4384d3;
+    background-color: #fffacd;
+    border: 1px solid #4384d3;
+}
+
+.CSSTableGenerator.hoverable table tr.selectedRow:hover {
+    background:#c1d6f0;
+}
+
+.CSSTableGenerator.datagridNew {
+    margin:0;
+    border-top: none;
+}
+
+/**  the "table" that is used as the header row; color it differently ; and the first line of a table that *only* has the CSSTableGenerator class */
+/* TODO: rewrite the HTML and CSS to do without [class="CSSTableGenerator"]. It makes CSS *NOT* behave like CSS.
+   Then when that's done we no longer have to by specific about applying this styling ALSO to
+   .CSSTableGenerator.apptStudySubjectHeaderData table tr:first-child and
+   .CSSTableGenerator.apptStudySubjectHeaderData table tr:first-child
+ */
+.CSSTableGenerator.headerTable table thead tr, .CSSTableGenerator.headerTable,
+[class="CSSTableGenerator"] table thead tr:first-child,[class="CSSTableGenerator"] table tbody tr:first-child,
+.CSSTableGenerator.billingResourcesReport table tr:first-child,
+.CSSTableGenerator.apptStudySubjectHeaderData table tr:first-child {
+    background: #5981a6;
+    color:#ffffff;
+}
+
+#searchResourcesHeaderData {
+    margin:0;
+}
+
+/* turn off column lines */
+.datagridNew.hoverable tr:first-child td, .CSSTableGenerator.hoverable td, .CSSTableGenerator.hoverable th {
+    border-left:none;
+    border-right:none;
+}
+
+.CSSTableGenerator tr:last-child td:last-child {
+    -moz-border-radius-bottomright: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.CSSTableGenerator table tr:first-child td:first-child {
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-top-left-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.CSSTableGenerator table tr:first-child td:last-child {
+    -moz-border-radius-topright: 0px;
+    -webkit-border-top-right-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.CSSTableGenerator tr:last-child td:first-child {
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.CSSTableGenerator td:first-child, .CSSTableGenerator th:first-child {
+    /** prevents double border on the left */
+    border-left:none;
+}
+
+.CSSTableGenerator tr {
+    font-weight: normal;
+    color: #000000;
+}
+
+.CSSTableGenerator td, .CSSTableGenerator th {
+    vertical-align: middle;
+    text-align: left;
+    padding: 7px;
+    border-left: 1px solid #8c8c8c;
+    border-right: 1px solid #8c8c8c;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.CSSTableGenerator td.sortable {
+    height: 20px;
+    background: url("images/sort_both.png") no-repeat center right;
+    padding-right: 20px;
+}
+
+.CSSTableGenerator td.sorting_asc {
+    cursor: pointer;
+    background: url('images/sort_asc.png') no-repeat center right;
+    padding-right: 20px;
+}
+
+.CSSTableGenerator td.sorting_desc {
+    cursor: pointer;
+    background: url('images/sort_desc.png') no-repeat center right;
+    padding-right: 20px;
+}
+
+.CSSTableGenerator tr:last-child td {
+    border-width: 0px 1px 0px 0px;
+}
+
+.CSSTableGenerator tr td:last-child {
+    border-width: 0px 0px 1px 0px;
+}
+
+.CSSTableGenerator tr:last-child td:last-child {
+    border-width: 0px 0px 0px 0px;
+}
+
+.CSSTableGenerator tr:first-child td:first-child {
+    border-width: 0px 0px 1px 0px;
+}
+
+.CSSTableGenerator tr:first-child td:last-child {
+    border-width: 0px 0px 1px 1px;
+}
+
+.CSSTableGenerator thead tr:nth-child(odd),.CSSTableGenerator tbody tr:nth-child(odd),
+.datagridNew  thead tr:nth-child(even),.datagridNew tbody tr:nth-child(even), .expandableTable-rowHighlight {
+    background-color:#F1F1F1;
+}
+
+.CSSTableGenerator thead tr:first-child, .CSSTableGenerator tbody tr:first-child {
+    font-weight: bold;
+    color: #0a507d;
+}
+
+/* the header row background */
+.CSSTableGenerator thead tr:first-child td, .CSSTableGenerator tbody tr:first-child td,
+.CSSTableGenerator thead tr:first-child th, .CSSTableGenerator tbody tr:first-child th {
+    text-align: left;
+    border-width: 0px 0px 1px 1px;
+    font-size: 14px;
+}
+
+/** css for booked resource and overbook tables ***/
+.datagrid table tbody td {
+    color: #00496B;
+    border-left: 1px solid #E1EEF4;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.datagrid table tbody .alt td {
+    background: #E1EEF4;
+    color: #00496B;
+}
+
+.datagrid table tbody td:first-child {
+    border-left: none;
+}
+
+.datagrid table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.datagrid table tfoot td div {
+    border-top: 1px solid #006699;
+    background: #E1EEF4;
+    padding: 2px;
+}
+
+.datagrid table tfoot td {
+    padding: 0;
+    font-size: 12px
+}
+
+.datagrid table tfoot td ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: right;
+}
+
+.datagrid table tfoot  li {
+    display: inline;
+}
+
+.datagrid table tfoot li a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 1px;
+    color: #FFFFFF;
+    border: 1px solid #006699;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #006699;
+}
+
+.datagrid table tfoot ul.active,.datagrid table tfoot ul a:hover {
+    text-decoration: none;
+    border-color: #006699;
+    color: #FFFFFF;
+    background: none;
+    background-color: #00557F;
+}
+
+.tableHeaderAbove {
+    font: normal 12px/150% Arial, Helvetica, sans-serif;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* datagridNew added to override some of the styling in CSSTableGenerator*/
+.datagridNew td, .datagridNew th {
+    font-size: 13px;
+}
+
+.datagridNew thead tr:first-child, .datagridNew tbody tr:first-child {
+    font-weight: normal;
+    color: #000000;
+    background: none;
+}
+
+.datagridNew thead tr:first-child td, .datagridNew tbody tr:first-child td {
+    vertical-align: middle;
+    text-align: left;
+    padding: 7px;
+    border-left: 1px solid #8c8c8c;
+    border-right: 1px solid #8c8c8c;
+    font-size: 13px;
+    word-wrap: break-word;
+}
+
+.datagridNew  thead tr:nth-child(odd), .datagridNew tbody tr:nth-child(odd) {
+    background: none;
+}
+
+.sortable {
+    cursor: pointer;
+    height: 20px;
+    background: url('images/sort_both.png') no-repeat center right;
+}
+
+.sortable:hover {
+    color: black;
+}
+
+.sorting_asc {
+    cursor: pointer;
+    background: url('images/sort_asc.png') no-repeat center right;
+    padding-right: 20px;
+}
+
+.sorting_desc {
+    cursor: pointer;
+    background: url('images/sort_desc.png') no-repeat center right;
+    padding-right: 20px;
+}
+
+div.dhtmlx_window_active,div.dhx_modal_cover_dv {
+    position: fixed !important;
+}
+
+.apptDateRangeContainer {
+    display: inline-block;
+    padding: 3px 3px 3px 0;
+    width: 380px;
+    font-size: 14px;
+    background: #ecf0f1;
+}
+
+.apptDateRangeContainer input {
+    width: 90px;
+    padding-left: 3px;
+    font-size: 14px;
+    font-weight: normal;
+    border: 0 none;
+    background: none repeat scroll 0 0 transparent;
+    vertical-align: text-bottom;
+}
+
+.apptDateRangeContainer img {
+    vertical-align: top;
+    margin: 0 0 0 3px;
+}
+
+.apptDateContainer {
+    display: inline-block;
+    background: #ecf0f1;
+    font-size: 12px;
+}
+
+.apptDateContainer input {
+    width: 80px;
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.apptDateContainer img {
+    vertical-align: middle;
+    margin: 0 0 0 3px;
+}
+
+
+/*********************************************************************************************************************/
+
+.formTable_new {
+    border: 0px;
+    cellspacing: 0px;
+    cellpadding: 0px;
+    width: 100%;
+}
+
+.formTable_new td {
+    height: 35px;
+    vertical-align: middle;
+}
+
+.formTable_new .formTextInput, .formTable_new .alphanumericOnly, .formTable_new .numbersOnly
+{
+    min-height: 25px;
+    min-width: 200px;
+    font-size: 12px;
+}
+
+.formTable_new .hasDatepicker
+{
+    min-height: 25px;
+    min-width: 175px;
+}
+
+.formTextAreaSmaller_new {
+    width: 781px;
+    height: 50px;
+    padding: 2px;
+    border: 2px solid #AAAAAA;
+    font-size: 12px;
+}
+
+.formLabel_new {
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.indent11px {
+    padding-left:11px;
+}
+
+.dateContainer input {
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.dateContainer img {
+    vertical-align: middle;
+    margin: 0 0 0 3px;
+}
+
+.apptfilterContainer {
+    clear: both;
+    padding: 20px 0 0 0;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none solid rgb(0,0,0);
+}
+
+.formValidationRequired {
+    color: #bb0000;
+    background: url("images/error_image.png") no-repeat scroll 2px 2px ;
+    border: 1px solid #bb0000;
+    font-size: 90%;
+    padding: 8px;
+    display: none;
+    clear: both;
+    max-width: 360px;
+}
+
+.ganttChartThemed table thead th {
+    background-color: #818181;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.ganttChartUnthemed table thead th {
+    background-color: #909090;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+select {
+    background: transparent;
+    height: 26px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif ;
+    font-weight: 300;
+}
+
+input[readonly] {
+    cursor: pointer;
+}
+
+
+.tableControls {
+    margin-bottom:10px;
+    color: #333333;
+}
+
+.tableControls .goButton {
+
+    margin: 0 0 0 5px !important;
+    border-radius:6px;
+    padding: 3px 6px 3px 6px;
+    min-width: auto;
+    height: auto;
+}
+
+.tableControls #pagination input.input_page {
+    width: 25px;
+    font-size: medium;
+}
+
+/* the images are the navigation buttons/arrows  */
+.tableControls img:hover, #visitDetailTab3 .paginateDays img:hover {
+    background:lightgray;
+}
+
+.tableControls img {
+    height:16px
+}
+
+div#visitDetailTab2 .newItemButton {
+    margin-bottom:8px;
+}
+
+div#visitDetailTab2 .primaryTableHeader {
+    width:1130px;
+}
+
+#visitDetailTab1 #visit_form #inpatient_relative_time {
+    margin-bottom:8px;
+}
+
+#visitDetailTab3 .formButton {
+    padding:3px 6px 3px 6px;
+}
+
+/** color scheme */
+
+.header, .footer_message {
+    background-color: #0a507d;
+}
+
+.primaryTableHeader, .ui-dialog-titlebar {
+    background-color: inherit;
+    color: #5981a6;
+    font-weight:600;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5em;
+    margin: 10px 0 5px 0;
+    font-weight: normal;
+    text-align: left;
+}
+
+.fullBlock {
+    background: inherit;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+/** new header and footer styles */
+
+/*footer institution css*/
+.footer {
+    color: #222222;
+    font-size: 80%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.footer a {
+    color: #676767;
+}
+
+.footer_message {
+    color: #ffffff;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 80%;
+    letter-spacing: 0.07em;
+    line-height: 1.5em;
+}
+
+.footerMenu {
+    padding: 10px;
+    background: #e9eaef;
+}
+
+#version_data {
+    float: right;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+
+.footerLogoWrapper {
+    padding: 0 0px 0 15px;
+}
+
+.footerLogo {
+    display: inline-block;
+    width: 350px;
+    height: 90px;
+    border-radius: 10px 0px 0px 0px;
+    -moz-border-radius: 10px 0px 0px 0px;
+    -webkit-border-radius: 10px 0px 0px 0px;
+}
+
+.footerAt {
+    display: inline-block;
+    padding: 40px 0 0 0;
+    font-weight: bold;
+}
+
+.footerInstitutionName {
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.headerNav {
+    text-align: right;
+    font-size: 14px;
+    padding: 60px 6px 20px 10px;
+}
+
+.headerNav a {
+    color: #666666;
+    margin: 5px 8px 7px 2px;
+    display: inline-block;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.headerNav a.active {
+    color: #5981a6;
+    border-bottom: 3px solid #b9870c;
+    padding-bottom: 2px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.headerLogoWrapper {
+    float: left;
+    padding: 0 15px;
+}
+
+.headerLogoWrapper img {
+    cursor: default;
+}
+
+.passwordLink a {
+    padding:0px 2px;
+    margin:0px;
+    color: -webkit-link;
+    text-decoration: underline;
+    font-family: 'Roboto',sans-serif;
+    text-transform: none;
+}
+
+.registrationLink a {
+    padding:0px 2px;
+    margin:0px;
+    color: -webkit-link;
+    text-decoration: underline;
+    font-family: 'Roboto',sans-serif;
+    text-transform: none;
+}
+
+.logoutLink {
+}
+
+
+.header {
+    min-height: 15px;
+    text-align: right;
+    width: 1190px;
+    float: right;
+    padding: 7px 10px 7px 0 ;
+    color: #ffffff;
+    border-bottom: 5px solid #d8e1e8;
+}
+
+.header a {
+    color: #ffffff;
+    padding-right: 5px;
+}
+
+/** appts.css : common appointment styles */
+#doubleRoom-dialog-confirm {
+    display:none;
+}
+
+#double-booked-subject-dialog-confirm {
+    display:none;
+}
+
+#switch-subject-dialog-confirm {
+    display:none;
+}
+
+/* Calendar event for a hold appointment */
+.Hold {
+    background-color: #e8bd42 !important;
+    border-color: #e8bd42 !important;
+}
+
+.holdDiv {
+    background-color: #c1d6f0;
+    padding-top: 0.5rem;
+    padding-bottom: .5rem;
+    border: 1px solid #CCCCCC;
+    margin-bottom: .5rem;
+}
+
+.holdDiv input[type="checkbox"]{
+    margin-left: 1rem;
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+}
+
+/** for ie11 and up;  add an extra pixel to the bottom of the checkbox  */
+_:-ms-fullscreen, :root .holdDiv input[type="checkbox"]{bottom:2px; }
+
+#appt_wizard_screen {
+    height: 450px;
+    min-width: 600px;
+    display: none;
+    overflow: hidden;
+}
+
+/*includes background table header color*/
+#appt_wizard_checkedout_visit_details #checkedOutResourcesHeaderData,
+#appt_wizard_scheduled_visit_details #scheduledResourcesHeaderData,
+#appt_overbook_check_dialog #overbookResourcesHeaderData,
+#resourceAnnotationsHeaderData,
+#appt_wizard_checkedin_visit_details #cancelledResourcesHeaderData,
+#appt_wizard_checkedin_visit_details #checkedInResourcesHeaderData,
+#appt_wizard_searchedDetails  #searchResourcesHeaderData {
+    overflow-y:scroll;
+    background: #5981a6;
+}
+
+#appt_wizard_checkedout_visit_details #checkedOutResourcesData,
+#appt_wizard_scheduled_visit_details #scheduledResourcesData,
+#appt_overbook_check_dialog #overbookedResourcesData,
+#resourceAnnotationsData,
+#appt_wizard_checkedin_visit_details #cancelledResourcesData,
+#appt_wizard_checkedin_visit_details #checkedInResourcesData,
+#appt_wizard_searchedDetails #searchResourcesData {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+#appt_wizard_scheduled_visit_details .leftComment {
+    height: 100px;
+}
+
+.apptStudySubjectHeaderData {
+    margin-top: .75rem;
+}
+
+/** for the wizard buttons under the table for
+ picking a new study subject (for switch subject) */
+div#switchSubject_div div.wizardButtons {
+    float: right;
+    margin-top: 5px;
+}
+
+a#switchSubject_button {
+    color: royalblue !important;
+}
+
+#switchSubject_StudySubjectData, #apptStudySubjectHeaderData_editAppt {
+    width:896px;
+}
+
+#switchSubject_StudySubjectData {
+    max-height: 350px;
+    overflow-y: scroll;
+    margin-bottom: 15px;
+}
+
+#switchSubject_StudySubjectData table#apptStudySubjectTable {
+    width:886px;
+}
+
+/** experimental separate colors for subtabs for the visit templates subtab area under studies */
+
+#studyVisitsTab2 li.ui-state-default:first-child {
+	background-color:#d6e3f5;
+}
+
+#studyVisitsTab2 li.ui-state-default.ui-state-active:first-child {
+	background-color:#2f67b6;
+}
+
+#studyVisitsTab2 li.ui-state-default:nth-child(2){
+	background-color:#aec7ea;
+}
+
+#studyVisitsTab2 li.ui-state-default.ui-state-active:nth-child(2){
+	background-color:#5d8fd5;
+}
+
+#sublocationListBottom, #apptSublocationListBottom {
+    position: relative;
+    padding-bottom: 3em;
+    border: none;
+    width: 100%;
+}
+
+#sublocationListBottom .ui-tabs-nav, #apptSublocationListBottom .ui-tabs-nav {
+    position: absolute;
+    left: 0.25em;
+    right: 0.25em;
+    bottom: 0.25em;
+    padding: 0em 0.2em 0.2em;
+    border-top: 1px solid #ccc !important;
+    border-bottom: none;
+}
+
+#sublocationListBottom .ui-tabs-nav li, #apptSublocationListBottom .ui-tabs-nav li{
+    top: -1px !important;
+    border-top: none;
+    border-bottom: 1px solid #ccc !important;
+    -moz-border-radius: 0px 0px 4px 4px;
+    -webkit-border-radius: 0px 0px 4px 4px;
+    border-radius: 0px 0px 4px 4px;
+}
+
+#sublocationListBottom .ui-tabs-nav li.ui-tabs-active, #apptSublocationListBottom .ui-tabs-nav li.ui-tabs-active
+{
+    top: -2px !important;
+}
+
+#sublocationListTop, #apptSublocationListTop
+{
+    border: none;
+    width: 100%;
+}
+
+#reports tr{
+    cursor: pointer;
+}
+
+img, button, input[type="button"] {
+    cursor: pointer;
+}
+
+.saveButtons {
+    border: 0;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    background: #a9a9a9 none repeat scroll 0 0;
+}
+
+.activeButton {
+    background: #b8a56b none repeat scroll 0 0;
+}
+
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+}
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+    height: 100px;
+}
+
+.combo {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border-color: #CCCCCC !important;
+}
+
+.combo-arrow {
+    background-color: #ffffff !important;
+}
+
+.combobox-gitem {
+    padding-left: 0 !important;
+}
+
+.comboboxListItem {
+    margin-left: 8px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+    color: #333333;
+}
+
+.comboboxListItem:hover
+{
+    color: #4bb193;
+}
+
+.comboboxListItem li {
+    margin-left: 12px;
+    padding-left: 0;
+}
+
+.comboboxListItem span {
+    margin-left: -4px;
+}
+
+.comboboxListItemDisabled {
+    font-style: italic;
+    color: #748ea3;
+    list-style-type: none;
+}
+
+.mrnListGroup
+{
+    color: #333333;
+}
+
+.combo-panel {
+    height: auto !important;
+    max-height: 150px !important;
+    width: auto !important;
+}
+
+.combobox-group {
+    font-weight: bold !important;
+    border-bottom: 1px solid #cccccc;
+    font-size: 13px !important;
+}
+
+.combobox-item {
+    border-bottom: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    color: #748ea3;
+}
+
+.combobox-item-selected
+{
+    background: #fffacd;
+}
+
+.combobox-item:hover
+{
+    color: #4bb193;
+    background-color: #f5f6f6;
+}
+
+.combobox-item-disabled:hover
+{
+    background-color: initial;
+}
+
+.comboboxListItemDisabled:hover
+{
+    color: #748ea3 !important;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.loginBody {
+    max-height: 260px;
+    min-height: 260px;
+    line-height: 27px;
+}
+
+.loginWrapperSize
+{
+    min-height: 470px;
+}
+
+#registrationBody
+{
+    margin-top: 40px;
+    min-height: 620px;
+}
+
+#registrationWrapper
+{
+    min-height: initial;
+}
+
+#appt_screen {
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+#CalendarTabs {
+    border: none;
+}
+
+#calendarTab {
+    padding-left: 10px;
+}
+
+.firstComboItem {
+    min-height: 14px;
+}
+
+.dollarSign {
+    margin-left: -7px;
+}
+
+
+.switchbutton {
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+
+.switchbutton-handle {
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+
+.switchbutton-on {
+    color: #ffffff;
+    background-color: #B8A56B;
+}
+
+.switchbutton-off {
+    color: #7DB0D1;
+    background-color: #ffffff;
+}
+
+.clear {
+    clear: both;
+}
+
+.three-columns {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+
+.simpleFilterContainer {
+    margin-bottom:23px;
+    display: inline-block;
+}
+
+.simpleFilterContainer input {
+    display: inline-block;
+    height:100%;
+    vertical-align: middle;
+    margin:0;
+}
+
+.simpleFilterContainer input[type="button"] {
+    border:none;
+    margin-left:-4px !important;
+    min-width: 70px;
+    border-radius: 0;
+    vertical-align: middle;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+.rightAligned {
+    float: right;
+}
+
+#dialog-message-header, #dialog-message {
+    text-align: center;
+}
+
+.messageDialog .ui-dialog-titlebar-close
+{
+    display: none;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.ui-dialog-titlebar
+{
+    margin-top: 5px;
+    padding: 0 0 0 15px !important;
+}
+
+.confirmationDialog, .messageDialog
+{
+    border: 2px solid #748ea3 !important;
+    box-shadow: 2px 2px 2px #888888
+}
+
+.confirmationDialog .ui-dialog-titlebar, .messageDialog .ui-dialog-titlebar
+{
+    border: none !important;
+    padding: 0 !important;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.confirmationDialog .ui-dialog-buttonpane, .messageDialog .ui-dialog-buttonpane {
+    margin-top: 0 !important;
+    padding: 0 !important;
+}
+
+.confirmationDialog .ui-dialog-buttonpane .ui-dialog-buttonset, .messageDialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: none !important;
+    text-align: center
+}
+
+.confirmationDialog .ui-dialog-buttonpane button, .messageDialog .ui-dialog-buttonpane button {
+    display: inline-block;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.confirmationDialog .ui-dialog-content, .messageDialog .ui-dialog-content
+{
+    text-align: center;
+    padding-top: 0;
+}
+
+.errorDialog
+{
+    border: 2px solid red !important;
+    box-shadow: 2px 2px 2px #888888
+}
+
+.hasDatepicker
+{
+    letter-spacing: 1px;
+}
+
+#dialog-message-header
+{
+    margin-top: 0;
+}
+
+#viewCancelledCommentLink, #viewCheckedoutCommentLink {
+    margin-top:15px;
+}
+
+.bottom_border {
+    border-bottom: dotted;
+    color: #d3d3d3;
+    margin-top: 10px;
+}
+
+.shortFixedLinkColWidth
+{
+    width: 90px;
+}
+
+#report_results .CSSTableGenerator
+{
+    width: auto;
+}
+
+#report_report_screen .dateContainer input[type=text]
+{
+    width: 90px;
+}
+
+#report_report_screen input[type=text]
+{
+    height: 20px;
+    font-size: 14px;
+}
+
+.ms-parent {
+    position: absolute;
+}
+.ms-drop {
+    overflow: visible;
+}
+
+#rdda-div {
+    margin-top: 0px;
+    vertical-align: top;
+}
+#ralt-div {
+    margin-top: -13px;
+    vertical-align: top;
+}
+#rdda-div {
+    margin-top: -13px;
+}
+#tempAdjustmentRangeBtn {
+    float:none;
+    margin-left:50px;
+}
+
+#tempAdjustmentRangeDialog {
+    display: none;
+}
+
+.rightButtonContainer {
+    float:right;
+    margin-top:5px;
+}
+
+#mytable1 td.dateLabel {
+    vertical-align: middle;
+}
+
+#mytable1 td img {
+    padding-bottom: 6px;
+    padding-left: 6px;
+    vertical-align: bottom;
+}
+
+.font18px {
+    font-size: 18px;
+}
+
+.dottedBottomBorder{
+    border-bottom: dotted;
+    color: #d3d3d3;
+}
+
+.formDate {
+    height: 20px;
+    width: 100px;
+}
+
+.ui-spinner {
+    font-size: 12px;
+}
+
+.ui-spinner-input {
+    color: #000000;
+}
+
+.numberSpinner {
+    max-width: 30px;
+}
+
+#homeBookedVisit .actionCol
+{
+    width: 100px;
+}
+
+#homeBookedVisit .schedStartTime
+{
+    min-width: 160px;
+    width: 160px;
+}
+
+#homeBookedVisit .schedEndTime
+{
+    min-width: 160px;
+    width: 160px;
+}
+
+.boldReportField {
+    font-weight: bold;
+}
+
+input
+{
+    font-family: 'Roboto', sans-serif ;
+}
+
+#addStudyMemberData
+{
+    max-height: 600px;
+    overflow-y: auto;
+    display: none;
+}
+
+
+.comments
+{
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.commentTextArea
+{
+    resize: none;
+}
+
+.commentsCount
+{
+    margin-top: 4px;
+}
+
+.horizontallyRestricted
+{
+    max-width: 95%;
+}
+
+.wizardBody
+{
+    display: none;
+    overflow: hidden;
+}
+
+.wizardBody .formLabel {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.inline-block
+{
+    display: inline-block;
+}
+
+.counterDisplay
+{
+    border-radius: 30px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    text-align: center;
+    margin-top: -11px;
+    z-index: 100;
+    right: -5px;
+}
+
+#rescheduleTable
+{
+    width: 850px;
+}
+
+.counterDisplayWrapper
+{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+    display: none;
+}
+
+#appt_wizard_checkedin_visit_details .requiredIcon
+{
+    font-weight: bold;
+}
+
+#appointmentfilterString
+{
+    height: 21px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+#appointment_filterButton
+{
+    height: 29px;
+}
+
+#filterSelected
+{
+    border-radius: 0;
+    height: 30px;
+    vertical-align: middle;
+}
+
+
+table.tightForm
+{
+    border-spacing: 0;
+}
+
+table.tightForm td
+{
+    padding: 10px 10px 0 0;
+}
+
+div.tightForm
+{
+    padding: 10px 0;
+}
+
+#wizard_checkoutReasons
+{
+    width: 300px;
+}
+
+#appt_wizard_scheduled_visit_details .comments,
+    #appt_wizard_checkedin_visit_details .comments{
+    min-width: 350px;
+}
+
+.expandableTable td {
+    border: none;
+}
+
+.CSSTableGenerator tr.expandableTable-noRowHighlight {
+    background-color: transparent;
+}
+
+tr.tableGroupHeaderRow {
+    font-weight: bold;
+}
+
+tr.tableGroupHeaderRow td {
+    border-bottom: 2px solid #8c8c8c;
+}
+
+.filterSelectedResourcesDiv {
+    padding-bottom: 10px;
+}
+
+span#filterSelectedResourcesLabel {
+    padding-right:30px !important;
+}
+
+.CSSTableGenerator .textbox-text {
+    font-weight: normal;
+    font-size: 0.65em !important;
+}
+
+.commentFieldText {
+    font-style: italic;
+    opacity: 0.5;
+}
+
+.commentFieldEdit {
+    border: initial;
+    background: initial;
+    width: 400px;
+}
+
+.CSSTableGenerator .hasDatepicker {
+    letter-spacing: normal;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    opacity: 1 !important;
+    letter-spacing: normal !important;
+    color: #aaaaaa !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+    opacity: 1 !important;
+    letter-spacing: normal !important;
+    color: #aaaaaa !important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    letter-spacing: normal !important;
+    color: #aaaaaa !important;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    letter-spacing: normal !important;
+    color: #aaaaaa !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.CSSTableGenerator td.centeredContent {
+    text-align:center !important;
+}
+
+.centerVertical {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+#phiWarning {
+    font-weight: bold;
+    display: table-cell;
+    padding-right: 270px;
+}
+
+.resourceAvailabilityColumnData {
+    padding-left: 30px !important;
+}
+
+/* tweak needed to make jquery's UI dialog work with the multiple-select plugin,
+   which uses a z-index of 1000, the same value as the dialog widget uses */
+
+/* (8/2019: this one disabled mouse on appt popups from calendar) .ui-front { z-index: 1001 !important; }*/
+.ui-dialog { z-index: 1001 !important ;}
+
+.combobox-item:empty{
+    min-height: 14px;
+}
+
+#sublocation_validation {
+    max-width: 350px !important;
+}
+
+#apptSearchHeading {
+    cursor: pointer;
+}
+
+@media only screen and (min-width:2560px) {
+    #back-to-top {
+        left: 71%;
+    }
+}
+
+@media only screen and (min-width: 1920px) and (max-width: 2559px) {
+    #back-to-top {
+        left: 77%;
+    }
+}
+
+@media only screen and (min-width: 1680px) and (max-width: 1919px) {
+    #back-to-top {
+        left: 81%;
+    }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1679px) {
+    #back-to-top {
+        left: 86%;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1439px) {
+    #back-to-top {
+        left: 90%;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1199px) {
+    #back-to-top {
+        left: 87%;
+    }
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 10vh;
+    z-index: 9999;
+    text-align: center;
+    color: #444;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+}
+
+#back-to-top.show {
+    opacity: 1;
+}
+
+#back-to-top-text {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.studyNameAndIdContainer {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.fc-day-grid-event {
+    color: white !important;
+}
+
+.fc-time-grid-event {
+    color: white !important;
+}
+
+.ui-widget-overlay {
+    opacity: .5;
+}
+
+.resourceDetailHeader {
+    background: #DBE0E6;
+    color: black;
+}

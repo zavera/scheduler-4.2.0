@@ -1,0 +1,111 @@
+<!--
+
+    Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+    3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+    EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<!-- Declare a JsRender template, in a script block: -->
+<script id="apptDetails_base" type="text/x-jsrender">
+       <tr>
+         <td width="25%" align="left" valign="top"><strong>Study: </strong></td>
+         <td align="left" valign="top" colspan="2"> {{:studyName}}</td>
+       </tr>
+       <tr>
+         <td align="left" valign="top"><strong>Local ID: </strong></td>
+         <td align="left" valign="top">{{:localId}}</td>
+       </tr>
+       <tr>
+         <td align="left" valign="top"><strong>PI Last Name: </strong></td>
+         <td align="left" valign="top">{{:piName}}</td>
+       </tr>
+       <tr>
+         <td align="left" valign="top"><strong>Visit Name: </strong></td>
+         <td align="left" valign="top">{{:visitName}}</td>
+       </tr>
+       <tr>
+         <td align="left" valign="top"><strong>Subject Name: </strong></td>
+         <td align="left" valign="top"><span class="dialog_subject_name_detail">{{:subjectName}}</span></td>
+         {{if showSwitchSubjectLink }}
+         <td align="left" valign="top"><span style="font-weight: bold; text-decoration: underline"><a
+             id="switchSubject_button"
+             onclick="javascript:switchSubjectWizard();"
+             class="newOverrideItemButton">{{:switchSubjectButtonText}}</a>
+           </span>
+         </td>
+         {{/if}}
+       </tr>
+       <tr>
+         <td align="left" valign="top"><strong>MRN: </strong></td>
+         <td align="left" valign="top"><span class="dialog_subject_mrn_detail">{{:subjectMrn}}</span></td>
+       </tr>
+    {{if showApptAndUserDetailByThemselves}}
+       <!-- only shown for a scheduled appt -->
+       <tr>
+       <td align="left" valign="top"><strong>{{:actionName}}</td>
+         <td align="left" valign="top" colspan="2">{{:apptDetail}}   {{:userDataDetail}}
+         </td>
+       </tr>
+    {{/if}}
+
+
+</script>
+
+<script id="apptDetails_extraRow" type="text/x-jsrender">
+  {{if changingInfoTitle != undefined}}
+    <tr>
+          <td align="left" valign="top"><strong>{{:changingInfoTitle}}: </strong></td>
+          <td align="left" valign="top">{{:changingInfo}}</td>
+    </tr>
+  {{/if}}
+    <tr>
+         <td align="left" valign="top"><strong>{{:actionName}}</td>
+         <td align="left" valign="top" colspan="2">{{:apptDetail}}   {{:userDataDetail}}
+  </tr>
+
+
+</script>
+
+<script id="apptDetails_cancelRows" type="text/x-jsrender">
+  <tr>
+    <td align="right" valign="top"><strong>Cancelled: </strong></td>
+    <td align="right" valign="top">{{:cancelledDate}}</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top"><strong>Cancellation Reason: </strong></td>
+    <td align="right" valign="top">{{:cancellationReason}}</td>
+  </tr>
+
+
+</script>
+
+<script id="studyRow_template" type="text/x-jsrender">
+
+ <tr id='study_{{:id}}' onclick='getStudySelectedRowId({{:id}})'>
+   <td width='25%' class=selectClass{{:id}}> {{:localId}}</td>
+   <td width='75%' class=selectClass{{:id}}>{{:name}}</td>
+ </tr>
+
+</script>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+
+  <link href="/scheduler-resources/local-style.css" rel="stylesheet" type="text/css"/>
+  <link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
+
+  <link href="css/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-ui-misc/jquery-ui-delta.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/global.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/appt_batch.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/last-word.css" rel="stylesheet" type="text/css"/>
+
+
+
+  <script type="text/javascript" src="js/lib/json2.js"></script>
+  <script type="text/javascript" src="js/lib/jquery.min-3.4.0.js"></script>
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script> -->
+  <script type="text/javascript" src="js/lib/jquery-ui.min-1.12.1.js"></script>
+  <script type="text/javascript" src="js/lib/maskedInputPlugin.js"></script>
+  <script src="js/lib/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+
+  <script src="js/lib/date.format.js" type="text/javascript"></script>
+  <script src="js/lib/jquery.blockUI.js" type="text/javascript"></script>
+  <script src="js/util/util.js" type="text/javascript"></script>
+  <script src="js/util/dto.js" type="text/javascript"></script>
+  <script src="js/util/breadcrumbs.js" type="text/javascript"></script>
+
+  <script src="js/widget/dialogs.js" type="text/javascript"></script>
+  <script src="js/common/feedback_screen.js" type="text/javascript"></script>
+  <script src="js/util/global2.js" type="text/javascript"></script>
+  <script src="js/util/dates.js" type="text/javascript"></script>
+
+  <script src="js/Home/booked_resources_table.js" type="text/javascript"></script>
+
+  <!-- javascript / css files for calendar plugin -->
+  <script type="text/javascript" src="js/lib/jquery-ui-sliderAccess.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.js"></script>
+
+  <script src="js/util/dates.js" type="text/javascript"></script>
+
+  <script src="js/widget/widget_util.js" type="text/javascript"></script>
+  <script src="js/Home/appointment_screen.js" type="text/javascript"></script>
+  <script src="js/Home/appt_calendar.js" type="text/javascript"></script>
+  <script src="js/Home/home_util.js" type="text/javascript"></script>
+  <script src="js/util/dateRanges.js" type="text/javascript"></script>
+  <script src="js/widget/columns.js" type="text/javascript"></script>
+  <script src="js/widget/tables.js" type="text/javascript"></script>
+  <script src="js/widget/table_filter.js" type="text/javascript"></script>
+  <script src="js/widget/table_pagination.js" type="text/javascript"></script>
+  <script src="js/Studies/study_tables.js" type="text/javascript"></script>
+  <script src="js/Home/overbook_check_table.js" type="text/javascript"></script>
+  <script src="js/Home/appt_dialogs.js" type="text/javascript"></script>
+  <script src="js/Home/appt_search.js" type="text/javascript"></script>
+  <script src="js/Home/appt_calendar_page.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+
+      onloadAppointmentDetail();
+    });
+
+  </script>
+
+  <!--
+
+  Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+
+  2. Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+
+  3. The name of the author may not be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+  EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+  TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+</head>
+
+<body onMouseMove="app_handleMouseMove()">
+<div class="wrapperSize">
+
+  <!--     @HEADER     -->
+  <div id="fullHeader"></div>
+
+  <div class="breadcrumbs"></div>
+
+  <!--     @MAIN BODY     -->
+  <div class="mainBody">
+    <div id="appointment_form_screen" class="listContainer">
+      <div class="importantInfoBlock">
+        <div class="mainNameBlock">
+          <div class="mainName headerColor"><span id="bookedVisitStudy_name"></span></div>
+        </div>
+        <div class="statusWrapper">
+          <div id="apptStatusClass">
+            <div class="label">Status</div>
+            <div class="value"><span id="bookedVisitStatus"></span></div>
+          </div>
+          <div class="leftBlock">
+            <div class="label2">Appointment Duration</div>
+            <div class="value2"><span id="bookedVisitDuration"></span> mins</div>
+          </div>
+          <div class="rightBlock">
+            <div class="label2">Scheduled Start Time</div>
+            <span id="bookedVisitStartTime"></span>
+            <div class="label2">Scheduled End Time</div>
+            <span id="bookedVisitEndTime"></span>
+          </div>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="primaryTableHeader">Additional Details</div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td width="21%" align="left" valign="top"><strong>Local ID</strong></td>
+            <td width="29%" align="left" valign="top"><span id="bookedVisitStudyLocalID"></span></td>
+            <td width="21%" align="left" valign="top"><strong>Subject</strong></td>
+            <td width="29%" align="left" valign="top"><span id="bookedVisitSubjectFullName"></span></td>
+          </tr>
+          <tr>
+            <td align="left" valign="top"><strong>Catalyst ID</strong></td>
+            <td align="left" valign="top"><span id="bookedVisitStudyCatID"></span></td>
+            <td align="left" valign="top"><strong>Subject MRN</strong></td>
+            <td align="left" valign="top"><span id="bookedVisitSubjectMRN"></span></td>
+          </tr>
+          <tr>
+            <td align="left" valign="top"><strong> IRB Number</strong></td>
+            <td align="left" valign="top"><span id="bookedVisitStudyIRB"></span></td>
+            <td align="left" valign="top"><strong>Subject Sex</strong></td>
+            <td align="left" valign="top"><span id="bookedVisitSubjectSex">Female</span></td>
+          </tr>
+          <tr>
+            <td align="left" valign="top"><strong> Visit</strong></td>
+            <td align="left" valign="top"><span id="bookedVisitName"></span></td>
+            <td align="left" valign="top"><strong>Subject Date of Birth</strong></td>
+            <td align="left" valign="top"><span id="bookedVisitSubjectDob"></span></td>
+          </tr>
+          <tr>
+            <td align="left" valign="top"><strong>Study Visit Type</strong></td>
+            <td align="left" valign="top"><span id="bookedVisitType"></span></td>
+          </tr>
+        </table>
+        <div class="commentBlock">
+          <div class="secondaryTableHeader">Comments</div>
+          <table width="100%" border="0" cellspacing="0" cellpadding="5">
+            <tr>
+              <td align="left"><span id="bookedVisitComment"></span></td>
+            </tr>
+          </table>
+        </div>
+        <div style="clear: both;"></div>
+        <div style="clear: both;"></div>
+        <div class="primaryTableHeader">Resources</div>
+
+        <div id="batchResourcesTablePagination" class="tableControls"></div>
+        <div id="batchResourcesTableWrapper" class="CSSTableGenerator"></div>
+
+        <div style="clear: both;"></div>
+        <div class="formButtonBlock">
+          <input type="button" id="appointmentOverbookView"
+                 onclick="javascript:overbookCheckBatchViewClick();" value="Overbook Check"
+                 class="formButton"/>
+        </div>
+        <div id="renderOverbook">
+          <div class="mainName" align="center"></div>
+          <div class="primaryTableHeader">Appointment Overbook</div>
+          <div id="overbookResourcesTableWrapper" class="CSSTableGenerator"></div>
+        </div>
+
+        <div class="primaryTableHeader">Batch Entry</div>
+        <table class="checkinTable" id="checkinTable">
+          <tr>
+            <td class="label"><strong>Latest Check-In Entry</strong></td>
+            <td><span id="bookedVisitCheckInTime"></span></td>
+          </tr>
+          <tr class="altRow">
+            <td class="label"><strong>Latest Check-Out Entry</strong></td>
+            <td><span id="bookedVisitCheckOutReasonName"></span> <span id="bookedVisitCheckOutTime"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><strong>Latest Cancelled Entry</strong></td>
+            <td><span id="bookedVisitCancelReasonName"></span> <span id="bookedVisitCancelTime"></span></td>
+          </tr>
+        </table>
+
+        <div id="checkinRender" class="checkinTable altRow">
+          <table>
+            <tr>
+              <td class="label"><strong>Check In Details</strong>
+                <span style="display:inline-block"></span></td>
+              <td>
+                <div class="dateContainer">
+                  <input type="text" id="checkin_date"/>
+                </div>
+              </td>
+              <td>
+                <input type="text" id="checkin_time" onclick="javascript:setInitialTime(1);"
+                       style="display: inline-block"/>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="checkoutRender" class="checkinTable">
+          <table>
+            <tr>
+              <td class="label"><strong>Check Out Details</strong>
+                <span style="display:inline-block"></span></td>
+              <td><select id="checkoutReason" onchange="javascript:checkoutReasonChangeClick();"></select>
+              </td>
+              <td>
+                <div class="dateContainer">
+                  <input type="text" id="checkout_date"/>
+                </div>
+              <td>
+                  <input type="text" id="checkout_time" onclick="javascript:setInitialTime(2);"
+                         style="display: inline-block"/>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="cancelRender" class="checkinTable altRow">
+          <table>
+            <tr>
+              <td class="label"><strong>Cancel Details</strong>
+                <span style="display:inline-block"></span>
+              </td>
+              <td>
+                <select id="cancellationReasons" onchange="javascript:cancelReasonChangeClick();"></select>
+              </td>
+              <td>
+                <div class="dateContainer" id="cancel_date_wrapper">
+                  <input type="text" id="cancel_date"/>
+                </div>
+              </td>
+              <td><input type="text" id="cancel_time" onclick="javascript:setInitialTime(3);"/></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="holdRender">
+          For actions on Hold appointments please go to the Calendar View appointment pop up page.
+        </div>
+
+        <div class="formButtonBlock checkinTable">
+          <div id="renderSave">
+            <input type="button" value="Save" onclick="javascript:apptSubmitBatchListClick();"
+                   id="appointmentListSubmit" class="formButton"/>
+            <input type="button" id="appointmentListCancel" onclick="javascript:apptCancelBatchListClick();"
+                   value="Cancel" class="formButton"/>
+          </div>
+          <div id="renderCancel">
+            <input type="button" id="appointmentListCancel" onclick="javascript:apptCancelBatchListClick();"
+                   value="Cancel" class="formButton"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--     @MAIN BODY     -->
+  <!--     @FOOTER    -->
+  <div class="footer"></div>
+</div> <!-- end wrapperSize -->
+
+</body>
+</html>

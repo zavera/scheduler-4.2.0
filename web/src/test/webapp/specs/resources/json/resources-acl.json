@@ -1,0 +1,205 @@
+[
+  {
+    "id": 1,
+    "specs": [
+      {
+        "name": "addNewResource",
+        "value": true
+      },
+      {
+        "name": "sublocationClosure",
+        "value": true
+      },
+      {
+        "name": "editResource",
+        "value": true
+      },
+      {
+        "name": "addDefault",
+        "value": true
+      },
+      {
+        "name": "addAlternate",
+        "value": true
+      },
+      {
+        "name": "addTemporary",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "specs": [
+      {
+        "name": "addNewResource",
+        "value": true
+      },
+      {
+        "name": "sublocationClosure",
+        "value": true
+      },
+      {
+        "name": "editResource",
+        "value": true
+      },
+      {
+        "name": "addDefault",
+        "value": true
+      },
+      {
+        "name": "addAlternate",
+        "value": true
+      },
+      {
+        "name": "addTemporary",
+        "value": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "specs": [
+      {
+        "name": "addNewResource",
+        "value": false
+      },
+      {
+        "name": "sublocationClosure",
+        "value": true
+      },
+      {
+        "name": "editResource",
+        "value": false
+      },
+      {
+        "name": "addDefault",
+        "value": false
+      },
+      {
+        "name": "addAlternate",
+        "value": false
+      },
+      {
+        "name": "addTemporary",
+        "value": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "specs": [
+      {
+        "name": "addNewResource",
+        "value": false
+      },
+      {
+        "name": "sublocationClosure",
+        "value": false
+      },
+      {
+        "name": "editResource",
+        "value": false
+      },
+      {
+        "name": "addDefault",
+        "value": false
+      },
+      {
+        "name": "addAlternate",
+        "value": false
+      },
+      {
+        "name": "addTemporary",
+        "value": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "specs": [
+      {
+        "name": "addNewResource",
+        "value": false
+      },
+      {
+        "name": "sublocationClosure",
+        "value": false
+      },
+      {
+        "name": "editResource",
+        "value": false
+      },
+      {
+        "name": "addDefault",
+        "value": false
+      },
+      {
+        "name": "addAlternate",
+        "value": false
+      },
+      {
+        "name": "addTemporary",
+        "value": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "specs": [
+      {
+        "name": "addNewResource",
+        "value": false
+      },
+      {
+        "name": "sublocationClosure",
+        "value": false
+      },
+      {
+        "name": "editResource",
+        "value": false
+      },
+      {
+        "name": "addDefault",
+        "value": false
+      },
+      {
+        "name": "addAlternate",
+        "value": false
+      },
+      {
+        "name": "addTemporary",
+        "value": false
+      }
+    ]
+  },
+  {
+    "id": "something bogus",
+    "specs": [
+      {
+        "name": "addNewResource",
+        "value": false
+      },
+      {
+        "name": "sublocationClosure",
+        "value": false
+      },
+      {
+        "name": "editResource",
+        "value": false
+      },
+      {
+        "name": "addDefault",
+        "value": false
+      },
+      {
+        "name": "addAlternate",
+        "value": false
+      },
+      {
+        "name": "addTemporary",
+        "value": false
+      }
+    ]
+  }
+]

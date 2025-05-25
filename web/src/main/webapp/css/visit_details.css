@@ -1,0 +1,181 @@
+/**
+ * Copyright (c) 2015-2016, President and Fellows of Harvard College
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
+ *
+ * 3. The name of the author may not be used to endorse or promote products
+ * derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ * EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ * TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+.fc-toolbar {
+    display: none;
+}
+.fc table {
+    font-size: 0.9em !important;
+}
+.fc-timeline-event .fc-content {
+    padding: 0 !important;
+}
+.fc-toolbar.fc-header-toolbar {
+    display: none;
+}
+.appointmentHover:after {
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    margin-right: -25px;
+    content: ' ';
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid #2779aa;
+    cursor: pointer;
+
+    -webkit-transform: rotatex(360deg);
+    -moz-transform: rotatex(360deg);
+    -ms-transform: rotatex(360deg);
+    transform: rotatex(360deg);
+}
+.datagrid table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+    border-color: #CCCCCC;
+}
+
+.datagrid {
+    font: normal 12px/150% Arial, Helvetica, sans-serif;
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid #CCCCCC;
+}
+
+.datagrid table td,.datagrid table th {
+    padding: 3px 10px;
+}
+
+.datagrid table thead th {
+    background-color: #EAF4FD;
+    color: #0a507d;
+    font-size: 12px;
+    font-weight: 700;
+    border-left: 1px solid #CCCCCC;
+}
+
+.datagrid table thead th:first-child {
+    border: none;
+}
+
+.datagrid table tbody td {
+    border-left: 1px solid #CCCCCC;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.datagrid table tbody .alt td {
+    background: #CCCCCC;
+    color: #00496B;
+}
+
+.datagrid table tbody td:first-child {
+    border-left: none;
+}
+
+.datagrid table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.datagrid table tfoot td div {
+    border-top: 1px solid #006699;
+    background: #CCCCCC;
+}
+
+.datagrid table tfoot td {
+    padding: 0;
+    font-size: 12px
+}
+
+.datagrid table tfoot td div {
+    padding: 2px;
+}
+
+.datagrid table tfoot td ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: right;
+}
+
+.datagrid table tfoot  li {
+    display: inline;
+}
+
+.datagrid table tfoot li a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 1px;
+    color: #FFFFFF;
+    border: 1px solid #006699;
+    background-color: #006699;
+}
+
+.datagrid table tfoot ul.active,.datagrid table tfoot ul a:hover {
+    text-decoration: none;
+    border-color: #006699;
+    color: #FFFFFF;
+    background: none;
+    background-color: #00557F;
+}
+
+#select_all_template_resource {
+    width: 100px;
+}
+
+#select_template_resource_clear_all {
+    width: 100px;
+    margin-left: 15px;
+}
+
+#select_template_resource_save {
+    display: none;
+    width: 140px;
+}
+
+#select_template_resource_save_and_close {
+    display: none;
+    width: 140px;
+}
+
+#viewCommentLink {
+    display: inline-block;
+}
+
+#resourceAnnotationsTable .numberSpinner {
+    max-width: 27px;
+    font-size: 92%;
+}
+
+.commentField{
+    width: 100%;
+}

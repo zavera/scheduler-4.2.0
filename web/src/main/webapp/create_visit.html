@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+
+  <link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
+  <link href="/scheduler-resources/local-style.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/jquery-easyui-1.8.2/icon.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/combo.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/combobox.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/linkbutton.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/menu.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/panel.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/textbox.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/tooltip.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-easyui-1.8.2/validatebox.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <link href="css/jquery-ui-misc/jquery-ui-delta.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/global.css" rel="stylesheet" type="text/css"/>
+
+  <link href="css/last-word.css" rel="stylesheet" type="text/css"/>
+
+
+
+  <script type="text/javascript" src="js/lib/json2.js"></script>
+  <script type="text/javascript" src="js/lib/jquery.min-3.4.0.js"></script>
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script> -->
+  <script type="text/javascript" src="js/lib/jquery-ui.min-1.12.1.js"></script>
+  <script type="text/javascript" src="js/lib/maskedInputPlugin.js"></script>
+
+  <script src="js/lib/date.format.js" type="text/javascript"></script>
+  <script src="js/lib/jquery.blockUI.js" type="text/javascript"></script>
+  <script src="js/util/breadcrumbs.js" type="text/javascript"></script>
+
+  <script src="js/common/feedback_screen.js" type="text/javascript"></script>
+  <script src="js/util/global2.js" type="text/javascript"></script>
+  <script src="js/util/util.js" type="text/javascript"></script>
+  <script src="js/widget/widget_util.js" type="text/javascript"></script>
+
+  <!--https://www.jeasyui.com/documentation/index.php-->
+
+  <!--javascript files needed for EasyUI combobox -->
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.menu.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.linkbutton.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.tooltip.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.panel.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.parser.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.validatebox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.textbox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.combo.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-easyui-1.8.2/jquery.combobox.js" type="text/javascript"></script>
+  <script src="js/lib/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+
+  <!-- javascript / css files for calendar plugin -->
+  <script type="text/javascript" src="js/lib/jquery-ui-sliderAccess.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.js"></script>
+
+  <script src="js/util/dates.js" type="text/javascript"></script>
+  <script src="js/widget/dialogs.js" type="text/javascript"></script>
+
+  <script src="js/Studies/study_screen.js" type="text/javascript"></script>
+  <script src="js/Studies/study_module.js" type="text/javascript"></script>
+  <script src="js/Studies/study_form.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+
+      $("#fullHeader").load("header.html", function () {
+
+        $('.studieslink').addClass('active');
+        studyPage.initCreateVisitPage();
+
+      });
+
+    });
+
+  </script>
+  <!--
+
+      Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are met:
+
+      1. Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+      2. Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+
+      3. The name of the author may not be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+      WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+      MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+      EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+      SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+      TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+      PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+      LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+      SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  -->
+
+</head>
+
+<body onMouseMove="app_handleMouseMove()">
+<div class="wrapperSize">
+
+  <div id="fullHeader">
+  </div>
+
+  <div class="breadcrumbs"></div>
+
+  <!--     @MAIN BODY     -->
+  <div class="mainBody">
+    <div id="study_visit_form_screen" style="display: block;">
+      <div class="mainNameBlock">
+        <span id="study_visit_name"></span>
+
+        <div class="mainName"><span id="visit_name"></span>
+        </div>
+      </div>
+      <div class="mainNameTableBlock">
+        <div class="requiredFieldKey">
+          <div class="requiredIcon">*</div>
+          = Required Field
+        </div>
+        <div class="primaryTableHeader" id="study_visit_form_title"></div>
+      </div>
+      <div style="clear: both;"></div>
+      <form id="visit_form" name="visit_form" method="post" action="">
+        <div class="halfFormBlock">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="formLabel">Visit Name
+                <div class="requiredIcon">*</div>
+              </td>
+              <td>
+                <input type="text" id="study_visitName" class="formTextInput" maxlength="255"/>
+                <span id="study_visitNameReadOnly" class="formTextReadOnly"></span>
+                <span><br/><span id="study_visitNameValidation" class="formElementRequired"></span></span>
+              </td>
+            </tr>
+            <tr>
+              <td class="formLabel">Short Name</td>
+              <td>
+                <input type="text" id="study_shortVisitName" class="formTextInput"/>
+                <span id="study_shortVisitNameReadOnly" class="formTextReadOnly"></span>
+              </td>
+            </tr>
+            <tr>
+              <td class="formLabel">Sub-Location
+                <div class="requiredIcon">*</div>
+              </td>
+              <td>
+                <select id="study_visitSublocation" class="formSelectInput"></select>
+                <span id="study_visitSublocationReadOnly" class="formTextReadOnly"></span>
+                <span id="study_visitSublocationValidation" class="formElementRequired"></span>
+              </td>
+            </tr>
+            <tr>
+              <td class="formLabel">Visit Type
+                <div class="requiredIcon">*</div>
+              </td>
+              <td>
+                <select id="study_visitType" class="formSelectInput"></select>
+                <span id="study_visitTypeReadOnly" class="formTextReadOnly"></span>
+                <span id="study_visitTypeValidation" class="formElementRequired"></span>
+              </td>
+            </tr>
+            <tr>
+              <td class="formLabel">Comment</td>
+              <td>
+                <div id="study_visitComment"></div>
+                <span id="study_visitCommentReadOnly" class="formTextReadOnly"></span>
+              </td>
+            </tr>
+          </table>
+          <div id="inpatient_relative_time">
+            <tr>
+              <td class="formLabel">Relative Time?</td>
+              <td align="right">
+                <input type="checkbox" id="study_relativeTime" name="study_relativeTime"
+                       class="formCheckBox"/>
+                <input type="checkbox" id="study_relativeTimeReadOnly" disabled="disabled"
+                       class="formCheckBoxReadOnly"/>
+              </td>
+            </tr>
+          </div>
+        </div>
+        <div class="halfFormBlock">
+          <table width="105%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="formLabel" nowrap="nowrap">Billable Template (check if Yes) &nbsp;</td>
+              <td align="right">
+                <input type="checkbox" id="study_billableTemplate" name="study_researchPharmacy"
+                       class="formCheckBox"/>
+                <input type="checkbox" id="study_billableTemplateReadOnly" disabled="disabled"
+                       class="formCheckBoxReadOnly"/>
+              </td>
+            </tr>
+            <tr>
+              <td class="formLabel" nowrap="nowrap">Research Pharmacy (check if Yes) &nbsp;</td>
+              <td align="right">
+                <input type="checkbox" id="study_researchPharmacy" name="study_researchPharmacy"
+                       class="formCheckBox"/>
+                <input type="checkbox" id="study_researchPharmacyReadOnly" disabled="disabled"
+                       class="formCheckBoxReadOnly"/>
+              </td>
+            </tr>
+            <tr>
+              <td nowrap="nowrap">Part of this Visit occurs at:</td>
+              <td align="right">&nbsp;</td>
+            </tr>
+            <tr>
+              <td nowrap="nowrap">Institution: Non CRC</td>
+              <td align="right" nowrap="nowrap">
+                <input type="checkbox" id="study_institution_noncrc" name="study_institution_noncrc"
+                       class="formCheckBox"/>
+                <input type="checkbox" id="study_institution_noncrcReadOnly" disabled="disabled"
+                       class="formCheckBoxReadOnly"/>
+              </td>
+            </tr>
+            <tr>
+              <td nowrap="nowrap">Non Institution: Non CRC</td>
+              <td align="right" nowrap="nowrap">
+                <input type="checkbox" id="study_nonInstitution_nonCrc" class="formCheckBox"/>
+                <input type="checkbox" id="study_nonInstitution_nonCrcReadOnly" disabled="disabled"
+                       class="formCheckBoxReadOnly"/>
+              </td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td align="right">&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+        <div style="clear:both"></div>
+        <div class="secondaryTableHeader">Levels Of Service</div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="5" class="tablePadding">
+          <tr>
+            <td class="formLabel">
+                <a href="javascript:nursingIntensityClick();">Nursing Intensity</a>
+            </td>
+            <td>
+              <input id="study_nursing" class="numbersOnly" type="text" value=""
+                     style="width: 30px;"/>
+              <span id="study_nursingReadOnly" class="formTextReadOnly"></span>
+            </td>
+            <td class="formLabel">
+                <a href="javascript:nutritionIntensityClick();">Nutrition Intensity</a>
+            </td>
+            <td>
+              <input id="study_nutrition" class="numbersOnly" type="text" value=""
+                     style="width: 30px;"/>
+              <span id="study_nutritionReadOnly" class="formTextReadOnly"></span>
+            </td>
+            <td class="formLabel">
+                <a href="javascript:processingIntensityClick();">Processing Intensity</a>
+            </td>
+            <td>
+              <input type="text" value="" class="numbersOnly" id="study_processing"
+                     style="width: 30px;"/>
+              <span id="study_processingReadOnly" class="formTextReadOnly"></span>
+            </td>
+            <td class="formLabel">
+                <a href="javascript:setupIntensityClick();">Set-Up Intensity</a>
+            </td>
+            <td>
+              <input type="text" value="" class="numbersOnly" id="study_setup" style="width: 30px;"/>
+              <span id="study_setupReadOnly" class="formTextReadOnly"></span>
+            </td>
+          </tr>
+        </table>
+        <br/>
+
+        <div style="clear:both"></div>
+        <table>
+          <tr id="study_visit_form_buttons">
+            <td colspan="6">
+              <input type="button" id="study_visit_cancelButton"
+                     onclick="javascript:cancelVisitClick();" name="button" value="Cancel"
+                     class="formButton"/>
+              <input type="button" id="study_visit_restoreButton"
+                     onclick="javascript:restoreVisitClick();" value="Restore" class="formButton"/>
+              <input type="button" id="study_visit_submitButton"
+                     onclick="javascript:crudVisitClick();" name="button" value="Save"
+                     class="formButton"/>
+              <img id="study_responseLoading" src="css/images/components/ajax_loader_indicator.gif"
+                   alt="loading" class="subject_fieldCheckRunning"/>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <div class="wizardBody" id="nursingLevelOfService_dialog" style="display: none; overflow: hidden;"
+         title="Nursing Level Of Service">
+      <div id="nursing_data" class="CSSTableGenerator"></div>
+    </div>
+
+    <div class="wizardBody" id="nutritionLevelOfService_dialog" style="display: none; overflow: hidden;"
+         title="Nutrition Level Of Service">
+      <div id="nutrition_data" class="CSSTableGenerator"></div>
+    </div>
+
+    <div class="wizardBody" id="processingLevelOfService_dialog" style="display: none; overflow: hidden;"
+         title="Processing Level Of Service">
+      <div id="processing_data" class="CSSTableGenerator"></div>
+    </div>
+
+    <div class="wizardBody" id="setupLevelOfService_dialog" style="display: none; overflow: hidden;"
+         title="Setup Level Of Service">
+      <div id="setup_data" class="CSSTableGenerator"></div>
+    </div>
+  </div>
+  <!--     @MAIN BODY     -->
+
+
+  <div class="footer"></div>
+</div>
+<!-- end wrapperSize -->
+
+
+<div id="main_dialog_wrapper">
+</div>
+
+</body>
+</html>

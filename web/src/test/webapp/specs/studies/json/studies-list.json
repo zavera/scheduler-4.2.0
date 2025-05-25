@@ -1,0 +1,41 @@
+[
+  {
+  "id":30,
+  "irbNumber":"IRB200",
+  "localId":"2119",
+  "name":"Auto Study",
+  "totalCount":200,
+  "studyStatus":"OPEN",
+  "investigator":
+    {
+      "firstName":"study",
+      "lastName":"staff10"
+    }
+  },
+  {
+    "id":140,
+    "irbNumber":"IRB50",
+    "localId":"4378",
+    "name":"Test Study 1",
+    "totalCount":200,
+    "studyStatus":"CLOSED",
+    "investigator":
+    {
+      "firstName":"fooFirst",
+      "lastName":"fooLast"
+    }
+  },
+  {
+    "id":180,
+    "irbNumber":"IRB400",
+    "localId":"5140",
+    "name":"Auto Study 2",
+    "totalCount":200,
+    "studyStatus":"PENDING",
+    "investigator":
+    {
+      "firstName":"firstName1",
+      "lastName":"lastName1"
+    }
+  }
+]

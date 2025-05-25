@@ -1,0 +1,95 @@
+<!--
+
+    Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+    3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+    EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<div class="headerLoginNav">
+  <div id="loginForm" class="authHeader">
+    <form id="loginParameters" action='login' method='POST'>
+      <input name="username" type="text" placeholder="Username" class="formSelectInputSmall"/>
+      <input name="password" type="password" placeholder="Password" class="formSelectInputSmall"/>
+      <input id="index_loginButton" class="formButton" onclick="javascript:resetParameters();" name="submit" type="submit"
+             value="Log In"/>
+      <img id="index_loginLoading" src="css/images/components/ajax_loader_indicator.gif" alt="loading"/>
+    </form>
+
+    <div class="registrationLink">
+      <a id="index_registrationLink" onclick="javascript:registrationLink();" href="#">Register</a>
+    </div>
+    <div class="passwordLink">
+      <span class="loginError"><!-- error --></span>
+      <a id="index_passwordResetLink" onclick="javascript:passwordResetLink();" href="#">Forgot My Password</a>
+    </div>
+    <div id="index_passwordResetDiv" style="display:none;visibility:hidden">
+      <input style="width:175px" id="index_email" placeholder="Email"/>
+      <input id="index_passwordResetButton" onclick="javascript:submitResetPasswordLink();" type="button"
+             value="Submit"/>
+      <img id="index_passwordResetLoading" src="css/images/components/ajax_loader_indicator.gif"
+           alt="loading"/>
+      <br/>
+    </div>
+    <div>
+            <span id="index_passwordResetMsg"
+                  style="color:blue;font-size:12px;margin-bottom:10px;margin-top:5px;display:none">Password reset instructions will be sent to your email</span>
+            <span id="index_passwordResetSuccess"
+                  style="color:green;font-size:12px;margin-bottom:10px;margin-top:5px;display:none">Password reset instructions sent</span>
+            <span id="index_passwordResetFailure"
+                  style="color:red;font-size:12px;margin-bottom:10px;margin-top:5px;display:none">user not found in system with submitted email</span>
+    </div>
+    <br/>
+        <span id="index_loginError"
+              style="color:red;font-size:12px;margin-bottom:5px;margin-top:0px;display:none"></span>
+  </div>
+</div>
+
+<span class="license_erase">
+   <!--Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+
+3. The name of the author may not be used to endorse or promote products
+derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. -->
+</span>

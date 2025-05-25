@@ -1,0 +1,7 @@
+{
+    "templateCategoryFieldIds": [
+        1, 2
+    ],
+    "startDate": null,
+    "endDate": null
+}

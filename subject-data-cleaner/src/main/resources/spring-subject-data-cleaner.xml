@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+    3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+    EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!--                                                                    -->
+<!-- WARNING: DO NOT POPULATE SENSITIVE PROPERTY VALUES (SUCH AS        -->
+<!-- PASSWORDS, ENCRYPTION KEYS, ETC.) IN THIS FILE.                    -->
+<!--                                                                    -->
+<!-- Instead, externalize these sensitive values in a properties file   -->
+<!-- located outside of your local git repository, or in a folder       -->
+<!-- listed in .gitignore. Then you can refer to these externalized     -->
+<!-- property values using the ${propert_name} syntax.                  -->
+<!--                                                                    -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+     xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.2.xsd
+       http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task.xsd
+       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd ">
+
+	<context:component-scan base-package="edu.harvard.catalyst.scheduler.persistence"/>
+	<context:component-scan base-package="edu.harvard.catalyst.scheduler.subjectDataCleaner"/>
+
+    <context:property-placeholder location="classpath:subject-data-cleaner.properties" />
+
+
+ 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${driver-name}"/>
+        <property name="jdbcUrl" value="${jdbc-url}"/>
+        <property name="user" value="${jdbc-user}"/>
+        <property name="password" value="${jdbc-password}" />
+    </bean>
+
+
+ 	<bean id="transactionManager"
+        class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory" />
+        </property>
+    </bean>
+
+
+    <!-- enable the configuration of transactional behavior based on annotations -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <bean id="sessionFactory"
+        class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource">
+            <ref bean="dataSource" />
+        </property>
+
+		<property name="packagesToScan">
+            <list>
+                <value>edu.harvard.catalyst.scheduler.entity</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">edu.harvard.catalyst.scheduler.util.SchedulerMySQL5Dialect</prop>
+                <prop key="hibernate.show_sql">false</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="keyFactoryForSubjectDataCleanUp" class="edu.harvard.catalyst.scheduler.util.KeyFactory">
+        <constructor-arg value="${keystoreLocation}" />
+        <constructor-arg value="${keystorePassword}" />
+        <constructor-arg value="${keyAlias}" />
+        <constructor-arg value="${keyPassword}" />
+    </bean>
+
+    <!-- the bean to be created via the factory bean -->
+    <bean id="encryptionKeyForSubjectDataCleanUp"
+          factory-bean="keyFactoryForSubjectDataCleanUp"
+          factory-method="createKey"/>
+
+    <task:annotation-driven executor="myExecutor" scheduler="myScheduler"/>
+	<task:executor id="myExecutor" pool-size="5"/>
+	<task:scheduler id="myScheduler" pool-size="10"/>
+
+    <!--<context:property-placeholder location="classpath:scheduler.properties"/>-->
+    <bean id="subjectSSOT_default" class="edu.harvard.catalyst.scheduler.service.StandaloneSubjectService"/>
+    <bean id="subjectSSOT_epic" class="edu.harvard.catalyst.scheduler.service.EpicSubjectService"/>
+    <alias name="subjectSSOT_${subjectMode}" alias="subjectSSOTConfigured" />
+
+</beans>
+

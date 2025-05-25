@@ -1,0 +1,223 @@
+/**
+ * Copyright (c) 2015-2016, President and Fellows of Harvard College
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
+ *
+ * 3. The name of the author may not be used to endorse or promote products
+ * derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ * EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ * TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+#tempApprovalTabContent {
+    padding-left: 10px;
+    margin-top: 12px;
+}
+
+.labels {
+    font-size: 16px;
+    font-weight: normal;
+    color: #000000;
+}
+
+.viewLabel {
+    font-size: 16px;
+    color: #000000;
+}
+
+#viewToggle {
+    padding: 20px 0 0 20px;
+}
+
+#apptSearchForm {
+    padding-top: 15px;
+    margin-left: 20px;
+}
+
+#apptSearchForm td {
+    vertical-align: middle;
+}
+
+#apptSearchHeading {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 0;
+}
+
+#apptSearchRange {
+    margin-top: 17px;
+    margin-left: 7px;
+}
+
+#apptSearchRangeTitle {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#apptSearchType {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.infoIcon {
+    width: 18px;
+    height: 18px;
+}
+
+#apptSearchIcons {
+    margin-top: 8px;
+    width: 100%;
+}
+
+.lineBorder {
+    border-bottom: 1px solid #bdbdbd;
+}
+
+#apptSearchActionsOuter {
+  margin-top: 8px;
+}
+
+.date img {
+    vertical-align: middle;
+    margin: 0 0 0 3px;
+}
+
+input:disabled {
+    background: #dddddd;
+}
+
+#apptSearchTemplateResources {
+    margin-top: 8px;
+}
+
+.apptSearchInfo {
+    color: #000000;
+    font-size: 13px;
+    vertical-align: middle;
+    outline: none;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-border-radius: 0 0 0 0;
+    -webkit-border-radius: 0 0 0 0;
+    border-radius: 0 0 0 0;
+}
+
+#apptSearchForm textarea {
+    resize: none;
+    border: 1px solid #cccccc;
+}
+
+#apptSearchForm input[type="text"], #apptSearchForm textarea {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#apptSearchForm input[type="text"] {
+    height: 18px;
+}
+
+#apptSearchOverbookRoomRow .textbox-prompt {
+    color: #000000;
+}
+
+#apptSearchOverbookStartTime {
+    margin-left: 10px;
+}
+
+#apptSearchResourceHeading {
+    margin-right: 0;
+}
+
+#searchApptResourceToggle {
+    padding-left: 14px;
+}
+
+.inlineError {
+    padding: 7px 7px 7px 35px;
+    font-size: 75%;
+}
+
+#overbookRoomSelectionMain {
+    margin-top: 7px;
+}
+
+#overbookRoomSelection {
+    color: red;
+}
+
+#apptSearch_overbookDateTimeValidation, #apptSearch_overbookReasoneValidation{
+    display: inline-block;
+}
+
+#apptSearchHeading{
+    cursor: pointer;
+}
+
+.lastMinuteEvent {
+    border: 3px dashed black !important;
+}
+
+.calendarKeyLastMinute {
+    border-style: dashed;
+    width: 15px;
+    height: 15px;
+}
+
+#schedulingRestrictionWarning {
+    font-size: 15px;
+}
+#schedulingRestrictionWarningContainer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#apptSearchExpandIcon {
+    width: 3%;
+    height: 25px;
+}
+
+#apptSearchResourceExpandIcon {
+     width: 2.5%;
+    height: 17px;
+ }
+
+#apptSearchHeading {
+    display: flex;
+}
+
+#apptSearchResourceHeading {
+    display: flex;
+}
+
+.redBorder {
+    border: 1px solid red;
+    -webkit-transition: border-color .5s ease;
+    -moz-transition: border-color .5s ease;
+    -ms-transition: border-color .5s ease;
+    -o-transition: border-color .5s ease;
+    transition: border-color .5s ease;
+}
+
+.commentDialog {
+    z-index: 9999 !important;
+}
+
+.scheduledEventDialog {
+    z-index: 999 !important;
+}

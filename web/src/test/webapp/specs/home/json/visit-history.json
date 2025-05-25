@@ -1,0 +1,8 @@
+{"bookedVisitActivity":
+  [
+    {"date":"03/27/2017 08:51","action":"Checked-In","user":"SA123"},
+    {"date":"03/27/2017 08:51","action":"Checked-Out","user":"SA123"},
+    {"date":"03/27/2017 08:51","action":"Overbooked","user":"SA123"},
+    {"date":"03/27/2017 08:51","action":"Checked-In","user":"SA123"}
+  ]
+}

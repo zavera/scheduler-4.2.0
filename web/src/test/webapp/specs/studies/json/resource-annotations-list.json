@@ -1,0 +1,27 @@
+{
+  "authenticated": true,
+  "resourceAnnotationsValues":
+  [
+    {
+      "name":"Annotation1",
+      "quantity":0,
+      "resourceAnnotations":0,
+      "quantifiable":true,
+      "selected":false,
+      "id":19
+    },
+    {
+      "name":"Annotatation5",
+      "quantity":0,
+      "resourceAnnotations":0,
+      "quantifiable":false,
+      "selected":false,
+      "id":42
+    }
+  ],
+  "resourceId": 0,
+  "result": false,
+  "size": 0,
+  "start": 0,
+  "total": 0
+}

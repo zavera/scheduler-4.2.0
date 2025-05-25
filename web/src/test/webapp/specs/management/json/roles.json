@@ -1,0 +1,19 @@
+[
+  {"name":"Study Coordinator - Research Asst","type":"ROLE_STUDY_COORDINATOR_RESEARCH_ASST","id":1},
+  {"name":"PI","type":"ROLE_PI","id":2},
+  {"name":"Co-Investigator","type":"ROLE_CO_INVESTIGATOR","id":3},
+  {"name":"Other Study Staff","type":"ROLE_OTHER_STUDY_STAFF","id":4},
+  {"name":"Nurse","type":"ROLE_NURSE","id":5},
+  {"name":"Nutritionist","type":"ROLE_NUTRITIONIST","id":6},
+  {"name":"CRC Administration","type":"ROLE_CRC_ADMINISTRATION","id":7},
+  {"name":"Lab","type":"ROLE_LAB","id":8},
+  {"name":"Administrative Director","type":"ROLE_ADMINISTRATIVE_DIRECTOR","id":9},
+  {"name":"Nurse Manager Director","type":"ROLE_NURSE_MANAGER_DIRECTOR","id":10},
+  {"name":"Nutrition Manager","type":"ROLE_NUTRITION_MANAGER","id":11},
+  {"name":"Physician","type":"ROLE_PHYSICIAN","id":13},
+  {"name":"Physician2","type":"ROLE_PHYSICIAN2","id":14},
+  {"name":"Scheduler","type":"ROLE_SCHEDULER","id":15},
+  {"name":"Scheduler2","type":"ROLE_SCHEDULER2","id":16},
+  {"name":"Associate Nurse","type":"ROLE_ASSOCIATE_NURSE","id":18},
+  {"name":"Associate RD","type":"ROLE_ASSOCIATE_RD","id":19}
+]

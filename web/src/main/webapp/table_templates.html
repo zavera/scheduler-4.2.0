@@ -1,0 +1,177 @@
+<!--
+
+    Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+    3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+    EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<!-- Declare a JsRender template, in a script block: -->
+
+<script id="mainFormTemplate" type="text/x-jsrender">
+
+  <div class="mainNameBlock">
+    <div class="mainName"><span id="resource_selected_resource_name"></span></div>
+  </div>
+  <div style="clear: both;"></div>
+
+  {{if editable}}
+
+      <div class="mainNameTableBlock">
+        <div class="primaryTableHeader" id="resource_resource_form_title">{{if new}}New{{else}}Edit{{/if}} Resource</div>
+      </div>
+      <div style="clear: both;"></div>
+      <div class="requiredFieldKey">
+        <div class="requiredIcon">*</div>= Required Field
+      </div>
+      <table class="formTable" border="0">
+        {{if new}}
+        <tr>
+          <td class="formLabel">Resource Type <div class="requiredIcon">*</div></td>
+          <td>
+            <select id="resourceTypeSelect" class="comboboxListItem"></select>
+            <span id="resourceTypeSelectValidation" class="formElementRequired"></span>
+          </td>
+          <td colspan="2" rowspan="3">
+            <div class="rightAligned"></div>
+          </td>
+        </tr>
+        {{else}}
+        <tr>
+          <td class="formLabel">Resource Type <div class="requiredIcon">*</div></td>
+          <td id ="resourceTypeNameTD">
+            <span id="resourceTypeName"></span>
+          </td>
+        </tr>
+        {{/if}}
+
+        <tr>
+          <td class="formLabel">Sub-Location <div class="requiredIcon">*</div></td>
+          <td>
+            <select id="resourceSublocationSelect" class="comboboxListItem"></select>
+            <span id="resourceSublocationSelectValidation" class="formElementRequired"></span>
+          </td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="formLabel">Resource Name <div class="requiredIcon">*</div></td>
+          <td>
+            <span id="resourceNameReadOnly" class="formTextReadOnly"></span>
+            <input type="text" id="resourceNameInput" class="formTextInput"/><span id="resourceNameSuffix"></span>
+            <span id="resourceNameInputValidation" class="formElementRequired"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            {{if !new}}
+              <div class="formTextReadOnly">Note: Resource name change will apply to all previous and future usages of the resource</div>
+            {{/if}}
+          </td>
+        </tr>
+        {{if inactive}}
+          <tr id="theActiveResource">
+            <td colspan="2" class="formLabel">
+              <label><input id="activateResourceCheckbox" type="checkbox"/>
+              Activate this resource (Once activated, the resource cannot be de-activated and will be available for scheduling) </label>
+            </td>
+          </tr>
+        {{/if}}
+        <tr>
+          <td colspan="2" class="leftAligned" style="padding: 15px 0 20px 0">
+            <input type="button" onclick="javascript:cancelResourceClick();" id="resource_cancelButton" name="button" value="Cancel" class="formButton"/>
+            {{if new}}
+              <input type="button" onclick="javascript:saveResourceClick({active: false});" id="resource_submitButton" name="button" value="Save as Inactive Resource" class="formButton"/>
+              <input type="button" onclick="javascript:saveResourceClick({active: true});" id="resource_submitButton" name="button" value="Save as Active Resource" class="formButton"/>
+            {{else}}
+              <input type="button" onclick="javascript:saveResourceClick();" id="resource_submitButton" name="button" value="Save Changes Above" class="formButton"/>
+            {{/if}}
+            <!-- TODO-XH: are we using this? -->
+            <img id="responseLoading" src="css/images/components/ajax_loader_indicator.gif" style="display:none"/>
+          </td>
+        </tr>
+        <tr>
+            <td colspan="2" style=" height: 3px; border-bottom: dotted; color: #d3d3d3;"></td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+      </table>
+
+  {{else}} <br/>
+  {{/if}}
+
+
+</script>
+
+<!-- Declare a JsRender template, in a script block: -->
+<script id="nurseAnnotationsListTemplate" type="text/x-jsrender">
+
+  <ul id="nurseList" class="annotationList">
+    {{for annotations}}
+      <li class="childNode nurseNode annotationNode node-{{>#data.id}}" value={{>#data.id}} onclick="Annotations.selectOrDeselectNode(this);">{{>#data.name}}</li>
+    {{/for}}
+  </ul>
+
+</script>
+
+<script id="nutritionAnnotationsListTemplate" type="text/x-jsrender">
+
+  <ul id="nutritionList" class="annotationList">
+    {{for annotations}}
+      <li class="childNode nutritionNode annotationNode node-{{>#data.id}}" value={{>#data.id}} onclick="Annotations.selectOrDeselectNode(this);">{{>#data.name}}</li>
+    {{/for}}
+  </ul>
+
+</script>
+
+<script id="equipmentAnnotationsListTemplate" type="text/x-jsrender">
+
+  <ul id="equipmentList" class="annotationList">
+    {{for annotations}}
+      <li class="childNode equipmentNode annotationNode node-{{>#data.id}}" value={{>#data.id}} onclick="Annotations.selectOrDeselectNode(this);">{{>#data.name}}</li>
+    {{/for}}
+  </ul>
+
+</script>
+
+<script id="roomAnnotationsListTemplate" type="text/x-jsrender">
+
+  <ul id="roomList" class="annotationList">
+    {{for annotations}}
+      <li class="childNode roomNode annotationNode node-{{>#data.id}}" value={{>#data.id}} onclick="Annotations.selectOrDeselectNode(this);">{{>#data.name}}</li>
+    {{/for}}
+  </ul>
+
+</script>
+
+<script id="labAnnotationsListTemplate" type="text/x-jsrender">
+
+  <ul id="labList" class="annotationList">
+    {{for annotations}}
+      <li class="childNode labNode annotationNode node-{{>#data.id}}" value={{>#data.id}} onclick="Annotations.selectOrDeselectNode(this);">{{>#data.name}}</li>
+    {{/for}}
+  </ul>
+
+</script>

@@ -1,0 +1,26 @@
+[
+  {
+    "id":92318,
+    "studyId":748,
+    "totalCount":2,
+    "visitName":"Test Visit",
+    "visitTypeName":"Outpatient Off Institution",
+    "sublocationName":"Off Institution",
+    "localId":"2300",
+    "lastUpdateTime":"Apr 28, 2017 10:46:02 AM",
+    "piName":"Foo Bar",
+    "finalApprovalStatus":"Approved"
+  },
+  {
+    "id":92318,
+    "studyId":748,
+    "totalCount":2,
+    "visitName":"Test Visit 2",
+    "visitTypeName":"Outpatient Non CRC",
+    "sublocationName":"Off Institution",
+    "localId":"2300",
+    "lastUpdateTime":"Jun 28, 2016 10:46:02 AM",
+    "piName":"Foo Bar",
+    "finalApprovalStatus":"Approved"
+  }
+]

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
+
+    <!--https://www.jeasyui.com/documentation/index.php-->
+    <link href="css/jquery-easyui-1.8.2/icon.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/combo.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/combobox.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/linkbutton.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/menu.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/panel.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/textbox.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/tooltip.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/validatebox.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-easyui-1.8.2/switchbutton.css" rel="stylesheet" type="text/css"/>
+
+    <link href="css/global.css" rel="stylesheet" type="text/css"/>
+
+    <link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
+    <link href="/scheduler-resources/local-style.css" rel="stylesheet" type="text/css"/>
+
+    <link href="css/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-ui-misc/jquery-ui-delta.css" rel="stylesheet" type="text/css"/>
+
+    <link href="css/multiple-select.css" rel="stylesheet" type="text/css"/>
+    <link href="css/visit_details.css" rel="stylesheet" type="text/css"/>
+
+    <link href='js/lib/fullcalendar-scheduler-4.2.0/packages/core/main.css' rel='stylesheet' type='text/css'>
+    <link href='js/lib/fullcalendar-scheduler-4.2.0/packages/timeline/main.css' rel='stylesheet'>
+    <link href='js/lib/fullcalendar-scheduler-4.2.0/packages/resource-timeline/main.css' rel='stylesheet'>
+
+    <link href="css/last-word.css" rel="stylesheet" type="text/css"/>
+
+
+    <script type="text/javascript" src="js/lib/json2.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.min-3.4.0.js"></script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script> -->
+    <script type="text/javascript" src="js/lib/jquery-ui.min-1.12.1.js"></script>
+    <script type="text/javascript" src="js/lib/maskedInputPlugin.js"></script>
+
+    <script src="js/widget/dialogs.js" type="text/javascript"></script>
+
+    <script src="js/lib/date.format.js" type="text/javascript"></script>
+    <script src="js/lib/jquery.blockUI.js" type="text/javascript"></script>
+    <script src="js/util/breadcrumbs.js" type="text/javascript"></script>
+
+    <script src="js/common/feedback_screen.js" type="text/javascript"></script>
+
+    <!--https://www.jeasyui.com/documentation/index.php-->
+
+    <!--javascript files needed for EasyUI combobox -->
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.menu.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.linkbutton.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.tooltip.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.panel.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.parser.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.validatebox.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.textbox.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.combo.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.combobox.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.switchbutton.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-easyui-1.8.2/jquery.searchbox.js" type="text/javascript"></script>
+    <script src="js/lib/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+
+    <!-- javascript / css files for calendar plugin -->
+    <script type="text/javascript" src="js/lib/jquery-ui-sliderAccess.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.js"></script>
+
+    <script src="js/util/dates.js" type="text/javascript"></script>
+
+    <script src="js/util/util.js" type="text/javascript"></script>
+    <script src="js/util/dto.js" type="text/javascript"></script>
+    <script src="js/util/global2.js" type="text/javascript"></script>
+
+    <script src="js/widget/widget_util.js" type="text/javascript"></script>
+    <script src="js/widget/columns.js" type="text/javascript"></script>
+    <script src="js/widget/tables.js" type="text/javascript"></script>
+    <script src="js/widget/table_filter.js" type="text/javascript"></script>
+    <script src="js/widget/table_pagination.js" type="text/javascript"></script>
+
+    <script src="js/Studies/study_screen.js" type="text/javascript"></script>
+    <script src="js/Studies/study_module.js" type="text/javascript"></script>
+    <script src="js/Studies/study_form.js" type="text/javascript"></script>
+    <script src="js/Studies/study_tables.js" type="text/javascript"></script>
+    <script src="js/Studies/template_resource_timeline.js" type="text/javascript"></script>
+    <script src="js/Studies/link_resources_table.js" type="text/javascript"></script>
+
+    <script src="js/lib/jquery.multiple.select.js" type="text/javascript"></script>
+
+    <script type='text/javascript' src='js/lib/fullcalendar-scheduler-4.2.0/packages/core/main.js'></script>
+    <script src='js/lib/fullcalendar-scheduler-4.2.0/packages/timeline/main.js'></script>
+    <script src='js/lib/fullcalendar-scheduler-4.2.0/packages/resource-common/main.js'></script>
+    <script src='js/lib/fullcalendar-scheduler-4.2.0/packages/resource-timeline/main.js'></script>
+    <script type='text/javascript' src='js/lib/fullcalendar-scheduler-4.2.0/packages/interaction/main.js'></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#fullHeader").load("header.html", function () {
+
+                $('.studieslink').addClass('active');
+                studyPage.initVisitDetailPage();
+
+            });
+
+        });
+
+    </script>
+    <!--
+
+    Copyright (c) 2015-2016, President and Fellows of Harvard College
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+    3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+    EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+  -->
+</head>
+
+<body onMouseMove="app_handleMouseMove()" onclick="closeAllHovers();">
+<div class="wrapperSize">
+
+    <div id="fullHeader"></div>
+
+    <div class="breadcrumbs"></div>
+
+    <!--     @MAIN BODY     -->
+    <div class="mainBody">
+        <div id="visit_detail_screen">
+            <div id="VisitDetailsTabs">
+                <ul>
+                    <li><a href="#visitDetailTab1" onclick="javascript:loadVisitTemplateDetailData();">Visit Detail</a>
+                    </li>
+                    <li><a href="#visitDetailTab2" onclick="javascript:loadVisitTemplateApprovalsTab();">Visit Template
+                        Approval</a></li>
+                    <li><a href="#visitDetailTab3" onclick="javascript:loadBuildVisitTemplateData();">Build Visit
+                        Template</a></li>
+                </ul>
+
+                <div id="visitDetailTab1" style="padding-left: 10px;">
+                    <div id="study_visit_form_screen" style="display: block;">
+                        <div class="mainNameBlock">
+                            <span id="study_visit_name" style="width: 480px;"></span>
+
+                            <div style="padding: 3px;"></div>
+                            <div class="mainName" style="width: 560px; font-size: 14px;">
+                                <span id="visit_name"></span>
+                            </div>
+                            <div style="padding: 3px;"></div>
+                            <div class="newItemButton textLeft" id="editStudyVisitLink"><a
+                                    href="javascript:editVisitClick();">Edit Visit Template</a></div>
+                        </div>
+                        <div class="mainNameTableBlock">
+                            <div class="primaryTableHeader" id="study_visit_form_title" style="width: 1130px;">Visit
+                                Details
+                            </div>
+                        </div>
+                        <div style="clear: both;"></div>
+                        <form id="visit_form" name="visit_form" method="post" action="">
+                            <div class="formBlock">
+                                <table class="formTable" style="width: 1130px;">
+                                    <col width="130">
+                                    <col width="400">
+                                    <col width="130">
+                                    <col width="470">
+                                    <tr>
+                                        <td class="formLabel">Visit Name</td>
+                                        <td>
+                                              <span id="study_visitNameReadOnly" style="width: 350px;"
+                                                    class="formTextReadOnly"></span>
+                                        </td>
+                                        <td class="formLabel" nowrap="nowrap">Billable Template (check if Yes)</td>
+                                        <td>
+                                            <input type="checkbox" id="study_billableTemplateReadOnly"
+                                                   disabled="disabled" class="formCheckBoxReadOnly"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="formLabel"></td>
+                                        <td>
+                                              <span style="width: 350px;"></span>
+                                        </td>
+                                        <td class="formLabel" nowrap="nowrap">Research Pharmacy (check if Yes)</td>
+                                        <td>
+                                            <input type="checkbox" id="study_researchPharmacyReadOnly"
+                                                   disabled="disabled" class="formCheckBoxReadOnly"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="formLabel">Short Name</td>
+                                        <td>
+                                              <span id="study_shortVisitNameReadOnly" style="width: 350px;"
+                                                    class="formTextReadOnly"></span>
+                                        </td>
+                                        <td nowrap="nowrap">Part of this Visit occurs at:</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="formLabel">Sub-Location</td>
+                                        <td>
+                                              <span id="study_visitSublocationReadOnly" style="width: 350px;"
+                                                    class="formTextReadOnly"></span>
+                                        </td>
+                                        <td nowrap="nowrap">Institution: Non CRC</td>
+                                        <td nowrap="nowrap">
+                                            <input type="checkbox" id="study_institution_noncrcReadOnly"
+                                                   disabled="disabled" class="formCheckBoxReadOnly"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="formLabel">Visit Type</td>
+                                        <td>
+                                              <span id="study_visitTypeReadOnly" style="width: 350px;"
+                                                    class="formTextReadOnly"></span>
+                                        </td>
+                                        <td nowrap="nowrap">Non Institution: Non CRC</td>
+                                        <td nowrap="nowrap">
+                                            <input type="checkbox" id="study_nonInstitution_nonCrcReadOnly"
+                                                   disabled="disabled" class="formCheckBoxReadOnly"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="newItemButton textLeft"
+                                                 id="viewCommentLink">
+                                                <a href="javascript:viewVisitCommentClick();">View Visit Template
+                                                    Comments</a></div>
+                                        </td>
+                                        <td colspan="3">
+                                              <span style="width: 950px; padding-top: 33px;"
+                                                    class="formTextReadOnly"></span>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                                <div id="inpatient_relative_time">
+                                    <tr>
+                                        <td class="formLabel">Relative Time?</td>
+                                        <td align="right">
+                                            <input type="checkbox" id="study_relativeTimeReadOnly"
+                                                   disabled="disabled" class="formCheckBoxReadOnly"/>
+                                        </td>
+                                    </tr>
+                                </div>
+                                <div style="clear:both"></div>
+                                <div class="secondaryTableHeader">Levels Of Service</div>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="5" class="tablePadding">
+                                    <tr>
+                                        <td class="formLabel">Nursing Intensity</td>
+                                        <td>
+                                            <span id="study_nursingReadOnly" class="formTextReadOnly"></span>
+                                        </td>
+                                        <td class="formLabel">Nutrition Intensity</td>
+                                        <td>
+                                            <span id="study_nutritionReadOnly" class="formTextReadOnly"></span>
+                                        </td>
+                                        <td class="formLabel">Processing Intensity</td>
+                                        <td>
+                                            <span id="study_processingReadOnly" class="formTextReadOnly"></span>
+                                        </td>
+                                        <td class="formLabel">Set-Up Intensity</td>
+                                        <td>
+                                            <span id="study_setupReadOnly" class="formTextReadOnly"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br/>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="wizardBody" id="visit_comment_dialog" style="display: none; overflow: hidden;"
+                         title="Visit Template Comments">
+                        <div id="visitComments_data" class="CSSTableGenerator" style="width: 675px;"></div>
+                    </div>
+                </div>
+
+                <div id="visitDetailTab2" style="padding-left: 10px;">
+                    <div class="mainNameBlock" style="padding-left: 10px;">
+                        <span id="study_visit_name2" style="width: 480px;"></span>
+
+                        <div style="padding: 3px;"></div>
+                        <div class="mainName" style="width: 560px; font-size: 14px;">
+                            <span id="visit_name2"></span>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div id="visit_approval_screen" style="display: block;">
+                        <div class="primaryTableHeader">Status: <span
+                                id="visitgrid_finalApprovalStatus"></span></div>
+                        <div id="visitApproval" class="newItemButton"></div>
+
+                        <div id="visitApprovalTablePagination" class="tableControls"></div>
+                        <div id="visitApprovalTableWrapper" class="CSSTableGenerator"></div>
+
+                    </div>
+                </div>
+
+                <div id="visitDetailTab3" style="padding-left: 5px; background-color: white;">
+                    <div style="width: 100%; background: #D9D9D9; color: #0A507D; padding: 5px; font-size: 12px">
+                        <span id="template_localId" style="float: left; font-weight: 700; padding-left: 10px"></span>
+                        <span id="template_pi" style="margin-left: 50px; font-weight: 700;"></span>
+                        <span style="float: right;">
+                              Template Status: <span id="template_status"> &nbsp; </span>
+                              <span id="template_type" style="padding-left: 10px;"></span>
+                          </span>
+                    </div>
+
+                    <div class="mainNameBlock"
+                         style="width: 70%; padding: 15px 0 0 15px; font-size: 14px; font-weight: 700;">
+                        <div id="template_studyName" style="width: 560px; color: #666666;"></div>
+                        <div id="template_visitName"
+                             style="width: 560px; padding-top: 10px; color: #0A507D; font-weight: 400; font-size: 20px"></div>
+                    </div>
+                    <div class="rightDivs" style="padding-left: 15px; border: 1px solid grey; margin: 15px 0 90px 0;">
+                        <img src="css/images/gantt/fixed.jpg"/> Fixed &nbsp;
+                        <img src="css/images/gantt/float.jpg"/> Float &nbsp;
+                        <img src="css/images/gantt/flex.jpg"/> Flex &nbsp;
+                    </div>
+
+                    <table style="font-size: 12px; padding: 10px 10px 20px 10px; color: #666666">
+                        <tr>
+                            <td style="padding-bottom: 0; margin-bottom: 0; height: 12px;">Sub-Location:</td>
+                            <td style="padding-bottom: 0; margin-bottom: 0; height: 12px;"><span
+                                    id="template_visitSublocation"></span></td>
+                            <td style="padding-bottom: 0; margin-bottom: 0; height: 12px; padding-left: 50px;">Total
+                                Resources In Visit:
+                            </td>
+                            <td style="padding-bottom: 0; margin-bottom: 0; height: 12px;"><span
+                                    id="total_resources_count"></span></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top: 0; margin-top: 0; height: 12px;">Visit Type:</td>
+                            <td style="padding-top: 0; margin-top: 0; height: 12px;"><span
+                                    id="template_visitType"></span>
+                            </td>
+                            <td style="padding-top: 0; margin-top: 0; height: 12px; padding-left: 50px;">Total Day
+                                Resources:
+                            </td>
+                            <td style="padding-top: 0; margin-top: 0; height: 12px;"><span
+                                    id="day_resources_count"></span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div style="padding-bottom: 20px; color: #0a517b">
+                          <span class="sortTemplateResources">
+                              Sort Resources by :
+                              <select id="topSortTemplateResourcesDropDown"
+                                      onchange="javascript:sortTemplateResources(this);" style="font-size: 11px;"
+                                      class="fix-me">
+                                <option value="StartAsc" title="Start (Ascending)">Start (Ascending)</option>
+                                <option value="NameAsc" title="Resource (Ascending)">Resource (Ascending)</option>
+                                <option value="NameDesc" title="Resource (Descending)">Resource (Descending)</option>
+                                <option value="TypeAsc" title="Type (Ascending)">Type (Ascending)</option>
+                                <option value="TypeDesc" title="Type (Descending)">Type (Descending)</option>
+                              </select>
+                          </span>
+                        <span class="paginateDays" style="color: #0A507D; visibility: hidden; padding-left: 80px;">
+                              <span class="firstDay" onclick="goToFirstDay();" style="visibility: hidden;">
+                                  <img src="css/images/gantt/allthewayback_arrow.png" alt="&lt;"
+                                       style="vertical-align: inherit;"/>
+                              </span>
+                              <span class="previousDay" onclick="goToPreviousDay();" style="visibility: hidden;">
+                                  <img src="css/images/gantt/back_arrow.png" alt="&lt;" height="13" width="16"
+                                       style="vertical-align: inherit;"/>
+                              </span>
+                              <span id="topGanttDateHeader" style="width: 240px;"></span>
+                              <span class="nextDay" onclick="goToNextDay();"> <img
+                                      src="css/images/gantt/forward_arrow.png" alt="&gt;"
+                                      height="13" width="16"
+                                      style="vertical-align: inherit;"/> </span>
+                              <span class="lastDay" onclick="goToLastDay();"> <img
+                                      src="css/images/gantt/allthewayforward_arrow.png"
+                                      alt="&lt;" style="vertical-align: inherit;"/> </span>
+                          </span>
+                        <span style="float: right">
+                              <span style="padding: 0 5px 0 60px;">
+                                  <a class="gantt_copyDayButton" onclick="copyDay();" style="visibility: hidden;">
+                                    <img src="css/images/gantt/copy_day.jpg" style="vertical-align: middle;"/>
+                                    Copy Day
+                                  </a>
+                              </span>
+                              <span>
+                                  <a class="gantt_newResourceButton" style="float: right; display: none;"
+                                     onclick="javascript:crudResourceClick('add_template_resource');">
+                                    <img src="css/images/gantt/add_new_resource.jpg" style="vertical-align: middle;"/>
+                                    Add New Resource
+                                  </a>
+                              </span>
+                              <span>
+                                  <a class="gantt_selectResourcesButton" style="display: none;"
+                                     onclick="loadSelectResourcesData();">
+                                    <img src="css/images/gantt/select_resources.jpg"
+                                         style="vertical-align: text-bottom; margin-top: 5px;"/>
+                                    Bulk Actions
+                                  </a>
+                              </span>
+                          </span>
+                    </div>
+
+                    <span id="multi_day" class="ganttChartThemed">
+                          <div onclick="toggleGanttView(this, 'templateResourceMultiDayContainer', 'multi')"
+                               title="Expand" style="width: 220px;">
+                            <img src="css/images/gantt/collapse_icon.jpg" id="templateResourceMultiDayContainerImg"
+                                 style="float: left; padding: 23px 0 10px 0;"/>
+                            <h4 style="margin: 0; padding: 20px 0 10px 20px; color: #0A507D;">Multi-Day (Ungrouped)</h4>
+                          </div>
+                          <div id="templateResourceMultiDayContainer" class="container"></div>
+                      </span>
+                    <span id="no_multi_resources"
+                          style="color: darkgrey; font-size: 12px; font-style: italic; text-align: center; display: none;">No Resources</span>
+
+                    <span id="single_day" class="ganttChartThemed">
+                          <div onclick="toggleGanttView(this, 'templateResourceSingleDayContainer', 'one')"
+                               title="Expand"
+                               style="width: 220px;">
+                            <img src="css/images/gantt/collapse_icon.jpg" id="templateResourceSingleDayContainerImg"
+                                 style="float: left; padding: 23px 0 10px 0;"/>
+                            <h4 style="margin: 0; padding: 20px 0 10px 20px; color: #0A507D;">Single Day
+                              (Ungrouped)</h4>
+                          </div>
+                          <div id="templateResourceSingleDayContainer" class="container"></div>
+                      </span>
+                    <span id="no_one_resources"
+                          style="color: darkgrey; font-size: 12px; font-style: italic; text-align: center; display: block;">No Resources</span>
+
+                    <span id="flex_groups" class="ganttChartUnthemed">
+                          <div onclick="toggleGanttView(this, 'templateResourceFlexGroupContainer', 'flex')"
+                               title="Expand" style="width: 150px;">
+                            <img src="css/images/gantt/collapse_icon.jpg" id="templateResourceFlexGroupContainerImg"
+                                 style="float: left; padding: 23px 0 10px 0;"/>
+                            <h4 style="margin: 0; padding: 20px 0 10px 20px; color: #7EB035;">Flex Group</h4>
+                          </div>
+                          <div id="templateResourceFlexGroupContainer" class="container"></div>
+                      </span>
+                    <span id="no_flex_resources"
+                          style="color: darkgrey; font-size: 12px; font-style: italic; text-align: center; display: block;">No Resources</span>
+
+                    <span id="float_groups" class="ganttChartUnthemed">
+                          <div onclick="toggleGanttView(this, 'templateResourceFloatGroupContainer', 'float')"
+                               title="Expand" style="width: 150px;">
+                            <img src="css/images/gantt/collapse_icon.jpg" id="templateResourceFloatGroupContainerImg"
+                                 style="float: left; padding: 23px 0 10px 0;"/>
+                            <h4 style="margin: 0; padding: 20px 0 10px 20px; color: #662E91;">Float Group</h4>
+                          </div>
+                          <div id="templateResourceFloatGroupContainer" class="container"></div>
+                      </span>
+                    <span id="no_float_resources"
+                          style="color: darkgrey; font-size: 12px; font-style: italic; text-align: center; display: block;">No Resources</span>
+
+                    <div style="padding: 20px 0 0 0; color: #0a517b">
+                          <span class="sortTemplateResources">
+                              Sort Resources by :
+                              <select id="bottomSortTemplateResourcesDropDown"
+                                      onchange="javascript:sortTemplateResources(this);" style="font-size: 11px;"
+                                      class="fix-me">
+                                <option value="StartAsc" title="Start (Ascending)">Start (Ascending)</option>
+                                <option value="NameAsc" title="Resource (Ascending)">Resource (Ascending)</option>
+                                <option value="NameDesc" title="Resource (Descending)">Resource (Descending)</option>
+                                <option value="TypeAsc" title="Type (Ascending)">Type (Ascending)</option>
+                                <option value="TypeDesc" title="Type (Descending)">Type (Descending)</option>
+                              </select>
+                          </span>
+                        <span class="paginateDays" style="visibility: hidden; padding-left: 80px;">
+                              <span class="firstDay" onclick="goToFirstDay();" style="visibility: hidden;">
+                                  <img src="css/images/gantt/allthewayback_arrow.png" alt="&lt;"
+                                       style="vertical-align: inherit;"/>
+                              </span>
+                              <span class="previousDay" onclick="goToPreviousDay();" style="visibility: hidden;">
+                                  <img src="css/images/gantt/back_arrow.png" alt="&lt;" height="13" width="16"
+                                       style="vertical-align: inherit;"/>
+                              </span>
+                              <span id="bottomGanttDateHeader" style="width: 240px;"></span>
+                              <span class="nextDay" onclick="goToNextDay();">
+                                  <img src="css/images/gantt/forward_arrow.png" alt="&gt;" height="13" width="16"
+                                       style="vertical-align: inherit;"/>
+                              </span>
+                              <span class="lastDay" onclick="goToLastDay();">
+                                  <img src="css/images/gantt/allthewayforward_arrow.png" alt="&lt;"
+                                       style="vertical-align: inherit;"/>
+                              </span>
+                          </span>
+                        <span style="float: right">
+                              <span style="padding: 0 5px 0 60px;">
+                                  <a class="gantt_copyDayButton" onclick="copyDay();" style="visibility: hidden;">
+                                    <img src="css/images/gantt/copy_day.jpg" style="vertical-align: middle;"/>
+                                    Copy Day
+                                  </a>
+                              </span>
+                              <span>
+                                  <a class="gantt_newResourceButton" style="float: right; display: none;"
+                                     onclick="javascript:crudResourceClick('add_template_resource');">
+                                    <img src="css/images/gantt/add_new_resource.jpg" style="vertical-align: middle;"/>
+                                    Add New Resource
+                                  </a>
+                              </span>
+                              <span>
+                                  <a class="gantt_selectResourcesButton" style="display: none;"
+                                     onclick="loadSelectResourcesData();">
+                                    <img src="css/images/gantt/select_resources.jpg"
+                                         style="vertical-align: text-bottom; margin-top: 5px;"/>
+                                    Bulk Actions
+                                  </a>
+                              </span>
+                          </span>
+                    </div>
+
+                </div>
+
+                <div class="wizardBody" id="link_template_resources" style="display: none; overflow: hidden;"
+                     title="Link Resource">
+
+                    <span class="tableHeaderAbove" id="resourceLinkingTableHeading"></span>
+
+                    <div id="resourceLinkingTableWrapper" class="CSSTableGenerator"></div>
+                    <!--<table id="resourceLinkingTable"></table>-->
+
+                    <div id="linkTemplateResourceButtons" class="wizardButtons" align="left">
+                        <input type="button" value="Link"
+                               onclick="javascript:linkTemplateResourceConfirmDialog(); return false;"
+                               id="link_resource_save" class="formButton"/>
+                        <input type="button" value="Close"
+                               onclick="javascript:cancelLinkTemplateResourceClick(); return false;"
+                               id="link_resource_close" class="formButton"/>
+                    </div>
+
+                </div>
+
+                <div class="wizardBody" id="crud_template_resource" style="display: none; overflow: hidden;"
+                     title="Add New Resource">
+                    <table style="width: 850px;">
+                        <tr>
+                            <td class="formLabel_new">Resource
+                                <div class="requiredIcon">*</div>
+                            </td>
+                            <td style="padding: 0" colspan="3">
+                                <select id="wizard_templateResources"
+                                        onchange="javascript:ResourceAnnotationsTable.loadFromResourceMenuSelection('resource', 'wizard_templateResources');"></select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="formLabel_new">Billable for the visit?</td>
+                            <td style="padding: 0">
+                                <input type="checkbox" id="template_resource_billable"
+                                       value="template_resource_billable">
+                            </td>
+                            <td class="formLabel_new">Standard Alternate?</td>
+                            <td style="padding: 0">
+                                <input type="checkbox" id="template_resource_alternate"
+                                       value="template_resource_alternate">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="formLabel_new">Resource Category</td>
+                            <td style="padding: 0">
+                                <label> <input type="radio" value="Fixed" name="category"
+                                               id="template_resource_fixed" onclick="toggleResourceTypeSelected();"
+                                               checked/> Fixed</label>
+                                <label> <input type="radio" value="Float" name="category"
+                                               id="template_resource_float"
+                                               onclick="toggleResourceTypeSelected();"/> Float</label>
+                                <label> <input type="radio" value="Flex" name="category" id="template_resource_flex"
+                                               onclick="toggleResourceTypeSelected();"/> Flex</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="formLabel_new">Resource Start Day
+                                <div class="requiredIcon">*</div>
+                            </td>
+                            <td>
+                                <input id="template_resource_start_day" class="numbersOnly" type="text" value=""
+                                       style="width: 30px;"/>
+                            </td>
+                            <td class="formLabel_new">Resource Start Time
+                                <div class="requiredIcon">*</div>
+                            </td>
+                            <td style="width: 80px;">
+                                <input type="text" id="template_resource_start_time" style="background:white;"
+                                       onclick="this.select()" onfocus="this.blur()" readonly="readonly"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="formLabel_new">Resource End Day
+                                <div class="requiredIcon">*</div>
+                            </td>
+                            <td>
+                                <input id="template_resource_end_day" class="numbersOnly" type="text" value=""
+                                       style="width: 30px;"/>
+                            </td>
+                            <td class="formLabel_new">Resource End Time
+                                <div class="requiredIcon">*</div>
+                            </td>
+                            <td style="width: 80px;">
+                                <input type="text" id="template_resource_end_time" style="background:white;"
+                                       onclick="this.select()" onfocus="this.blur()" readonly="readonly"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="formLabel_new">Float Start Day</td>
+                            <td>
+                                <input id="template_resource_float_start_day" class="numbersOnly" type="text" value=""
+                                       style="width: 30px;"/>
+                            </td>
+                            <td class="formLabel_new">Float Start Time</td>
+                            <td style="width: 80px;">
+                                <input type="text" id="template_resource_float_start_time" style="background:white;"
+                                       onclick="this.select()" onfocus="this.blur()" readonly="readonly"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="formLabel_new">Float End Day</td>
+                            <td>
+                                <input id="template_resource_float_end_day" class="numbersOnly" type="text" value=""
+                                       style="width: 30px;"/>
+                            </td>
+                            <td class="formLabel_new">Float End Time</td>
+                            <td style="width: 80px;">
+                                <input type="text" id="template_resource_float_end_time" style="background:white;"
+                                       onclick="this.select()" onfocus="this.blur()" readonly="readonly"/>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="annotationsTable" style="display: inline-block; width: 100%">
+                        <div class="wizardTableHeader">Available Activities</div>
+
+                        <div id="filterResourceAnnotations" class="filterSelectedResourcesDiv">
+                            <span id="filterResourceAnnotationsLabel">Filter By:</span>
+                            <select id="filterResourceAnnotationsSelect" class="filterSelectedResourcesSelect"></select>
+                        </div>
+
+                        <div id="resourceAnnotationsTableWrapper" class="CSSTableGenerator"></div>
+
+                        <div style="float: left; padding-top: 3px;">
+                            <span id="template_wizard_formValidation"
+                                  style="max-width: 500px; padding-left: 35px; visibility: hidden;"
+                                  class="formValidationRequired"></span>
+                        </div>
+
+                        <div id="templateResourceButtons" class="wizardButtons" align="right">
+                            <input id="saveTemplateResourceBtn" type="button" class="formButton" value="Save"
+                                   onclick="javascript:saveTemplateResource();"
+                                   id="template_resource_save"/>
+                            <input type="button" class="formButton" value="Close"
+                                   onclick="javascript:cancelTemplateResourceClick(); return false;"
+                                   id="template_resource_close"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wizardBody" id="select_template_resource" style="display: none; overflow: hidden;"
+                     title="Bulk Actions">
+                    <div class="selectTemplateResourcesTable" style="display: inline-block; width: 100%">
+
+                        <p>Select which resources to view in the list below:
+                            <input type="radio" value="nonBillable" name="viewSelectedResource"
+                                   id="nonBillableResources"
+                                   onclick="viewSelectedResources();" checked/>
+                            <label for="nonBillableResources">Non-Billable</label>
+                            <input type="radio" value="billable" name="viewSelectedResource"
+                                   id="billableResources"
+                                   onclick="viewSelectedResources();"/>
+                            <label for="billableResources">Billable</label>
+                        </p>
+
+                        <p id="bulkChangeMessage">Applying changes to checked resources will mark them as Billable.</p>
+
+                        <div id="filterSelectedResourcesDiv" class="filterSelectedResourcesDiv">
+                            <span id="filterSelectedResourcesLabel">Filter By:</span>
+                            <select id="filterSelectedResourcesSelect" class="filterSelectedResourcesSelect"></select>
+                        </div>
+
+                        <div id="billableResourcesTableWrapper" class="CSSTableGenerator"></div>
+
+                        <div id="selectTemplateResourceButtons" class="wizardButtons" align="right">
+                            <input type="button" class="formButton" value="Apply Changes"
+                                   onclick="javascript:saveSelectTemplateResource(false);"
+                                   id="select_template_resource_save"/>
+                            <input type="button" class="formButton" value="Apply & Close"
+                                   onclick="javascript:saveSelectTemplateResource(true);"
+                                   id="select_template_resource_save_and_close"/>
+                            <input type="button" class="formButton" value="Close"
+                                   onclick="javascript:cancelSelectTemplateResourceClick(); return false;"
+                                   id="select_template_resource_close"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="edit_template_resource_dialog_confirm" style="display: none; overflow: hidden;"
+                     title="Edit Approved Template">
+                    <p>Editing this template will change the approval status.</p>
+                </div>
+
+
+                <div id="delete_template_resource_dialog_confirm" style="display: none; overflow: hidden;"
+                     title="Delete Resource">
+                    <p>Are you sure you want to delete this resource?</p>
+                </div>
+
+
+                <div id="delete_template_resource_approval_dialog_confirm" style="display: none; overflow: hidden;"
+                     title="Edit Approved Template">
+                    <p>Editing this template will change the approval status.<br></p>
+                    <p>Are you sure you want to delete this resource?</p>
+                </div>
+
+
+                <div id="unlink-template-resource-group-dialog-confirm" style="display: none; overflow: hidden;"
+                     title="Unlink Resources">
+                    <p>Are you sure you want to unlink the following resources?</p>
+                    <span class="unlinkGroupedResources"></span>
+                </div>
+
+
+                <div id="unlink-template-resource-group-approval-dialog-confirm"
+                     style="display: none; overflow: hidden;" title="Edit Approved Template">
+                    <p>Editing this template will change the approval status.<br>
+                        <br>
+                        Are you sure you want to unlink the following resources?</p>
+                    <span class="unlinkGroupedResources"></span>
+                </div>
+
+
+                <div id="unlink-delete-individual-template-resource-dialog-confirm"
+                     style="display: none; overflow: hidden;">
+                    <p id="individualUnlinkDeleteMessage">If you continue, all resources in this group will become
+                        unlinked.</p>
+                </div>
+
+                <div id="ignore-changes-confirm" style="display: none; overflow: hidden;">
+                    <p>You have unsaved changes. If you continue, you will lose those changes.</p>
+                </div>
+
+                <div id="copy-day-template-resource-dialog" title="Copy Day" style="display: none; overflow: hidden;">
+                    <table style="table-layout: fixed; width: 400px;">
+                        <tr style="height: 30px;">
+                            <td colspan="2">
+                                <label>Copy Day</label>
+                            </td>
+                            <td colspan="2">
+                                <div class="styled-select">
+                                    <select id="fromCopyDaySelect"
+                                            onchange="javascript:fromCopyDayChangeClick();"></select>
+                                </div>
+                            </td>
+                            <td style="width: 20px; padding-left: 15px;">
+                                to
+                            </td>
+                            <td colspan="4">
+                                <select multiple="multiple" id="toCopyDaySelect"></select>
+                            </td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <p>Please note that multi-day (overnight) resources will not be copied.</p>
+
+                    <div style="float: left; padding-top: 3px;">
+                <span id="copy_day_formValidation" style="max-width: 500px; padding-left: 35px; visibility: hidden;"
+                      class="formValidationRequired"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--     @MAIN BODY     -->
+    <div class="footer"></div>
+</div>
+
+<!-- end wrapperSize -->
+
+<!-- todo: add via template -->
+<div id="main_dialog_wrapper"></div>
+
+</body>
+</html>

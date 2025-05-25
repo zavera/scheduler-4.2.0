@@ -1,0 +1,337 @@
+/**
+ * Copyright (c) 2015-2016, President and Fellows of Harvard College
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
+ *
+ * 3. The name of the author may not be used to endorse or promote products
+ * derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ * EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ * TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+/** subjects.css */
+
+#toggleAllSubjects {
+    padding-top: 22px;
+    padding-bottom: 19px;
+}
+
+#subject_search {
+    color: #ffffff;
+    background: #748ea3;
+    padding: 19px 10px 5px 10px;
+    margin: 22px 10px 10px 10px;
+    text-align: left;
+    letter-spacing: 1px;
+    max-height: 250px;
+}
+
+#subject_search_header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    padding-bottom: 30px;
+}
+
+#subject_search input[type=text] {
+    height: 30px;
+}
+
+#subject_search_body input[type=text] {
+    margin: 5px 4px 5px 10px;
+    font-size: 13px;
+    color: #333333
+}
+
+#search_subject_btn {
+    margin-left: 25px;
+    font-size: 13px;
+}
+
+#subject_search_header, #subject_search_body {
+    margin: 5px 230px 12px 10px;
+}
+
+#subject_search_more {
+    margin-left: 40px;
+}
+
+#subject_search_mrn
+{
+    margin-left: 0 !important;
+}
+
+.subjectListing {
+    margin-left: 10px;
+    margin-right: 10px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    min-height: 40px;
+    padding-top: 21px;
+    padding-right: 15px;
+    margin-top: 15px;
+    background: #eaf4fd;
+    border: 1px solid #748ea3;
+}
+
+.subjectHeader {
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 15px;
+    color: #000000;
+}
+
+.subjectDetails {
+    margin-top: 17px;
+    padding-left: 35px;
+    padding-bottom: 15px;
+    font-size: 13px;
+}
+
+#subject_search_gender label {
+    margin-left: 9px;
+}
+
+#subject_search_gender input {
+    vertical-align: middle;
+}
+
+#subject_search_gender label span {
+    vertical-align: middle;
+}
+
+.subjectDetails td:first-child {
+    color: #7DB0D1;
+}
+
+span {
+    display: inline-block;
+}
+td {
+    padding: 6px;
+}
+
+td [contenteditable=true] {
+    border: 1px solid #AAA !important;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    background-color: white;
+    background-color: -moz-field;
+    border: 1px solid darkgray;
+    box-shadow: 1px 1px 1px 0 lightgray inset;
+    margin-top: 5px;
+    width: 150px;
+    padding: 5px;
+}
+
+
+.roundBorder6 {
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.roundBtn {
+    font-size: 14px;
+    color: #bcab74;
+    background: #FFFFFF;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border: 2px solid #b8d5e4;
+}
+
+.searchValidationRequired {
+    color: #bb0000;
+    background: url("images/error_image.png") no-repeat scroll 5px 49% ;
+    background-color: #ffffff;
+    border: 1px solid #bb0000;
+    font-size: 85%;
+    padding: 5px 7px 5px 35px;
+    display: none;
+}
+
+.disabledInput {
+    background-color: #D8D8D8;
+    border-color: #D8D8D8;
+}
+
+.mainBody {
+    min-height:300px;
+}
+
+.ui-datepicker-trigger {
+    vertical-align: middle;
+}
+
+#subjectListingWrapper {
+    overflow: auto;
+    max-height: 1400px;
+}
+
+#toggleAllSubjects {
+    width: 150px;
+}
+
+.saveButton2 {
+    border: 0;
+    padding: 10px;
+    color: #b8a56b;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    background: #ffffff none repeat scroll 0 0;
+    font-size: 15px;
+}
+
+#search_divider {
+    border-left: 1px solid #ffffff;
+    width: 10px;
+    height: 68px;
+    margin-right: 30px;
+}
+
+.headerNav a {
+    display: none;
+}
+
+.moreActions
+{
+    margin-left: 31px;
+    font-size: 12px;
+}
+
+.moreActions a
+{
+    text-decoration: underline;
+}
+
+#subject_mrn_error
+{
+    display:none;
+    position: relative;
+    margin-left: 0;
+}
+
+#subject_name_error
+{
+    display:none;
+    position: relative;
+}
+
+#subject_birthdate_error
+{
+    display:none;
+    position: relative;
+}
+
+#subject_search_error
+{
+    max-width: 450px;
+}
+
+.footer {
+    margin-top:30px;
+}
+
+.subjectListing:nth-last-child(2) {
+    margin-bottom:225px;
+}
+
+#gender_filter
+{
+    size: 12px;
+    color: #ffffff;
+    padding-top: 10px;
+}
+
+#mrnLabel
+{
+    margin-right: 6px;
+}
+
+#mrnAndMoreActions
+{
+    float:right;
+    padding-left:40px;
+    height: 25px;
+}
+
+#subject_search_name
+{
+    width: 190px;
+}
+
+#subject_search_mrn
+{
+    width: 125px;
+    margin-left:0;
+}
+
+#subject_search_birthdate
+{
+    width: 159px;
+}
+
+#search_subject_btn_div
+{
+    vertical-align: top;
+    margin-top: 7px;
+    display: inline-block;
+}
+
+.badNewsMessage {
+    margin-top: 20px;
+    margin-left: auto;
+    padding:10px;
+    margin-right: auto;
+    font-size: 16px;
+    text-align: center;
+    border-style:solid;
+    color: #8a6d3b;
+    width:820px;
+    background-color:#fcf8e3;
+    border-color: #faebcc;
+    border-radius:10px;
+}
+
+.subject_search_input
+{
+    vertical-align: top;
+    display: inline-block;
+}
+
+.toggleSubjects
+{
+    margin: 0 10px 10px 10px;
+    float: left;
+}
+
+#create_new_subject_btn, #search_subject_btn {
+    cursor: pointer;
+}
+
+

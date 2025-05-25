@@ -1,0 +1,55 @@
+{
+"institutions": [
+  {
+    "name": "DEMO1",
+    "longName": "Demo Institution 1",
+    "id": 1
+  },
+  {
+    "name": "DEMO2",
+    "longName": "Demo Institution 2",
+    "id": 2
+  },
+  {
+    "name": "DEMO3",
+    "longName": "Demo Institution 3",
+    "id": 3
+  },
+  {
+    "name": "DEMO4",
+    "longName": "Demo Institution 4",
+    "id": 4
+  },
+  {
+    "name": "DEMO5",
+    "longName": "Demo Institution 5",
+    "id": 5
+  },
+  {
+    "name": "DEMO6",
+    "longName": "Demo Institution 6",
+    "id": 6
+  },
+  {
+    "name": "DEMO7",
+    "longName": "Demo Institution 7",
+    "id": 7
+  },
+  {
+    "name": "DEMO8",
+    "longName": "Demo Institution 8",
+    "id": 8
+  },
+  {
+    "name": "DEMO9",
+    "longName": "Demo Institution 9",
+    "id": 9
+  },
+  {
+    "name": "DEMO10",
+    "longName": "Demo Institution 10",
+    "id": 10
+  }
+],
+  "studyStatuses":[{"name":"IRB_PROCESS","shortName":"PENDING", "isPending": true, "isOpen": false, "isClosed": false, "id":11},{"name":"OPEN","shortName":"OPEN", "isPending": false, "isOpen": true, "isClosed": false,"id":22},{"name":"CLOSED","shortName":"CLOSED", "isPending": false, "isOpen": false, "isClosed": true,"id":33}]
+}

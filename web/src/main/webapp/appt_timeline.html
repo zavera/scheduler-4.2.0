@@ -1,0 +1,37 @@
+ <div class="confine">
+  <div class="primaryTableHeader">Resource Usage</div>
+  <div class="resourcePicker">
+    <input type="radio" name="resourceType" value="room" id="room"
+           onclick="doTimeline(timelineHours, startHour, displayId, classId, '3');">Room
+    <input type="radio" name="resourceType" value="nursing" id="nursing"
+           onclick="doTimeline(timelineHours, startHour, displayId, classId, '1');">Nursing
+    <input type="radio" name="resourceType" value="nutrition" id="nutrition"
+           onclick="doTimeline(timelineHours, startHour, displayId, classId, '2');">Nutrition
+    <input type="radio" name="resourceType" value="other" id="other"
+           onclick="doTimeline(timelineHours, startHour, displayId, classId, '5');">Other
+  </div>
+
+  <div class="dateContainer">Select Date: <input type="text" id="timeline_date"
+                                                 style="width: 90px; padding-left: 5px;"
+                                                 class="ll-skin-latoja"></div>
+  <a href="#" onclick="javascript:loadTimelineClick();" class="formButton goldColor">Display Resource Usage</a>
+  <span id="timeline_dateValidation" class="formElementRequired"></span>
+  <div id="sublocationFilterList" class="sublocationFilterList"></div>
+  <span id="sublocation_validation" class="formElementRequired"></span>
+  <input type="hidden" id="hidden"/>
+  <div class="timelinePaging">
+            <span id="previousDay" onclick="doPreviousTimeLine(timelineHours, startHour);"> <img
+                    src="css/images/date-previous.png" width="11" height="18" alt="&lt;"/> </span>
+    <span class="dateHeader" style="width: 240px;"> </span>
+            <span id="nextDay" onclick="doNextTimeLine(timelineHours, startHour);"> <img
+                    src="css/images/date-next.png" width="11" height="18" alt="&gt;"/> </span>
+  </div>
+  <div id="timelineContainer" class="timelineContainer"></div>
+  <div class="timelinePaging">
+            <span id="previousDay1" onclick="doPreviousTimeLine(timelineHours, startHour);"> <img
+                    src="css/images/date-previous.png" width="11" height="18" alt="&lt;"/> </span>
+    <span class="dateHeader" style="width: 240px;"> </span>
+            <span id="nextDay1" onclick="doNextTimeLine(timelineHours, startHour);"> <img
+                    src="css/images/date-next.png" width="11" height="18" alt="&gt;"/> </span>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+{
+  "totalCount":5,
+  "templateResource1s":[
+    {
+      "id":124731,
+      "resourceName":"6 Outpt - ACC",
+      "startMinutes":0,
+      "endMinutes":1680
+    },
+    {
+      "id":124732,
+      "resourceName":"APC (NP/PA) - ACC",
+      "startMinutes":360,
+      "endMinutes":390},
+    {
+      "id":124734,
+      "resourceName":"Dietitian, Research - ACC",
+      "startMinutes":390,
+      "endMinutes":420
+    },
+    {
+      "id":124733,
+      "resourceName":"APC (NP/PA) - ACC",
+      "startMinutes":840,
+      "endMinutes":870},
+    {
+      "id":124735,
+      "resourceName":"Dietitian, Research - ACC",
+      "startMinutes":870,
+      "endMinutes":900
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[
+  {"id":157,"dayOfWeek":1,"startTime":"04/26/2020 04:15 PM","endTime":"04/26/2020 04:30 PM","quantity":1,"totalCount":24},
+  {"id":156,"dayOfWeek":1,"startTime":"05/22/2021 12:00 AM","endTime":"05/22/2021 05:45 AM","quantity":1,"totalCount":24},
+  {"id":150,"dayOfWeek":1,"startTime":"05/23/2022 12:00 AM","endTime":"05/23/2022 05:45 AM","quantity":1,"totalCount":24},
+  {"id":151,"dayOfWeek":1,"startTime":"05/24/2023 12:00 AM","endTime":"05/24/2023 05:45 AM","quantity":1,"totalCount":24},
+  {"id":149,"dayOfWeek":1,"startTime":"05/25/2024 12:00 AM","endTime":"05/25/2024 05:45 AM","quantity":1,"totalCount":24},
+  {"id":153,"dayOfWeek":1,"startTime":"05/26/2025 12:00 AM","endTime":"05/26/2025 05:45 AM","quantity":1,"totalCount":24},
+  {"id":152,"dayOfWeek":1,"startTime":"05/29/2026 12:00 AM","endTime":"05/29/2026 05:45 AM","quantity":1,"totalCount":24},
+  {"id":148,"dayOfWeek":1,"startTime":"05/30/2027 12:00 AM","endTime":"05/30/2027 05:45 AM","quantity":1,"totalCount":24},
+  {"id":158,"dayOfWeek":1,"startTime":"05/31/2028 12:00 AM","endTime":"05/31/2028 05:45 AM","quantity":1,"totalCount":24},
+  {"id":167,"dayOfWeek":1,"startTime":"05/31/2030 02:30 AM","endTime":"06/01/2030 05:45 AM","quantity":1,"totalCount":24}
+]
