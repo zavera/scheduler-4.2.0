@@ -86,7 +86,8 @@ var sumupPage = (function () {
                     "\n" +
                     "Meals: - Breakfast: Oatmeal with berries and green tea at 7:30 AM - Snack: Greek yogurt with almonds at 10:00 AM - Lunch: Grilled chicken salad with vinaigrette and water at 12:30 PM - Snack: Apple slices with peanut butter at 3:00 PM - Dinner: Baked salmon, steamed broccoli, brown rice, and herbal tea at 6:30 PM\n" +
                     "\n" +
-                    "List all of the patient's activities (appointments and meals) that occur between 12:00 PM and 3:00 PM. Then, based on the patient's information, propose three personalized lifestyle recommendations to improve cardiovascular health.\""
+                    userMessage
+
             }),
             xhrFields: {
                 onprogress: function(e) {
